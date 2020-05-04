@@ -269,7 +269,7 @@ globalkeys = gears.table.join(
 	),
 	awful.key({ "Mod4" }, "d",
 		function ()
-			awful.spawn("dmenu_run -l 10")
+			awful.spawn("dmenu_run -l 7")
 		end
 	),
 
