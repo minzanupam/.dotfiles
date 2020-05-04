@@ -264,18 +264,18 @@ globalkeys = gears.table.join(
 	),
 	awful.key({ "Mod4" }, "Return",
 		function ()
-			awful.spawn("alacritty")
+			awful.spawn("urxvt")
 		end
 	),
 	awful.key({ "Mod4" }, "d",
 		function ()
-			awful.spawn("dmenu_run")
+			awful.spawn("dmenu_run -l 10")
 		end
 	),
 
 	awful.key({ "Mod4" }, "e",
 		function ()
-			awful.spawn("/home/anupam/emoji_script.sh")
+			awful.spawn("/home/anupam/.local/share/applications/emoji_over_dmenu/emoji_over_dmenu_script.sh")
 		end
 	),
 	-- wibox
