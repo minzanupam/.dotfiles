@@ -17,7 +17,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
-
+-- battery indicator widget
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 -- powerline 
 -- package.path = package.path .. ';/usr/lib/python3.8/site-packages/powerline/bindings/awesome/powerline.lua'
 -- require('powerline')
@@ -225,6 +226,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+			batteryarc_widget(),
             s.mylayoutbox,
 			-- powerline_widget,
         },
