@@ -259,6 +259,11 @@ globalkeys = gears.table.join(
 			awful.spawn("firefox")
 		end
 	),
+	awful.key({ "Mod4" }, "j",
+		function ()
+			awful.spawn("chromium")
+		end
+	),
 	awful.key({ "Mod4" }, "h",
 		function ()
 			awful.spawn("pcmanfm")
