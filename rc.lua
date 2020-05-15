@@ -55,7 +55,7 @@ end
 -- my theme
 beautiful.init("/home/anupam/.config/awesome/themes/default.lua")
 -- my wallpaper 
-beautiful.get().wallpaper="/home/anupam/Pictures/wallpapers/minimal/Desktop-download-Minimal-backgrounds.jpg"
+beautiful.get().wallpaper="/home/anupam/Pictures/wallpapers/minimal/61265.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
