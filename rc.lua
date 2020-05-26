@@ -276,7 +276,7 @@ globalkeys = gears.table.join(
 			awful.spawn("alacritty")
 		end
 	),
-	awful.key({ "Mod4" }, "d",
+	awful.key({ "Mod4" }, "p",
 		function ()
 			awful.spawn("dmenu_run -l 7")
 		end
@@ -391,7 +391,8 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+--    awful.key({ modkey }, "p", function() menubar.show() end,
+	awful.key({modkey}, "p", function() awful.spawn("dmenu_run") end,
               {description = "show the menubar", group = "launcher"})
 )
 
