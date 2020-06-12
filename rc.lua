@@ -55,7 +55,7 @@ end
 -- my theme
 beautiful.init("/home/anupam/.config/awesome/themes/default.lua")
 -- my wallpaper 
-beautiful.get().wallpaper="/home/anupam/Pictures/wallpapers/minimal/61265.jpg"
+beautiful.get().wallpaper="/home/anupam/Pictures/wallpapers/minimal/255909-vertical-minimalistic-wallpaper-3840x2160-images.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -635,7 +635,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 autorun = true
 autorunApps =
 {
-	"/usr/bin/picom -b"
+	"/usr/bin/picom -b",
+	"/usr/bin/nitrogen --restore &"
 }
 
 if autorun then
