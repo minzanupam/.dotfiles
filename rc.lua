@@ -71,23 +71,26 @@ modkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+
     awful.layout.suit.tile,
 --    awful.layout.suit.tile.left,
 --    awful.layout.suit.tile.bottom,
-   
+
     awful.layout.suit.max,
+
+    awful.layout.suit.spiral.dwindle,
+
+	awful.layout.suit.magnifier,
     
     awful.layout.suit.tile.top,
 --    awful.layout.suit.max.fullscreen,
---    awful.layout.suit.magnifier,
 --    awful.layout.suit.fair,
 --    awful.layout.suit.fair.horizontal,
 --    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
---    awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
+	--awful.layout.suit.corner.nw,
+	--awful.layout.suit.corner.ne,
+	--awful.layout.suit.corner.sw,
+	--awful.layout.suit.corner.se,
     awful.layout.suit.floating,
 }
 -- }}}
@@ -181,7 +184,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" }, s, awful.layout.layouts[1])
+    awful.tag({ "work", "Internet", "Song", "anime", "work", "Extra", "Extra", "work", "Update" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -263,7 +266,7 @@ globalkeys = gears.table.join(
 	),
 	awful.key({ "Mod4" }, "j",
 		function ()
-			awful.spawn("qutebrowser")
+			awful.spawn("alacritty -e /home/anupam/.config/vifm/scripts/vifmrun")
 		end
 	),
 	awful.key({ "Mod4" }, "h",
@@ -276,9 +279,14 @@ globalkeys = gears.table.join(
 			awful.spawn("alacritty")
 		end
 	),
+	awful.key({ "Mod4", "Shift" }, "Return",
+		function ()
+			awful.spawn("kitty")
+		end
+	),
 	awful.key({ "Mod4" }, "p",
 		function ()
-			awful.spawn("dmenu_run -l 7")
+			awful.spawn("dmenu_run -l 10")
 		end
 	),
 
@@ -288,6 +296,7 @@ globalkeys = gears.table.join(
 		end
 	),
 	-- wibox
+
 	
 	awful.key({ modkey, "Control" }, "f",
 		function ()
@@ -380,16 +389,17 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run {
-                    prompt       = "Run Lua code: ",
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                  }
-              end,
-              {description = "lua execute prompt", group = "awesome"}),
+    --awful.key({ modkey }, "x",
+    --          function ()
+    --              awful.prompt.run {
+    --                prompt       = "Run Lua code: ",
+    --                textbox      = awful.screen.focused().mypromptbox.widget,
+    --                exe_callback = awful.util.eval,
+    --                history_path = awful.util.get_cache_dir() .. "/history_eval"
+    --              }
+    --          end,
+    --          {description = "lua execute prompt", group = "awesome"}),
+
     -- Menubar
 --    awful.key({ modkey }, "p", function() menubar.show() end,
 	awful.key({modkey}, "p", function() awful.spawn("dmenu_run") end,
@@ -645,3 +655,16 @@ if autorun then
 	end
 end
 
+-- hide the border for max windows / clients
+screen.connect_signal("arrange", function (s)
+    local max = s.selected_tag.layout.name == "max"
+    local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
+    -- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
+    for _, c in pairs(s.clients) do
+        if (max or only_one) and not c.floating or c.maximized then
+            c.border_width = 0
+        else
+            c.border_width = beautiful.border_width
+        end
+    end
+end)
