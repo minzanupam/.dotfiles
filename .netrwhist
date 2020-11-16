@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/anupam/work/node/my-new-express-application'
+let g:netrw_dirhist_9='/home/anupam/work/node/my-node-application'
+let g:netrw_dirhist_8='/home/anupam/.local/share/nvim/site/doc'
+let g:netrw_dirhist_7='/home/anupam/.cache/yay/onivim2/src/onivim2'
+let g:netrw_dirhist_6='/home/anupam/.cache/yay/onivim2/src'
+let g:netrw_dirhist_5='/home/anupam/.cache/yay/onivim2/onivim2'
+let g:netrw_dirhist_4='/home/anupam/.cache/yay/onivim2/onivim2/branches'
+let g:netrw_dirhist_3='/home/anupam/.cache/yay/onivim2/onivim2'
+let g:netrw_dirhist_2='/home/anupam/.cache/yay/onivim2/onivim2/branches'
+let g:netrw_dirhist_1='/home/anupam/.cache/yay/onivim2/onivim2/info'
