@@ -83,8 +83,8 @@ awful.layout.layouts = {
   awful.layout.suit.magnifier,
 
   --    awful.layout.suit.max.fullscreen,
-  --    awful.layout.suit.fair,
-  --    awful.layout.suit.fair.horizontal,
+  awful.layout.suit.fair,
+  awful.layout.suit.fair.horizontal,
   --    awful.layout.suit.spiral,
   --awful.layout.suit.corner.nw,
   --awful.layout.suit.corner.ne,
@@ -184,7 +184,97 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "work", "Internet", "Song", "anime", "work", "Extra", "Extra", "work", "Update" }, s, awful.layout.layouts[1])
+  -- awful.tag({ "work", "Internet", "Song", "anime", "work", "Extra", "Extra", "work", "Update" }, s, awful.layout.layouts[1])
+  --
+  -- my tags
+  -- work1
+  awful.tag.add("1", {
+      icon = '/home/anupam/.config/awesome/icons/home.svg',
+      layout = awful.layout.suit.tile,
+      master_fill_policy = "expand",
+      gap_single_client = false,
+      gap = 0,
+      screen = s,
+      selected = true
+    })
+  -- internet
+  awful.tag.add("2", {
+      icon = '/home/anupam/.config/awesome/icons/global.svg',
+      layout = awful.layout.suit.fair,
+      master_fill_policy = "expand",
+      gap_single_client = false,
+      gap = 15,
+      screen = s,
+      selected = false
+    })
+  -- songs
+  awful.tag.add("3", {
+      icon = '/home/anupam/.config/awesome/icons/musical-note.svg',
+      layout = awful.layout.suit.fair,
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = 15,
+      screen = s,
+      selected = false
+    })
+  -- anime
+  awful.tag.add("4", {
+      icon = '/home/anupam/.config/awesome/icons/animate.svg',
+      layout = awful.layout.suit.fair,
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = 15,
+      screen = s,
+      selected = false
+    })
+  -- work5
+  awful.tag.add("5", {
+      icon = '/home/anupam/.config/awesome/icons/haskell.svg',
+      layout = awful.layout.suit.tile,
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = 0,
+      screen = s,
+      selected = false
+    })
+--  -- extra 6
+--  awful.tag.add("6", {
+--      layout = awful.layout.suit.tile,
+--      master_fill_policy = "expand",
+--      gap_single_client = true,
+--      gap = 0,
+--      screen = s,
+--      selected = false
+--    })
+--  -- extra 7
+--  awful.tag.add("7", {
+--      layout = awful.layout.suit.tile,
+--      master_fill_policy = "expand",
+--      gap_single_client = true,
+--      gap = 0,
+--      screen = s,
+--      selected = false
+--    })
+  -- work 8
+  awful.tag.add("6", {
+      icon = '/home/anupam/.config/awesome/icons/react.svg',
+      layout = awful.layout.suit.tile,
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = 5,
+      screen = s,
+      selected = false
+    })
+--  -- update 9
+--  awful.tag.add("", {
+--      icon = '/home/anupam/.config/awesome/icons/system-update.svg',
+--      layout = awful.layout.suit.tile,
+--      master_fill_policy = "expand",
+--      gap_single_client = true,
+--      gap = 0,
+--      screen = s,
+--      selected = false
+--    })
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
