@@ -644,7 +644,6 @@ awful.rules.rules = {
         "Gpick",
         "Kruler",
         "MessageWin",  -- kalarm.
-        "Sxiv",
         "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
         "Wpa_gui",
         "veromix",
@@ -661,6 +660,22 @@ awful.rules.rules = {
         "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
       }
   }, properties = { floating = true }},
+
+  -- force not floating
+  { rule_any = {
+      class = {
+        "pavucontrol-qt"
+      }
+  }, properties = { floating = false } },
+
+  { rule_any = {
+      class = {
+        "firefox",
+        "Thunderbird",
+        "Chromium",
+        "Brave",
+      }
+  }, properties = { tag = "2" } },
 
   -- Add titlebars to normal clients and dialogs
   { rule_any = {type = { "normal", "dialog" }
