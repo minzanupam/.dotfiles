@@ -200,7 +200,7 @@ awful.screen.connect_for_each_screen(function(s)
   -- internet
   awful.tag.add("2", {
       icon = '/home/anupam/.config/awesome/icons/global.svg',
-      layout = awful.layout.suit.fair,
+      layout = awful.layout.suit.spiral,
       master_fill_policy = "expand",
       gap_single_client = false,
       gap = 15,
@@ -257,11 +257,11 @@ awful.screen.connect_for_each_screen(function(s)
 --    })
   -- work 8
   awful.tag.add("6", {
-      icon = '/home/anupam/.config/awesome/icons/react.svg',
-      layout = awful.layout.suit.tile,
+      icon = '/home/anupam/.config/awesome/icons/paint.png',
+      layout = awful.layout.suit.max,
       master_fill_policy = "expand",
       gap_single_client = true,
-      gap = 5,
+      gap = 0,
       screen = s,
       selected = false
     })
@@ -669,6 +669,7 @@ awful.rules.rules = {
   }, properties = { floating = false } },
 
   { rule_any = {
+      -- internet applications
       class = {
         "firefox",
         "Thunderbird",
@@ -676,6 +677,42 @@ awful.rules.rules = {
         "Brave",
       }
   }, properties = { tag = "2" } },
+
+  { rule_any = {
+      -- song / audio applications
+      class = {
+        "Audacious",
+        "Audacity",
+        "obs",
+      }
+  }, properties = { tag = "3" } },
+
+  { rule_any = {
+      -- digital art and office related applications
+      class = {
+        "Blender",
+        "Gimp",
+        "Krita",
+        "kdenlive",
+        "Drawing",
+        "libreoffice",
+        "Spice-Up",
+        "Com.github.phase1geo.minder",
+      }
+  }, properties = { tag = "6" } },
+
+  { rule_any = {
+      -- image / entertainment applications
+      class = {
+        "calibre",
+        "Image Lounge", -- nomacs
+        "Viewnior",
+        "okular",
+        "vlc",
+        "mpv",
+        "celluloid",
+      }
+  }, properties = { tag = "4" } },
 
   -- Add titlebars to normal clients and dialogs
   { rule_any = {type = { "normal", "dialog" }
