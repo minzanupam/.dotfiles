@@ -257,7 +257,7 @@ awful.screen.connect_for_each_screen(function(s)
 --    })
   -- work 8
   awful.tag.add("6", {
-      icon = '/home/anupam/.config/awesome/icons/paint.png',
+      icon = '/home/anupam/.config/awesome/icons/paint.svg',
       layout = awful.layout.suit.max,
       master_fill_policy = "expand",
       gap_single_client = true,
@@ -694,6 +694,7 @@ awful.rules.rules = {
         "Gimp",
         "Inkscape",
         "Krita",
+        "Darktable",
         "kdenlive",
         "Drawing",
         "libreoffice",
