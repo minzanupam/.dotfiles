@@ -692,6 +692,7 @@ awful.rules.rules = {
       class = {
         "Blender",
         "Gimp",
+        "Inkscape",
         "Krita",
         "kdenlive",
         "Drawing",
