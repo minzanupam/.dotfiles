@@ -73,7 +73,6 @@ modkey = "Mod1"
 awful.layout.layouts = {
 
   awful.layout.suit.tile,
-  --    awful.layout.suit.tile.left,
   --    awful.layout.suit.tile.bottom,
 
   awful.layout.suit.max,
@@ -84,6 +83,9 @@ awful.layout.layouts = {
 
   --    awful.layout.suit.max.fullscreen,
   awful.layout.suit.fair,
+
+  awful.layout.suit.tile.left,
+
   awful.layout.suit.fair.horizontal,
   --    awful.layout.suit.spiral,
   --awful.layout.suit.corner.nw,
@@ -220,7 +222,7 @@ awful.screen.connect_for_each_screen(function(s)
   -- anime
   awful.tag.add("4", {
       icon = '/home/anupam/.config/awesome/icons/animate.svg',
-      layout = awful.layout.suit.fair,
+      layout = awful.layout.suit.tile,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = 15,
@@ -693,7 +695,7 @@ awful.rules.rules = {
         "Blender",
         "Gimp",
         "Inkscape",
-        "Krita",
+        "krita",
         "Darktable",
         "kdenlive",
         "Drawing",
