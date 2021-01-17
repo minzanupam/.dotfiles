@@ -190,7 +190,7 @@ awful.screen.connect_for_each_screen(function(s)
   --
   -- my tags
   -- work1
-  awful.tag.add("1", {
+  awful.tag.add("", {
       icon = '/home/anupam/.config/awesome/icons/home.svg',
       layout = awful.layout.suit.tile,
       master_fill_policy = "expand",
@@ -200,9 +200,9 @@ awful.screen.connect_for_each_screen(function(s)
       selected = true
     })
   -- internet
-  awful.tag.add("2", {
+  awful.tag.add("", {
       icon = '/home/anupam/.config/awesome/icons/global.svg',
-      layout = awful.layout.suit.spiral,
+      layout = awful.layout.suit.max,
       master_fill_policy = "expand",
       gap_single_client = false,
       gap = 15,
@@ -210,7 +210,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
   -- songs
-  awful.tag.add("3", {
+  awful.tag.add("", {
       icon = '/home/anupam/.config/awesome/icons/musical-note.svg',
       layout = awful.layout.suit.fair,
       master_fill_policy = "expand",
@@ -220,7 +220,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
   -- anime
-  awful.tag.add("4", {
+  awful.tag.add("", {
       icon = '/home/anupam/.config/awesome/icons/animate.svg',
       layout = awful.layout.suit.tile,
       master_fill_policy = "expand",
@@ -230,7 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
   -- work5
-  awful.tag.add("5", {
+  awful.tag.add("", {
       icon = '/home/anupam/.config/awesome/icons/haskell.svg',
       layout = awful.layout.suit.tile,
       master_fill_policy = "expand",
@@ -258,7 +258,7 @@ awful.screen.connect_for_each_screen(function(s)
 --      selected = false
 --    })
   -- work 8
-  awful.tag.add("6", {
+  awful.tag.add("", {
       icon = '/home/anupam/.config/awesome/icons/paint.svg',
       layout = awful.layout.suit.max,
       master_fill_policy = "expand",
@@ -369,11 +369,6 @@ globalkeys = gears.table.join(
   awful.key({ "Mod4" }, "Return",
     function ()
       awful.spawn("alacritty")
-    end
-    ),
-  awful.key({ "Mod4", "Shift" }, "Return",
-    function ()
-      awful.spawn("kitty")
     end
     ),
   awful.key({ "Mod4" }, "p",
