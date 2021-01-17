@@ -190,9 +190,9 @@ awful.screen.connect_for_each_screen(function(s)
   --
   -- my tags
   -- work1
-  awful.tag.add("", {
+  awful.tag.add("1", {
       icon = '/home/anupam/.config/awesome/icons/home.svg',
-      layout = awful.layout.suit.tile,
+      layout = awful.layout.suit.tile.top,
       master_fill_policy = "expand",
       gap_single_client = false,
       gap = 0,
@@ -200,7 +200,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = true
     })
   -- internet
-  awful.tag.add("", {
+  awful.tag.add("2", {
       icon = '/home/anupam/.config/awesome/icons/global.svg',
       layout = awful.layout.suit.max,
       master_fill_policy = "expand",
@@ -210,7 +210,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
   -- songs
-  awful.tag.add("", {
+  awful.tag.add("3", {
       icon = '/home/anupam/.config/awesome/icons/musical-note.svg',
       layout = awful.layout.suit.fair,
       master_fill_policy = "expand",
@@ -220,7 +220,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
   -- anime
-  awful.tag.add("", {
+  awful.tag.add("4", {
       icon = '/home/anupam/.config/awesome/icons/animate.svg',
       layout = awful.layout.suit.tile,
       master_fill_policy = "expand",
@@ -230,7 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
       selected = false
     })
   -- work5
-  awful.tag.add("", {
+  awful.tag.add("5", {
       icon = '/home/anupam/.config/awesome/icons/haskell.svg',
       layout = awful.layout.suit.tile,
       master_fill_policy = "expand",
@@ -258,7 +258,7 @@ awful.screen.connect_for_each_screen(function(s)
 --      selected = false
 --    })
   -- work 8
-  awful.tag.add("", {
+  awful.tag.add("6", {
       icon = '/home/anupam/.config/awesome/icons/paint.svg',
       layout = awful.layout.suit.max,
       master_fill_policy = "expand",
