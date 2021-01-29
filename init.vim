@@ -3,114 +3,94 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set nowrap
+set ignorecase
+set smartcase
 set colorcolumn=80
+"set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 "set textwidth=80
-
 " line number
 set nu
 set rnu
-
 let mapleader = " "
-
 " set auto comment off
-autocmd BufNewFile,BufWinEnter * setlocal formatoptions-=cro
-
-" set swap off 
+" autocmd BufNewFile,BufWinEnter * setlocal formatoptions-=cro
+" set auto comment on
+autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
 set noswapfile
-
-" turn off search highligting
-set nohlsearch
-
+"set nohlsearch
+set hlsearch
+set foldmethod=manual
+set foldlevel=9
+set foldnestmax=5
 " indentation guild
 "set list lcs=tab:\¦\ 
 
 
-" color scheme
-colorscheme gruvbox
-
-" set folding
-set foldmethod=syntax
-set foldlevel=9
-set foldnestmax=5
-
-
-" key maps 
 " maps for cut copy and paste from clipboard
 noremap <leader>y "+y
-noremap <leader>d "+d
+" noremap <leader>d "+d
 noremap <leader>p "+p
 " maps for ecsape, save and quit
-"imap <C-L> <Esc>
-"map <C-K> :w<CR>
+" imap <C-L> <Esc>
+" map <C-K> :w<CR>
 " map <C-J> :q<CR>
 
-" vim fugitive mapings
-nmap <leader>gh :diffget //2<CR>
-nmap <leader>gl :diffget //3<CR>
+"maps for most recently used buffers
+noremap <C-j> :BufMRUNext<CR>
+noremap <C-k> :BufMRUPrev<CR>
 
+" vim fugitive mapings
+noremap <leader>gh :diffget //2<CR>
+noremap <leader>gl :diffget //3<CR>
 " nerdtree
-map :nt :NERDTreeToggle
+nnoremap :nt :NERDTreeToggle
+" fff file manager
+let g:fff#split = "20new"
+let g:fff#split_direction = "nosplitright splitbelow"
+map <leader>f :F<CR>
 " nerd commenter
 map <leader>/ <plug>NERDCommenterToggle
 let g:NERDDefaultAlign='left'
-
 " multiple cursors mappings
 let g:multi_cursor_use_default_mapping=0
-" Default mapping
 let g:multi_cursor_start_word_key      = '<leader><C-n>'
-"let g:multi_cursor_select_all_word_key = '<A-n>'
-"let g:multi_cursor_start_key           = 'g<C-n>'
-"let g:multi_cursor_select_all_key      = 'g<A-n>'
 let g:multi_cursor_next_key            = '<C-n>'
-"let g:multi_cursor_prev_key            = '<C-p>'
-"let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 " fzf
 nnoremap <C-p> :GFiles<CR>
 " fzf ripgrep
 nnoremap <C-n> :Rg<CR>
-
-
-" coc
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> rn <Plug>(coc-rename)
-
 " maximizer
-nnoremap <leader>m :MaximizerToggle!<CR>
-" debug bindings
-" nnoremap <leader><leader>dd :call vimspector#Launch()<CR>
-" nnoremap <leader><leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
-" nnoremap <leader><leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
-" nnoremap <leader><leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
-" nnoremap <leader><leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
-" nnoremap <leader><leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
-" nnoremap <leader><leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
-" nnoremap <leader><leader>de :call vimspector#Reset()<CR>
-" nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
-" nmap <leader>dl <Plug>VimspectorStepInto
-" nmap <leader>dj <Plug>VimspectorStepOver
-" nmap <leader>dk <Plug>VimspectorStepOut
-" nmap <leader>d_ <Plug>VimspectorRestart
-" nnoremap <leader>d<space> :call vimspector#Continue()<CR>
-" nmap <leader>drc <Plug>VimspectorRunToCursor
-" nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
-" nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
+nnoremap <leader>m :MaximizerToggle<CR>
 
-" key maps end
+" undotree config
+nnoremap :ut :UndotreeToggle
 
 
- "vim-plug
+"vim-plug
 call plug#begin('~/.config/nvim/plugged')
-"" language plugins
+" color schemes
+Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'jnurmine/Zenburn'
+Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'mildred/vim-bufmru'
+" language plugins
 "Plug 'dart-lang/dart-vim-plugin'
 "" IDE features
+Plug 'dylanaraps/fff.vim'
+"Plug 'ptzz/lf.vim'
+"    Plug 'rbgrouleff/bclose.vim'
 Plug 'preservim/nerdtree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/fzf.vim'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'rstacruz/vim-closer'
 Plug 'preservim/nerdcommenter'
 "" git
 Plug 'tpope/vim-fugitive' 
@@ -119,109 +99,109 @@ Plug 'thaerkh/vim-indentguides'
 "" global languge highlights
 Plug 'sheerun/vim-polyglot'
 "" different colored brackets paranthesis
-Plug 'frazrepo/vim-rainbow'
-"" Theming
+" Plug 'frazrepo/vim-rainbow'
+" " react css styled components
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-"" html
+  Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'
 "" vim latex - vimtex
 Plug 'lervag/vimtex'
-"" icons for nerdtree
-Plug 'ryanoasis/vim-devicons'
 "" get some shell commands in vim
-Plug 'tpope/vim-eunuch'
-"" tmuxline
+"Plug 'tpope/vim-eunuch'
+"" theming tmux line with vim
 Plug 'edkolev/tmuxline.vim'
-"" vim react typescript snippets
-Plug 'mlaursen/vim-react-snippets'
-"" vim snippets list
-" Plug 'honza/vim-snippets'
-" ultisnips snippet engine
-Plug 'SirVer/ultisnips'
 "" save vim sessions
 Plug 'tpope/vim-obsession'
 "" Multiline vim cursors
 Plug 'terryma/vim-multiple-cursors'
-"" vim debugging
-" Plug 'puremourning/vimspector'
 "" maximize the window
 Plug 'szw/vim-maximizer'
 "" css colors 
 Plug 'ap/vim-css-color'
 "" :VimBeGood game remove neovim from npm if you happen to remove this plugin
 "Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
-
-"" write with sudo
+" write with sudo
 "Plug 'lambdalisue/suda.vim'
+
+"" vim debugging
+Plug 'puremourning/vimspector'
+
+"" Undotree
+Plug 'mbbill/undotree'
+
+"vim lsp config
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+"Plug 'nvim-lua/diagnostic-nvim'
+"Plug 'tjdevries/nlua.nvim'
+
+" coc 
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" vim snippets
+" Plug 'mlaursen/vim-react-snippets'
+" Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+
+" minimap 
+" Plug 'wfxr/minimap.vim'
+
 call plug#end()
-
-
-" settings for coc
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
-" use <tab> for auto complete end here
-" setting for coc ends here
-" settings for coc snippets
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? coc#_select_confirm() :
-"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" 
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-" 
-" let g:coc_snippet_next = '<tab>'
-" settings for coc snippets end
-
-" ultisnips config
-let g:UltiSnipsExpandTrigger="<c-l>,"
-let g:UltiSnipsJumpForwardTrigger="<c-l>,"
-let g:UltiSnipsJumpBackwardTrigger="<c-l>."
-" ultisnips config end
 
 " vim airline config
 let g:airline_powerline_fonts = 1
-let g:airline_theme='lucius'
-" vim airline config ends
+let g:airline_highlighting_cache = 1
+" let g:airline_theme='lucius'
 
 " turn off and disable matching parenthesis
 let g:loaded_matchparen = 1
-
 " dart / flutter plugin settings 
 let g:dart_format_on_save = 1
-
 " line indentation guide style
 let g:indentguides_spacechar = '┆'
 let g:indentguides_tabchar = '¦'
-
 " rainbow brackets options 
 " let g:rainbow_active = 1
 
-
-" set the tab for some specific filetypes
-autocmd FileType rust setlocal ts=4 sw=4 
-autocmd FileType python,json setlocal ts=4 sw=4 et
-autocmd FileType typescriptreact setlocal ts=2 sw=2 
-autocmd FileType javascript setlocal ts=2 sw=2
-autocmd FileType dart setlocal ts=2 sw=2 et
-autocmd FileType html setlocal ts=2 sw=2
-autocmd FileType typescript setlocal ts=2 sw=2 et
-
-" let g:AutoPairsShortcutToggle = '<C-j>'
+let g:AutoPairsShortcutToggle = '<C-j>'
 
 " latex auto compile
-autocmd BufWritePost *.tex !pdflatex %
-
+" autocmd BufWritePost *.tex !pdflatex %
 let g:tex_flavor = 'latex'
+
+" change director on buffer enter (works with fzf)
+autocmd BufEnter * silent! lcd %:p:h
+
+colorscheme ayu
+set background=dark
+" set t_8f=\[[38;2;%lu;%lu;%lum
+" set t_8b=\[[48;2;%lu;%lu;%lum
+set termguicolors
+" to get a transparent background
+"hi Normal ctermbg=NONE guibg=none
+"hi LineNr guibg=none
+ 
+hi Normal guibg=none
+hi LineNr guibg=none
+hi LineNr guifg=grey
+
+"source ~/.config/nvim/coc_config.vim
+source ~/.config/nvim/lsp_config.vim
+"source ~/.config/nvim/snippet_config.vim
+source ~/.config/nvim/vimspector_config.vim
+
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {rust, lua, typescript}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { },  -- list of language that will be disabled
+  },
+}
+EOF
+
