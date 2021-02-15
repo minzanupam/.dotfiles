@@ -15,10 +15,10 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 "lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach };
 "lua require'lspconfig'.rls.setup{ };
 lua<<EOC
-require'lspconfig'.tsserver.setup{};
+require'lspconfig'.tsserver.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.texlab.setup{}
-require'lspconfig'.sumneko_lua.setup {};
+require'lspconfig'.sumneko_lua.setup {}
 require'lspconfig'.jedi_language_server.setup{}
 EOC
 "lua require'lspconfig'.sumneko_lua.setup { is_installed=false };

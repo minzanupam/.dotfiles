@@ -36,8 +36,10 @@ noremap <leader>p "+p
 " map <C-J> :q<CR>
 
 "maps for most recently used buffers
-noremap <C-j> :BufMRUNext<CR>
-noremap <C-k> :BufMRUPrev<CR>
+noremap <C-h> :BufMRUNext<CR>
+noremap <C-l> :BufMRUPrev<CR>
+noremap <C-j> <C-w>w
+noremap <C-k> <C-w>W
 
 " vim fugitive mapings
 noremap <leader>gh :diffget //2<CR>
@@ -79,6 +81,7 @@ Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mildred/vim-bufmru'
+Plug 'drewtempelmeyer/palenight.vim'
 " language plugins
 "Plug 'dart-lang/dart-vim-plugin'
 "" IDE features
@@ -94,8 +97,9 @@ Plug 'rstacruz/vim-closer'
 Plug 'preservim/nerdcommenter'
 "" git
 Plug 'tpope/vim-fugitive' 
+Plug 'airblade/vim-gitgutter'
 "" indentation guide
-Plug 'thaerkh/vim-indentguides'
+" Plug 'thaerkh/vim-indentguides'
 "" global languge highlights
 Plug 'sheerun/vim-polyglot'
 "" different colored brackets paranthesis
@@ -124,6 +128,8 @@ Plug 'ap/vim-css-color'
 " write with sudo
 "Plug 'lambdalisue/suda.vim'
 
+"" vim table mode
+Plug 'dhruvasagar/vim-table-mode'
 "" vim debugging
 Plug 'puremourning/vimspector'
 
@@ -176,7 +182,7 @@ let g:tex_flavor = 'latex'
 " change director on buffer enter (works with fzf)
 autocmd BufEnter * silent! lcd %:p:h
 
-colorscheme ayu
+colorscheme gruvbox
 set background=dark
 " set t_8f=\[[38;2;%lu;%lu;%lum
 " set t_8b=\[[48;2;%lu;%lu;%lum
@@ -185,15 +191,15 @@ set termguicolors
 "hi Normal ctermbg=NONE guibg=none
 "hi LineNr guibg=none
  
-hi Normal guibg=none
-hi LineNr guibg=none
-hi LineNr guifg=grey
+"hi Normal guibg=none
+"hi LineNr guibg=none
+" for ayu color scheme
+"hi LineNr guifg=grey
 
 "source ~/.config/nvim/coc_config.vim
 source ~/.config/nvim/lsp_config.vim
 "source ~/.config/nvim/snippet_config.vim
 source ~/.config/nvim/vimspector_config.vim
-
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
