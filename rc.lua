@@ -192,7 +192,7 @@ awful.screen.connect_for_each_screen(function(s)
   -- work1
   awful.tag.add("1", {
       icon = '/home/anupam/.config/awesome/icons/home.svg',
-      layout = awful.layout.suit.tile.top,
+      layout = awful.layout.suit.tile,
       master_fill_policy = "expand",
       gap_single_client = false,
       gap = 0,
@@ -679,8 +679,6 @@ awful.rules.rules = {
       -- song / audio applications
       class = {
         "Audacious",
-        "Audacity",
-        "obs",
       }
   }, properties = { tag = "3" } },
 
@@ -697,6 +695,8 @@ awful.rules.rules = {
         "libreoffice",
         "Spice-Up",
         "Com.github.phase1geo.minder",
+        "Audacity",
+        "obs",
       }
   }, properties = { tag = "6" } },
 
