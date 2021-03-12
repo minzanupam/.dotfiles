@@ -350,7 +350,7 @@ globalkeys = gears.table.join(
   awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
     {description = "go back", group = "tag"}),
 
-  --my key bindings
+  --my keybindings
   awful.key({ "Mod4" }, "k",
     function ()
       awful.spawn("firefox")
@@ -371,7 +371,7 @@ globalkeys = gears.table.join(
       awful.spawn("alacritty")
     end
     ),
-  awful.key({ "Mod4" }, "p",
+  awful.key({ "Mod4" }, "t",
     function ()
       awful.spawn("dmenu_run -l 10")
     end
@@ -447,7 +447,7 @@ globalkeys = gears.table.join(
     {description = "open a terminal", group = "launcher"}),
   awful.key({ modkey, "Control" }, "r", awesome.restart,
     {description = "reload awesome", group = "awesome"}),
-  awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+  awful.key({ modkey, "Shift"   }, "z", awesome.quit,
     {description = "quit awesome", group = "awesome"}),
 
   awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -790,8 +790,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- my autorun programs
 
-autorun = true
-autorunApps =
+local autorun = true
+local autorunApps =
 {
   "/usr/bin/picom -b",
   "/usr/bin/nitrogen --restore &"
