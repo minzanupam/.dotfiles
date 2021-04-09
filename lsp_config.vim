@@ -1,6 +1,11 @@
 "autocomplete
 set completeopt=menuone,noinsert,noselect
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<cr>
+nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
+nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
+" nnoremap <leader>gl :lua vim.lsp.buf.implementation()<cr>
+nnoremap <leader>vll :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
+nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
 
 "set shortmess+=c
 let g:completion_enable_auto_popup = 1
@@ -18,6 +23,7 @@ lua<<EOC
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.texlab.setup{}
+require'lspconfig'.ccls.setup{}
 local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/".."Linux".."/lua-language-server" 
 require'lspconfig'.sumneko_lua.setup {

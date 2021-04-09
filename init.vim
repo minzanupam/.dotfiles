@@ -31,15 +31,28 @@ noremap <leader>y "+y
 " noremap <leader>d "+d
 noremap <leader>p "+p
 " maps for ecsape, save and quit
-" imap <C-L> <Esc>
+"imap <C-L> <Esc>
 " map <C-K> :w<CR>
 " map <C-J> :q<CR>
+
+nnoremap <C-Up> <cmd>resize +3<cr>
+nnoremap <C-Down> <cmd>resize -3<cr>
+nnoremap <C-Left> <cmd>vertical resize -3<cr>
+nnoremap <C-Right> <cmd>vertical resize +3<cr>
+
+noremap <leader>i :nohls<CR>
 
 "maps for most recently used buffers
 noremap <C-h> :BufMRUNext<CR>
 noremap <C-l> :BufMRUPrev<CR>
-noremap <C-j> <C-w>w
-noremap <C-k> <C-w>W
+"noremap <C-j> <C-w>w
+"noremap <C-k> <C-w>W
+" maps quick fix list
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
+
+nnoremap <leader>j :lnext<CR>
+nnoremap <leader>k :lprev<CR>
 
 " vim fugitive mapings
 noremap <leader>gh :diffget //2<CR>
@@ -60,15 +73,17 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 " fzf
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-n> :GFiles<CR>
 " fzf ripgrep
-nnoremap <C-n> :Rg<CR>
+nnoremap <C-p> :Rg<CR>
 " maximizer
 nnoremap <leader>m :MaximizerToggle<CR>
 
 " undotree config
 nnoremap :ut :UndotreeToggle
 
+" visual search
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 "vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -92,6 +107,7 @@ Plug 'preservim/nerdtree'
   Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'stsewd/fzf-checkout.vim'
 "Plug 'jiangmiao/auto-pairs'
 Plug 'rstacruz/vim-closer'
 Plug 'preservim/nerdcommenter'
@@ -124,7 +140,7 @@ Plug 'szw/vim-maximizer'
 "" css colors 
 Plug 'ap/vim-css-color'
 "" :VimBeGood game remove neovim from npm if you happen to remove this plugin
-"Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+"Plug 'ThePrimeagen/vim-be-good'
 " write with sudo
 "Plug 'lambdalisue/suda.vim'
 
@@ -179,6 +195,10 @@ let g:AutoPairsShortcutToggle = '<C-j>'
 " autocmd BufWritePost *.tex !pdflatex %
 let g:tex_flavor = 'latex'
 
+" vim table mode
+"let g:table_mode_corner='+'
+"let g:table_mode_corner_corner='+'
+
 " change director on buffer enter (works with fzf)
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -191,8 +211,8 @@ set termguicolors
 "hi Normal ctermbg=NONE guibg=none
 "hi LineNr guibg=none
  
-"hi Normal guibg=none
-"hi LineNr guibg=none
+hi Normal guibg=none
+hi LineNr guibg=none
 " for ayu color scheme
 "hi LineNr guifg=grey
 
@@ -211,3 +231,15 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+" dvorak
+"noremap h <left>
+"noremap t <up>
+"noremap n <down>
+"noremap s <right>
+"
+"noremap j t
+"noremap l n
+"noremap k s
+"noremap J T
+"noremap L N
+"noremap K S
