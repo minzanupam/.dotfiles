@@ -239,25 +239,6 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       selected = false
     })
---  -- extra 6
---  awful.tag.add("6", {
---      layout = awful.layout.suit.tile,
---      master_fill_policy = "expand",
---      gap_single_client = true,
---      gap = 0,
---      screen = s,
---      selected = false
---    })
---  -- extra 7
---  awful.tag.add("7", {
---      layout = awful.layout.suit.tile,
---      master_fill_policy = "expand",
---      gap_single_client = true,
---      gap = 0,
---      screen = s,
---      selected = false
---    })
-  -- work 8
   awful.tag.add("6", {
       icon = '/home/anupam/.config/awesome/icons/paint.svg',
       layout = awful.layout.suit.max,
@@ -267,16 +248,30 @@ awful.screen.connect_for_each_screen(function(s)
       screen = s,
       selected = false
     })
---  -- update 9
---  awful.tag.add("", {
---      icon = '/home/anupam/.config/awesome/icons/system-update.svg',
---      layout = awful.layout.suit.tile,
---      master_fill_policy = "expand",
---      gap_single_client = true,
---      gap = 0,
---      screen = s,
---      selected = false
---    })
+  awful.tag.add("7", {
+      layout = awful.layout.suit.tile,
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = 0,
+      screen = s,
+      selected = false
+    })
+  awful.tag.add("8", {
+      layout = awful.layout.suit.tile,
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = 0,
+      screen = s,
+      selected = false
+    })
+  awful.tag.add("9", {
+      layout = awful.layout.suit.tile,
+      master_fill_policy = "expand",
+      gap_single_client = true,
+      gap = 0,
+      screen = s,
+      selected = false
+    })
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -368,7 +363,8 @@ globalkeys = gears.table.join(
     ),
   awful.key({ "Mod4" }, "Return",
     function ()
-      awful.spawn("alacritty")
+      awful.spawn("tabbed -c -n alacritty alacritty --embed")
+      --awful.spawn("alacritty")
     end
     ),
   awful.key({ "Mod4" }, "t",
@@ -379,7 +375,7 @@ globalkeys = gears.table.join(
 
   awful.key({ "Mod4" }, "e",
     function ()
-      awful.spawn("/home/anupam/.local/share/applications/emoji_over_dmenu/emoji_over_dmenu_script.sh")
+      awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
     end
     ),
 
@@ -678,7 +674,7 @@ awful.rules.rules = {
   { rule_any = {
       -- song / audio applications
       class = {
-        "Audacious",
+         "Audacious",
       }
   }, properties = { tag = "3" } },
 
@@ -697,19 +693,18 @@ awful.rules.rules = {
         "Com.github.phase1geo.minder",
         "Audacity",
         "obs",
+        "calibre",
       }
   }, properties = { tag = "6" } },
 
   { rule_any = {
       -- image / entertainment applications
       class = {
-        "calibre",
-        "Image Lounge", -- nomacs
-        "Viewnior",
-        "okular",
-        "vlc",
-        "mpv",
-        "celluloid",
+        --"Image Lounge", -- nomacs
+        --"Viewnior",
+        --"okular",
+        --"vlc",
+        --"celluloid",
       }
   }, properties = { tag = "4" } },
 
