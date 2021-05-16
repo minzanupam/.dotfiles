@@ -363,8 +363,8 @@ globalkeys = gears.table.join(
     ),
   awful.key({ "Mod4" }, "Return",
     function ()
-      awful.spawn("tabbed -c -n alacritty alacritty --embed")
-      --awful.spawn("alacritty")
+      --awful.spawn("tabbed -c -n alacritty alacritty --embed")
+      awful.spawn("alacritty")
     end
     ),
   awful.key({ "Mod4" }, "t",
@@ -523,6 +523,12 @@ clientkeys = gears.table.join(
   awful.key({ modkey,           }, "m",
     function (c)
       c.maximized = not c.maximized
+      for _, cls in ipairs(client.get()) do
+        -- minimize all windows except the focused one
+        if c.window ~= cls.window then
+          cls.minimized = not cls.minimized
+        end
+      end
       c:raise()
     end ,
     {description = "(un)maximize", group = "client"}),
