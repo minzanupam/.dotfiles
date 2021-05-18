@@ -15,7 +15,7 @@
 " settings for coc snippets end
 
 " ultisnips config
-let g:UltiSnipsExpandTrigger="<c-l>,"
-let g:UltiSnipsJumpForwardTrigger="<c-l>,"
-let g:UltiSnipsJumpBackwardTrigger="<c-l>."
+let g:UltiSnipsExpandTrigger="<c-k>u"
+let g:UltiSnipsJumpForwardTrigger="<c-k>f"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>b"
 " ultisnips config end

@@ -16,9 +16,9 @@ let mapleader = " "
 " autocmd BufNewFile,BufWinEnter * setlocal formatoptions-=cro
 " set auto comment on
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
-set noswapfile
-"set nohlsearch
-set hlsearch
+set swapfile
+set nohlsearch
+"set hlsearch
 set foldmethod=manual
 set foldlevel=9
 set foldnestmax=5
@@ -58,7 +58,12 @@ nnoremap <leader>k :lprev<CR>
 noremap <leader>gh :diffget //2<CR>
 noremap <leader>gl :diffget //3<CR>
 " nerdtree
-nnoremap :nt :NERDTreeToggle
+"nnoremap :nt :NERDTreeToggle
+" netw
+let g:netrw_liststyle = 0
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 20
 " fff file manager
 let g:fff#split = "20new"
 let g:fff#split_direction = "nosplitright splitbelow"
@@ -73,9 +78,27 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 " fzf
-nnoremap <C-n> :GFiles<CR>
+"nnoremap <C-n> :GFiles<CR>
 " fzf ripgrep
-nnoremap <C-p> :Rg<CR>
+"nnoremap <C-p> :Rg<CR>
+
+" telescope
+nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <C-n> <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
+nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
+
+"lsp
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<cr>
+nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
+nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
+" nnoremap <leader>gl :lua vim.lsp.buf.implementation()<cr>
+nnoremap <leader>vll :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
+nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
+
+
+
 " maximizer
 nnoremap <leader>m :MaximizerToggle<CR>
 
@@ -84,6 +107,11 @@ nnoremap :ut :UndotreeToggle
 
 " visual search
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+
+" Store relative line number jumps in the jumplist. j, k 
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 
 "vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -103,11 +131,16 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'dylanaraps/fff.vim'
 "Plug 'ptzz/lf.vim'
 "    Plug 'rbgrouleff/bclose.vim'
-Plug 'preservim/nerdtree'
-  Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'stsewd/fzf-checkout.vim'
+"Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"  Plug 'junegunn/fzf.vim'
+"  Plug 'stsewd/fzf-checkout.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'jiangmiao/auto-pairs'
 Plug 'rstacruz/vim-closer'
 Plug 'preservim/nerdcommenter'
@@ -130,7 +163,7 @@ Plug 'lervag/vimtex'
 "" get some shell commands in vim
 "Plug 'tpope/vim-eunuch'
 "" theming tmux line with vim
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 "" save vim sessions
 Plug 'tpope/vim-obsession'
 "" Multiline vim cursors
@@ -165,9 +198,9 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " vim snippets
-" Plug 'mlaursen/vim-react-snippets'
-" Plug 'honza/vim-snippets'
-" Plug 'SirVer/ultisnips'
+"Plug 'mlaursen/vim-react-snippets'
+"Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
 
 " minimap 
 " Plug 'wfxr/minimap.vim'
@@ -178,6 +211,13 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 let g:airline_highlighting_cache = 1
 " let g:airline_theme='lucius'
+
+let g:airline_section_a = 0
+let g:airline_section_x = 0
+let g:airline_section_y = 0
+let g:airline_section_z = 0
+let g:airline_section_error = 0
+let g:airline_section_warning = 0
 
 " turn off and disable matching parenthesis
 let g:loaded_matchparen = 1
@@ -202,10 +242,10 @@ let g:tex_flavor = 'latex'
 " change director on buffer enter (works with fzf)
 autocmd BufEnter * silent! lcd %:p:h
 
-colorscheme gruvbox
+colorscheme nord
 set background=dark
-" set t_8f=\[[38;2;%lu;%lu;%lum
-" set t_8b=\[[48;2;%lu;%lu;%lum
+"set t_8f=\[[38;2;%lu;%lu;%lum
+"set t_8b=\[[48;2;%lu;%lu;%lum
 set termguicolors
 " to get a transparent background
 "hi Normal ctermbg=NONE guibg=none
@@ -219,7 +259,8 @@ hi LineNr guibg=none
 "source ~/.config/nvim/coc_config.vim
 source ~/.config/nvim/lsp_config.vim
 "source ~/.config/nvim/snippet_config.vim
-source ~/.config/nvim/vimspector_config.vim
+"source ~/.config/nvim/vimspector_config.vim
+lua require 'telescope'
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -231,15 +272,4 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" dvorak
-"noremap h <left>
-"noremap t <up>
-"noremap n <down>
-"noremap s <right>
-"
-"noremap j t
-"noremap l n
-"noremap k s
-"noremap J T
-"noremap L N
-"noremap K S
+
