@@ -11,13 +11,19 @@ let g:completion_confirm_key = "\<C-y>"
 " languages servers
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
-"lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach };
-"lua require'lspconfig'.rls.setup{ };
 lua<<EOC
-require'lspconfig'.tsserver.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.texlab.setup{}
+require'lspconfig'.hls.setup{}
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.denols.setup{
+    filetypes = { "typescript" } 
+}
+require'lspconfig'.tsserver.setup {}
 require'lspconfig'.ccls.setup{}
+require'lspconfig'.jedi_language_server.setup{}
+require'lspconfig'.dartls.setup{ }
+
 local sumneko_root_path = vim.fn.stdpath('cache')..'/lspconfig/sumneko_lua/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/".."Linux".."/lua-language-server" 
 require'lspconfig'.sumneko_lua.setup {
@@ -45,8 +51,12 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
 }
-require'lspconfig'.jedi_language_server.setup{}
+
+-- require("flutter-tools").setup{ flutter_path = "/opt/flutter" }
+
 EOC
+
+
 "lua require'lspconfig'.sumneko_lua.setup { is_installed=false };
 "lua <<EOF
 "local custom_nvim_lspconfig_attach = function(...) end
@@ -60,9 +70,5 @@ EOC
 "  }
 "})
 "EOF
-lua <<EOF
-require'lspconfig'.tsserver.setup {
-    cmd = {"typescript-language-server", "--stdio"}
-}
-EOF
+
 autocmd BufEnter * lua require'completion'.on_attach()
