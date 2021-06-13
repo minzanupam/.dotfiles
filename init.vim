@@ -9,8 +9,8 @@ source ~/.config/nvim/maping.vim
 source ~/.config/nvim/global_variables.vim
 
 lua <<EOF
-require 'telescope'
-require 'lspconfig'
+require 'mylspconfig'
+require 'mytelescope'
 require'colorizer'.setup()
 
 require'nvim-treesitter.configs'.setup {
@@ -22,6 +22,11 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = { enable = true },
   indent = { enable = true, disable = {"python"} },
 }
+require'sniprun'.setup({
+  display = {
+    "Classic",                    -- "display results in the command-line  area
+    },
+})
 EOF
 
 " latex auto compile
@@ -29,13 +34,13 @@ EOF
 " change directory on buffer enter (works with fzf)
 "autocmd BufEnter * silent! lcd %:p:h
 " add/remove comment/indent to the next line
-autocmd BufNewFile,BufWinEnter * setlocal formatoptions=-cro
+autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
 " dart
 "autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
 " lsp
 autocmd BufEnter * lua require'completion'.on_attach()
 
-colorscheme nord
+colorscheme gruvbox
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum

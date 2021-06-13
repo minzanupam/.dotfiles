@@ -84,6 +84,7 @@ Plug 'nvim-treesitter/completion-treesitter'
 " minimap 
 " Plug 'wfxr/minimap.vim'
 Plug 'chaoren/vim-wordmotion'
+Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 call plug#end()
 
 

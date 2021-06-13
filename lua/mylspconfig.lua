@@ -1,4 +1,3 @@
-lua<<EOF
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.texlab.setup{}
 require'lspconfig'.hls.setup{}
@@ -39,4 +38,3 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
 }
-EOF
