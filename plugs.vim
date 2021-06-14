@@ -34,13 +34,13 @@ Plug 'airblade/vim-gitgutter'
 "" indentation guide
 " Plug 'thaerkh/vim-indentguides'
 "" global languge highlights
-"Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 "" different colored brackets paranthesis
 " Plug 'frazrepo/vim-rainbow'
 " " react css styled components
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  "Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/vim-gitbranch'
 Plug 'mattn/emmet-vim'
 "" vim latex - vimtex
@@ -50,11 +50,11 @@ Plug 'lervag/vimtex'
 "" theming tmux line with vim
 "Plug 'edkolev/tmuxline.vim'
 "" save vim sessions
-Plug 'tpope/vim-obsession'
+"Plug 'tpope/vim-obsession'
 "" Multiline vim cursors
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 "" maximize the window
-Plug 'szw/vim-maximizer'
+"Plug 'szw/vim-maximizer'
 "" css colors 
 "Plug 'ap/vim-css-color'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -65,13 +65,13 @@ Plug 'norcalli/nvim-colorizer.lua'
 "" vim table mode
 Plug 'dhruvasagar/vim-table-mode'
 "" vim debugging
-Plug 'puremourning/vimspector'
+"Plug 'puremourning/vimspector'
 "" Undotree
 Plug 'mbbill/undotree'
 "vim lsp config
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'tjdevries/nlua.nvim'
+"Plug 'tjdevries/nlua.nvim'
 " coc 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " treesitter
@@ -85,6 +85,7 @@ Plug 'nvim-treesitter/completion-treesitter'
 " Plug 'wfxr/minimap.vim'
 Plug 'chaoren/vim-wordmotion'
 Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+Plug 'rhysd/open-pdf.vim'
+Plug 'tpope/vim-surround'
+Plug 'ActivityWatch/aw-watcher-vim'
 call plug#end()
-
-

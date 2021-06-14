@@ -1,5 +1,5 @@
-map w <Plug>WordMotion_w
-map b <Plug>WordMotion_b
+"map w <Plug>WordMotion_w
+"map b <Plug>WordMotion_b
 " fff
 "nnoremap <leader>f :F<CR>
 " nerd commenter

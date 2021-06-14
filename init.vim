@@ -8,6 +8,18 @@ source ~/.config/nvim/maping.vim
 "source ~/.config/nvim/vimspector_config.vim
 source ~/.config/nvim/global_variables.vim
 
+colorscheme gruvbox
+set background=dark
+" xterm or tmux values I don't know
+"set t_8f=\[[38;2;%lu;%lu;%lum
+"set t_8b=\[[48;2;%lu;%lu;%lum
+" to get a transparent background
+"hi Normal ctermbg=NONE guibg=none
+hi Normal guibg=none
+hi LineNr guibg=none
+" for ayu color scheme
+"hi LineNr guifg=grey
+
 lua <<EOF
 require 'mylspconfig'
 require 'mytelescope'
@@ -39,18 +51,6 @@ autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
 "autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
 " lsp
 autocmd BufEnter * lua require'completion'.on_attach()
-
-colorscheme gruvbox
-set background=dark
-" xterm or tmux values I don't know
-"set t_8f=\[[38;2;%lu;%lu;%lum
-"set t_8b=\[[48;2;%lu;%lu;%lum
-" to get a transparent background
-"hi Normal ctermbg=NONE guibg=none
-hi Normal guibg=none
-hi LineNr guibg=none
-" for ayu color scheme
-"hi LineNr guifg=grey
 
 set statusline=
 set statusline=%{gitbranch#name()}\ %f\ %=%(%l,%c%V\ %=\ %)
