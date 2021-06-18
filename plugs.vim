@@ -21,11 +21,12 @@ Plug 'ryanoasis/vim-devicons'
 "  Plug 'stsewd/fzf-checkout.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'akinsho/flutter-tools.nvim'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 "Plug 'rstacruz/vim-closer'
 Plug 'preservim/nerdcommenter'
 "" git

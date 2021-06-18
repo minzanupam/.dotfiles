@@ -4,6 +4,7 @@ require'lspconfig'.hls.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.svelte.setup{}
 require'lspconfig'.tsserver.setup {}
+require'lspconfig'.cssls.setup{}
 require'lspconfig'.ccls.setup{}
 require'lspconfig'.jedi_language_server.setup{}
 require'lspconfig'.dartls.setup{ }

@@ -15,7 +15,7 @@ set nohlsearch
 set nosplitbelow
 set nu
 set rnu
-"set autowriteall
+set autowriteall
 "set hidden
 set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 "set textwidth=80
