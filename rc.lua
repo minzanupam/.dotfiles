@@ -59,7 +59,7 @@ beautiful.get().wallpaper="/home/anupam/Pictures/wallpapers/minimal/255909-verti
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nvim"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -81,7 +81,8 @@ awful.layout.layouts = {
 
   awful.layout.suit.magnifier,
 
-  --    awful.layout.suit.max.fullscreen,
+  --awful.layout.suit.max.fullscreen,
+
   awful.layout.suit.fair,
 
   awful.layout.suit.tile.left,
@@ -232,7 +233,7 @@ awful.screen.connect_for_each_screen(function(s)
   -- work5
   awful.tag.add("5", {
       icon = '/home/anupam/.config/awesome/icons/haskell.svg',
-      layout = awful.layout.suit.tile,
+      layout = awful.layout.suit.max,
       master_fill_policy = "expand",
       gap_single_client = true,
       gap = 0,
@@ -348,12 +349,12 @@ globalkeys = gears.table.join(
   --my keybindings
   awful.key({ "Mod4" }, "k",
     function ()
-      awful.spawn("firefox")
+      awful.spawn("brave")
     end
     ),
-  awful.key({ "Mod4" }, "j",
+  awful.key({ "Mod4" }, "p",
     function ()
-      awful.spawn("alacritty -e /home/anupam/.config/vifm/scripts/vifmrun")
+      awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
     end
     ),
   awful.key({ "Mod4" }, "h",
@@ -369,9 +370,17 @@ globalkeys = gears.table.join(
     ),
   awful.key({ "Mod4" }, "t",
     function ()
-      awful.spawn("dmenu_run -l 10")
+      awful.spawn("dmenu_run")
     end
     ),
+
+  awful.key({ "Mod4" }, "n",
+    function ()
+      awful.spawn(terminal .. " -e /home/anupam/scripts/tmux_opener.sh")
+    end
+  ),
+
+
 
   awful.key({ "Mod4" }, "e",
     function ()
@@ -507,7 +516,7 @@ clientkeys = gears.table.join(
     {description = "close", group = "client"}),
   awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
     {description = "toggle floating", group = "client"}),
-  awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
+  awful.key({ modkey, "Shift" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
     {description = "move to master", group = "client"}),
   awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
     {description = "move to screen", group = "client"}),
@@ -525,7 +534,7 @@ clientkeys = gears.table.join(
       c.maximized = not c.maximized
       for _, cls in ipairs(client.get()) do
         -- minimize all windows except the focused one
-        if c.window ~= cls.window then
+        if c.window ~= cls.window and c.first_tag == cls.first_tag then
           cls.minimized = not cls.minimized
         end
       end
@@ -670,6 +679,7 @@ awful.rules.rules = {
   { rule_any = {
       -- internet applications
       class = {
+        "Nyxt",
         "firefox",
         "Thunderbird",
         "Chromium",
@@ -693,13 +703,10 @@ awful.rules.rules = {
         "krita",
         "Darktable",
         "kdenlive",
-        "Drawing",
         "libreoffice",
         "Spice-Up",
-        "Com.github.phase1geo.minder",
         "Audacity",
         "obs",
-        "calibre",
       }
   }, properties = { tag = "6" } },
 
@@ -795,7 +802,7 @@ local autorun = true
 local autorunApps =
 {
   "/usr/bin/picom -b",
-  "/usr/bin/nitrogen --restore &"
+  "/usr/bin/nitrogen --restore &",
 }
 
 if autorun then
