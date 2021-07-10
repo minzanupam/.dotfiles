@@ -20,8 +20,8 @@ nnoremap <C-Left> <cmd>vertical resize -3<cr>
 nnoremap <C-Right> <cmd>vertical resize +3<cr>
 noremap <leader>i :nohls<CR>
 "maps for most recently used buffers
-noremap <C-h> :BufMRUNext<CR>
-noremap <C-l> :BufMRUPrev<CR>
+"noremap <C-h> :BufMRUNext<CR>
+"noremap <C-l> :BufMRUPrev<CR>
 "noremap <C-j> <C-w>w
 "noremap <C-k> <C-w>W
 " maps quick fix list
@@ -52,6 +52,7 @@ nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<cr>
 nnoremap <leader>gl <cmd>lua vim.lsp.buf.signature_help()<cr>
 nnoremap <leader>vll <cmd>lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
 nnoremap <leader>vsd <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
+nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<cr>
 " harpoon
 nnoremap <leader>ha <cmd>lua require("harpoon.mark").add_file()<cr>
 nnoremap <leader>hl <cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>
@@ -64,6 +65,8 @@ nnoremap <leader>hvt <cmd>lua require("harpoon.term").gotoTerminal(2)<cr>
 nnoremap <leader>hvn <cmd>lua require("harpoon.term").gotoTerminal(3)<cr>
 nnoremap <leader>hvs <cmd>lua require("harpoon.term").gotoTerminal(4)<cr>
 nnoremap <leader>hch <cmd>lua require("harpoon.term").sendCommand(1, "make build && ./target/main\n")<cr>
+nnoremap <C-h> <cmd>lua require("harpoon.ui").nav_file(1)<cr>
+nnoremap <C-l> <cmd>lua require("harpoon.ui").nav_file(2)<cr>
 
 " maximizer
 nnoremap <leader>m <cmd>MaximizerToggle<CR>
@@ -78,3 +81,8 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 vmap<leader>f <Plug>SnipRun
+" easy align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+" notes
+nnoremap <leader>n <cmd>tab drop /tmp/notes.md<cr>

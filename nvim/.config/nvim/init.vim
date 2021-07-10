@@ -8,7 +8,7 @@ source ~/.config/nvim/maping.vim
 "source ~/.config/nvim/vimspector_config.vim
 source ~/.config/nvim/global_variables.vim
 
-colorscheme nord
+colorscheme onedark
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum

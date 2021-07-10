@@ -16,7 +16,7 @@ set nosplitbelow
 set nu
 set rnu
 set autowriteall
-"set hidden
+set hidden
 set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 "set textwidth=80
 "set hlsearch
@@ -28,4 +28,4 @@ set foldnestmax=5
 "lsp autocompletion
 set completeopt=menuone,noinsert,noselect
 "set shortmess+=c
-
+set updatetime=50
