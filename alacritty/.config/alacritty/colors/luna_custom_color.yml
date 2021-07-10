@@ -1,0 +1,24 @@
+# custom alacritty theme based on luna
+colors:
+  primary: 
+    foreground: '#e5e5e5'
+    background: '#212121'
+  normal:
+    black: '#616161'
+    blue: '#e3588d'
+    green: '#b06bfc'
+    yellow: '#2aa198'
+    red: '#fa8072'
+    magenta: '#ff8da1'
+    cyan: '#8ddaff'
+    white: '#e5e5e5'
+  bright:
+    black: '#616161'
+    magenta: '#f64a8a'
+    green: '#bada55'
+    yellow: '#00bcbc'
+    red: '#ff4040'
+    blue: '#ff8da1'
+    cyan: '#c9f0fa'
+    white: '#e5e5e5'
+
