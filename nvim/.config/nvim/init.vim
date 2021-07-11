@@ -34,11 +34,11 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = { enable = true },
   indent = { enable = true, disable = {"python"} },
 }
-require'sniprun'.setup({
-  display = {
-    "Classic",                    -- "display results in the command-line  area
-    },
-})
+-- require'sniprun'.setup({
+--   display = {
+--     "Classic",                    -- "display results in the command-line  area
+--     },
+-- })
 EOF
 
 " latex auto compile

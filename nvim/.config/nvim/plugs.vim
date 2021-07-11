@@ -8,8 +8,8 @@ Plug 'jnurmine/Zenburn'
 Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'mildred/vim-bufmru'
-Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'mildred/vim-bufmru'
+"Plug 'drewtempelmeyer/palenight.vim'
 "Plug 'dart-lang/dart-vim-plugin'
 "Plug 'dylanaraps/fff.vim'
 "Plug 'ptzz/lf.vim'
@@ -43,9 +43,9 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/vim-gitbranch'
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 "" vim latex - vimtex
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 "" get some shell commands in vim
 "Plug 'tpope/vim-eunuch'
 "" theming tmux line with vim
@@ -84,9 +84,9 @@ Plug 'nvim-treesitter/completion-treesitter'
 "Plug 'SirVer/ultisnips'
 " minimap 
 " Plug 'wfxr/minimap.vim'
-Plug 'chaoren/vim-wordmotion'
-Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
-Plug 'rhysd/open-pdf.vim'
-Plug 'tpope/vim-surround'
-Plug 'ActivityWatch/aw-watcher-vim'
+"Plug 'chaoren/vim-wordmotion'
+"Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+"Plug 'rhysd/open-pdf.vim'
+"Plug 'tpope/vim-surround'
+"Plug 'ActivityWatch/aw-watcher-vim'
 call plug#end()
