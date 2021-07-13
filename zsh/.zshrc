@@ -34,7 +34,6 @@ alias vi="nvim -S"
 # source "/home/anupam/.zsh/key-bindings.zsh"
 
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
 
 # something to display
 #colorscript -r

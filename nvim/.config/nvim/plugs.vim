@@ -15,7 +15,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'ptzz/lf.vim'
 "    Plug 'rbgrouleff/bclose.vim'
 "Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "  Plug 'junegunn/fzf.vim'
 "  Plug 'stsewd/fzf-checkout.vim'
@@ -31,7 +31,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'preservim/nerdcommenter'
 "" git
 Plug 'tpope/vim-fugitive' 
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 "" indentation guide
 " Plug 'thaerkh/vim-indentguides'
 "" global languge highlights
@@ -59,10 +60,6 @@ Plug 'itchyny/vim-gitbranch'
 "" css colors 
 "Plug 'ap/vim-css-color'
 Plug 'norcalli/nvim-colorizer.lua'
-"" :VimBeGood game remove neovim from npm if you happen to remove this plugin
-"Plug 'ThePrimeagen/vim-be-good'
-" write with sudo
-"Plug 'lambdalisue/suda.vim'
 "" vim table mode
 Plug 'dhruvasagar/vim-table-mode'
 "" vim debugging
@@ -71,13 +68,15 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'mbbill/undotree'
 "vim lsp config
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+"Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
+Plug 'ray-x/lsp_signature.nvim'
 "Plug 'tjdevries/nlua.nvim'
 " coc 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/completion-treesitter'
+"Plug 'nvim-treesitter/completion-treesitter'
 " vim snippets
 "Plug 'mlaursen/vim-react-snippets'
 "Plug 'honza/vim-snippets'
@@ -87,6 +86,10 @@ Plug 'nvim-treesitter/completion-treesitter'
 "Plug 'chaoren/vim-wordmotion'
 "Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
 "Plug 'rhysd/open-pdf.vim'
-"Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
 "Plug 'ActivityWatch/aw-watcher-vim'
+"Plug 'dstein64/nvim-scrollview'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 call plug#end()

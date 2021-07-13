@@ -8,7 +8,7 @@ source ~/.config/nvim/maping.vim
 "source ~/.config/nvim/vimspector_config.vim
 source ~/.config/nvim/global_variables.vim
 
-colorscheme onedark
+colorscheme gruvbox
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
@@ -21,9 +21,12 @@ set background=dark
 "hi LineNr guifg=grey
 
 lua <<EOF
+require('gitsigns').setup()
+require("trouble").setup{}
 require 'mylspconfig'
 require 'mytelescope'
-require'colorizer'.setup()
+require 'mylspsignature'
+--require'colorizer'.setup()
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -50,7 +53,8 @@ autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
 " dart
 "autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
 " lsp
-autocmd BufEnter * lua require'completion'.on_attach()
+"autocmd BufEnter * lua require'completion'.on_attach()
+autocmd BufReadPost,FileReadPost * lua require "lsp_signature".on_attach()
 
 set statusline=
 set statusline=%{gitbranch#name()}\ %f\ %=%(%l,%c%V\ %=\ %)
