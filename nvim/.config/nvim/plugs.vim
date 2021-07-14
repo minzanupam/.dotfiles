@@ -69,8 +69,8 @@ Plug 'mbbill/undotree'
 "vim lsp config
 Plug 'neovim/nvim-lspconfig'
 "Plug 'nvim-lua/completion-nvim'
-Plug 'hrsh7th/nvim-compe'
-Plug 'ray-x/lsp_signature.nvim'
+"Plug 'hrsh7th/nvim-compe'
+"Plug 'ray-x/lsp_signature.nvim'
 "Plug 'tjdevries/nlua.nvim'
 " coc 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}

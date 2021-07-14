@@ -15,8 +15,8 @@ set background=dark
 "set t_8b=\[[48;2;%lu;%lu;%lum
 " to get a transparent background
 "hi Normal ctermbg=NONE guibg=none
-"hi Normal guibg=none
-"hi LineNr guibg=none
+hi Normal guibg=none
+hi LineNr guibg=none
 " for ayu color scheme
 "hi LineNr guifg=grey
 
@@ -25,7 +25,7 @@ require('gitsigns').setup()
 require("trouble").setup{}
 require 'mylspconfig'
 require 'mytelescope'
-require 'mylspsignature'
+-- require 'mylspsignature'
 --require'colorizer'.setup()
 
 require'nvim-treesitter.configs'.setup {
@@ -34,7 +34,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
     disable = {},  -- list of language that will be disabled
   },
-  incremental_selection = { enable = true },
+  incremental_selection = { enable = false },
   indent = { enable = true, disable = {"python"} },
 }
 -- require'sniprun'.setup({
@@ -54,7 +54,7 @@ autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
 "autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
 " lsp
 "autocmd BufEnter * lua require'completion'.on_attach()
-autocmd BufReadPost,FileReadPost * lua require "lsp_signature".on_attach()
+"autocmd BufReadPost,FileReadPost * lua require "lsp_signature".on_attach()
 
 set statusline=
 set statusline=%{gitbranch#name()}\ %f\ %=%(%l,%c%V\ %=\ %)
