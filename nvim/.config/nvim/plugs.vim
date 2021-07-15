@@ -28,7 +28,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'akinsho/flutter-tools.nvim'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'rstacruz/vim-closer'
-Plug 'preservim/nerdcommenter'
+"Plug 'preservim/nerdcommenter'
+"Plug 'tpope/vim-commentary'
+Plug 'winston0410/commented.nvim'
 "" git
 Plug 'tpope/vim-fugitive' 
 "Plug 'airblade/vim-gitgutter'
@@ -36,7 +38,7 @@ Plug 'lewis6991/gitsigns.nvim'
 "" indentation guide
 " Plug 'thaerkh/vim-indentguides'
 "" global languge highlights
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 "" different colored brackets paranthesis
 " Plug 'frazrepo/vim-rainbow'
 " " react css styled components
@@ -69,13 +71,15 @@ Plug 'mbbill/undotree'
 "vim lsp config
 Plug 'neovim/nvim-lspconfig'
 "Plug 'nvim-lua/completion-nvim'
-"Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-compe'
 "Plug 'ray-x/lsp_signature.nvim'
 "Plug 'tjdevries/nlua.nvim'
 " coc 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 "Plug 'nvim-treesitter/completion-treesitter'
 " vim snippets
 "Plug 'mlaursen/vim-react-snippets'

@@ -3,7 +3,7 @@
 " fff
 "nnoremap <leader>f :F<CR>
 " nerd commenter
-map <leader>/ <plug>NERDCommenterToggle
+"map <leader>/ <plug>NERDCommenterToggle
 " maps for cut copy and paste from clipboard
 noremap <leader>y "+y
 " noremap <leader>d "+d

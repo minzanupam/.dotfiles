@@ -21,22 +21,20 @@ hi LineNr guibg=none
 "hi LineNr guifg=grey
 
 lua <<EOF
+-- require'colorizer'.setup()
 require('gitsigns').setup()
 require("trouble").setup{}
+require'commented'.setup {
+        comment_padding = " ", 
+        keybindings = {n = "<leader>/", v = "<leader>/", nl = "<leader>/"},
+        set_keybindings = true,
+        ex_mode_cmd = "Comment"
+}
 require 'mylspconfig'
 require 'mytelescope'
+require 'mytreesitter'
 -- require 'mylspsignature'
---require'colorizer'.setup()
 
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = {},  -- list of language that will be disabled
-  },
-  incremental_selection = { enable = false },
-  indent = { enable = true, disable = {"python"} },
-}
 -- require'sniprun'.setup({
 --   display = {
 --     "Classic",                    -- "display results in the command-line  area
@@ -49,7 +47,7 @@ EOF
 " change directory on buffer enter (works with fzf)
 "autocmd BufEnter * silent! lcd %:p:h
 " add/remove comment/indent to the next line
-autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
+"autocmd BufNewFile,BufWinEnter * setlocal formatoptions=cro
 " dart
 "autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
 " lsp
