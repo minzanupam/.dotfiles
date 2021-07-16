@@ -76,7 +76,9 @@ bookmarks() {
 findproj() { cd `find ~/work -maxdepth 3 -mindepth 1 -type d | fzf` }
 
 editconf() { 
-    nvim `fzf < /home/anupam/scripts/conflist` -c 'cd %:p:h'
+    #  nvim `fzf < /home/anupam/scripts/conflist` -c 'cd %:p:h'
+    # nvim `find /home/anupam/.dotfiles -type f | fzf` -c 'cd /home/anupam/.dotfiles'
+    nvim -c 'cd /home/anupam/.dotfiles' -c "lua require('telescope.builtin').git_files()"
 }
 
 songsearch() { 

@@ -2,7 +2,7 @@ let mapleader = " "
 
 source ~/.config/nvim/setmaps.vim
 source ~/.config/nvim/plugs.vim
-source ~/.config/nvim/maping.vim
+source ~/.config/nvim/mappings.vim
 "source ~/.config/nvim/coc_config.vim
 "source ~/.config/nvim/snippet_config.vim
 "source ~/.config/nvim/vimspector_config.vim
