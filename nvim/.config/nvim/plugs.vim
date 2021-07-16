@@ -46,7 +46,7 @@ Plug 'lewis6991/gitsigns.nvim'
 "Plug 'vim-airline/vim-airline'
   "Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/vim-gitbranch'
-"Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 "" vim latex - vimtex
 "Plug 'lervag/vimtex'
 "" get some shell commands in vim

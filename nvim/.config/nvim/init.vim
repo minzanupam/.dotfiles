@@ -22,7 +22,6 @@ hi LineNr guibg=none
 
 lua <<EOF
 -- require'colorizer'.setup()
-require('gitsigns').setup()
 require("trouble").setup{}
 require'commented'.setup {
         comment_padding = " ", 
@@ -33,6 +32,7 @@ require'commented'.setup {
 require 'mylspconfig'
 require 'mytelescope'
 require 'mytreesitter'
+require 'mygitsigns'
 -- require 'mylspsignature'
 
 -- require'sniprun'.setup({

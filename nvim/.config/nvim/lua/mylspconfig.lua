@@ -13,9 +13,9 @@ lspconfig.clangd.setup{}
 lspconfig.jedi_language_server.setup{}
 lspconfig.dartls.setup{}
 lspconfig.tsserver.setup{}
-lspconfig.denols.setup{
-  filetypes = { "typescript" }
-}
+-- lspconfig.denols.setup{
+  -- filetypes = { "typescript" }
+-- }
 lspconfig.bashls.setup{}
 lspconfig.sumneko_lua.setup{
     cmd = {
