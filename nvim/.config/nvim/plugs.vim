@@ -33,6 +33,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'winston0410/commented.nvim'
 "" git
 Plug 'tpope/vim-fugitive' 
+Plug 'junegunn/gv.vim'
 "Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 "" indentation guide

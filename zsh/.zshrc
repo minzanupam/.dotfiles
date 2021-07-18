@@ -1,4 +1,4 @@
-setopt correct
+#  setopt correct
 
 #ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 #if [[ ! -d $ZSH_CACHE_DIR ]]; then

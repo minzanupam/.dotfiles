@@ -8,7 +8,7 @@ source ~/.config/nvim/mappings.vim
 "source ~/.config/nvim/vimspector_config.vim
 source ~/.config/nvim/global_variables.vim
 
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
@@ -21,7 +21,7 @@ hi LineNr guibg=none
 "hi LineNr guifg=grey
 
 lua <<EOF
--- require'colorizer'.setup()
+require'colorizer'.setup()
 require("trouble").setup{}
 require'commented'.setup {
         comment_padding = " ", 

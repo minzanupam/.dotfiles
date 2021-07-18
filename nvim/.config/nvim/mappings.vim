@@ -66,7 +66,7 @@ nnoremap <leader>hvn <cmd>lua require("harpoon.term").gotoTerminal(3)<cr>
 nnoremap <leader>hvs <cmd>lua require("harpoon.term").gotoTerminal(4)<cr>
 nnoremap <leader>hch <cmd>lua require("harpoon.term").sendCommand(1, "make build && ./target/main\n")<cr>
 nnoremap <C-h> <cmd>lua require("harpoon.ui").nav_file(1)<cr>
-nnoremap <C-l> <cmd>lua require("harpoon.ui").nav_file(2)<cr>
+nnoremap <C-t> <cmd>lua require("harpoon.ui").nav_file(2)<cr>
 " trouble nvim
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>

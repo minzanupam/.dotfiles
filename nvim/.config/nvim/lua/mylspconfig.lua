@@ -1,21 +1,23 @@
 local lspconfig = require'lspconfig'
 
-lspconfig.texlab.setup{}
+lspconfig.texlab.setup{ autostart = false }
 lspconfig.rust_analyzer.setup{}
 lspconfig.hls.setup{}
 lspconfig.gopls.setup{}
 lspconfig.svelte.setup{}
 lspconfig.cssls.setup{}
 lspconfig.clangd.setup{}
---lspconfig.ccls.setup{
---  init_options = { cache = {directory = ""} }
---}
+-- lspconfig.ccls.setup{
+--     autostart = false,
+--     init_options = { cache = {directory = ""} }
+-- }
 lspconfig.jedi_language_server.setup{}
 lspconfig.dartls.setup{}
 lspconfig.tsserver.setup{}
--- lspconfig.denols.setup{
-  -- filetypes = { "typescript" }
--- }
+lspconfig.denols.setup{
+    autostart = false,
+    filetypes = { "typescript" }
+}
 lspconfig.bashls.setup{}
 lspconfig.sumneko_lua.setup{
     cmd = {

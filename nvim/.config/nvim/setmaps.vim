@@ -29,3 +29,4 @@ set foldnestmax=5
 set completeopt=menuone,noinsert,noselect
 "set shortmess+=c
 set updatetime=50
+set clipboard=unnamedplus
