@@ -187,92 +187,92 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  -- awful.tag({ "work", "Internet", "Song", "anime", "work", "Extra", "Extra", "work", "Update" }, s, awful.layout.layouts[1])
+  awful.tag({1,2,3,4,5,6}, s, awful.layout.layouts[1])
   --
   -- my tags
   -- work1
-  awful.tag.add("1", {
-      icon = '/home/anupam/.config/awesome/icons/home.svg',
-      layout = awful.layout.suit.tile,
-      master_fill_policy = "expand",
-      gap_single_client = false,
-      gap = 0,
-      screen = s,
-      selected = true
-    })
-  -- internet
-  awful.tag.add("2", {
-      icon = '/home/anupam/.config/awesome/icons/global.svg',
-      layout = awful.layout.suit.max,
-      master_fill_policy = "expand",
-      gap_single_client = false,
-      gap = 15,
-      screen = s,
-      selected = false
-    })
-  -- songs
-  awful.tag.add("3", {
-      icon = '/home/anupam/.config/awesome/icons/musical-note.svg',
-      layout = awful.layout.suit.fair,
-      master_fill_policy = "expand",
-      gap_single_client = true,
-      gap = 15,
-      screen = s,
-      selected = false
-    })
-  -- anime
-  awful.tag.add("4", {
-      icon = '/home/anupam/.config/awesome/icons/animate.svg',
-      layout = awful.layout.suit.tile,
-      master_fill_policy = "expand",
-      gap_single_client = true,
-      gap = 15,
-      screen = s,
-      selected = false
-    })
-  -- work5
-  awful.tag.add("5", {
-      icon = '/home/anupam/.config/awesome/icons/haskell.svg',
-      layout = awful.layout.suit.max,
-      master_fill_policy = "expand",
-      gap_single_client = true,
-      gap = 0,
-      screen = s,
-      selected = false
-    })
-  awful.tag.add("6", {
-      icon = '/home/anupam/.config/awesome/icons/paint.svg',
-      layout = awful.layout.suit.max,
-      master_fill_policy = "expand",
-      gap_single_client = true,
-      gap = 0,
-      screen = s,
-      selected = false
-    })
-  awful.tag.add("7", {
-      layout = awful.layout.suit.tile,
-      master_fill_policy = "expand",
-      gap_single_client = true,
-      gap = 0,
-      screen = s,
-      selected = false
-    })
-  awful.tag.add("8", {
-      layout = awful.layout.suit.tile,
-      master_fill_policy = "expand",
-      gap_single_client = true,
-      gap = 0,
-      screen = s,
-      selected = false
-    })
-  awful.tag.add("9", {
-      layout = awful.layout.suit.tile,
-      master_fill_policy = "expand",
-      gap_single_client = true,
-      gap = 0,
-      screen = s,
-      selected = false
-    })
+  -- awful.tag.add("1", {
+      -- icon = '/home/anupam/.config/awesome/icons/home.svg',
+      -- layout = awful.layout.suit.tile,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = false,
+      -- gap = 0,
+      -- screen = s,
+      -- selected = true
+    -- })
+  -- -- internet
+  -- awful.tag.add("2", {
+      -- icon = '/home/anupam/.config/awesome/icons/global.svg',
+      -- layout = awful.layout.suit.max,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = false,
+      -- gap = 15,
+      -- screen = s,
+      -- selected = false
+    -- })
+  -- -- songs
+  -- awful.tag.add("3", {
+      -- icon = '/home/anupam/.config/awesome/icons/musical-note.svg',
+      -- layout = awful.layout.suit.fair,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = true,
+      -- gap = 15,
+      -- screen = s,
+      -- selected = false
+    -- })
+  -- -- anime
+  -- awful.tag.add("4", {
+      -- icon = '/home/anupam/.config/awesome/icons/animate.svg',
+      -- layout = awful.layout.suit.tile,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = true,
+      -- gap = 15,
+      -- screen = s,
+      -- selected = false
+    -- })
+  -- -- work5
+  -- awful.tag.add("5", {
+      -- icon = '/home/anupam/.config/awesome/icons/haskell.svg',
+      -- layout = awful.layout.suit.max,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = true,
+      -- gap = 0,
+      -- screen = s,
+      -- selected = false
+    -- })
+  -- awful.tag.add("6", {
+      -- icon = '/home/anupam/.config/awesome/icons/paint.svg',
+      -- layout = awful.layout.suit.max,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = true,
+      -- gap = 0,
+      -- screen = s,
+      -- selected = false
+    -- })
+  -- awful.tag.add("7", {
+      -- layout = awful.layout.suit.tile,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = true,
+      -- gap = 0,
+      -- screen = s,
+      -- selected = false
+    -- })
+  -- awful.tag.add("8", {
+      -- layout = awful.layout.suit.tile,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = true,
+      -- gap = 0,
+      -- screen = s,
+      -- selected = false
+    -- })
+  -- awful.tag.add("9", {
+      -- layout = awful.layout.suit.tile,
+      -- master_fill_policy = "expand",
+      -- gap_single_client = true,
+      -- gap = 0,
+      -- screen = s,
+      -- selected = false
+    -- })
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -354,7 +354,8 @@ globalkeys = gears.table.join(
     ),
   awful.key({ "Mod4" }, "p",
     function ()
-      awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
+      -- awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
+      awful.spawn("clipmenu")
     end
     ),
   awful.key({ "Mod4" }, "h",
@@ -676,51 +677,6 @@ awful.rules.rules = {
       }
   }, properties = { floating = false } },
 
-  { rule_any = {
-      -- internet applications
-      class = {
-        "Nyxt",
-        "firefox",
-        "Thunderbird",
-        "Chromium",
-        "Brave",
-      }
-  }, properties = { tag = "2" } },
-
-  { rule_any = {
-      -- song / audio applications
-      class = {
-         "Audacious",
-      }
-  }, properties = { tag = "3" } },
-
-  { rule_any = {
-      -- digital art and office related applications
-      class = {
-        "Blender",
-        "Gimp",
-        "Inkscape",
-        "krita",
-        "Darktable",
-        "kdenlive",
-        "libreoffice",
-        "Spice-Up",
-        "Audacity",
-        "obs",
-      }
-  }, properties = { tag = "6" } },
-
-  { rule_any = {
-      -- image / entertainment applications
-      class = {
-        --"Image Lounge", -- nomacs
-        --"Viewnior",
-        --"okular",
-        --"vlc",
-        --"celluloid",
-      }
-  }, properties = { tag = "4" } },
-
   -- Add titlebars to normal clients and dialogs
   { rule_any = {type = { "normal", "dialog" }
     }, properties = { titlebars_enabled = false }
@@ -803,6 +759,8 @@ local autorunApps =
 {
   "/usr/bin/picom -b",
   "/usr/bin/nitrogen --restore &",
+  -- "/usr/bin/greenclip daemon &",
+  "/usr/bin/clipmenud &",
 }
 
 if autorun then
