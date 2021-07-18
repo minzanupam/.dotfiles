@@ -58,7 +58,7 @@ fi
 #alias lf=lfcd
 
 start_bookmarks() { 
-    selected=$(fzf < /home/anupam/scripts/bookmarkslist) 
+    selected=`fzf < /home/anupam/.cache/projectlist`
     dirname=`basename $selected`
     tmux switch-client -t $dirname
     #if [[ $? -eq 0 ]]; then
@@ -69,11 +69,15 @@ start_bookmarks() {
 }
 
 bookmarks() { 
-    selected=$(fzf < /home/anupam/scripts/bookmarkslist) 
+    selected=`fzf < /home/anupam/.cache/projectlist`
     cd $selected
 }
 
-findproj() { cd `find ~/work -maxdepth 3 -mindepth 1 -type d | fzf` }
+set_projectdir () {
+    find /home/anupam/work -type d -name '.git' -prune | sed 's/\.git//g' > /home/anupam/.cache/projectlist
+}
+
+#  findproj() { cd `find ~/work -maxdepth 3 -mindepth 1 -type d | fzf` }
 
 editconf() { 
     #  nvim `fzf < /home/anupam/scripts/conflist` -c 'cd %:p:h'
