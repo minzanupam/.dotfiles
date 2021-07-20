@@ -58,6 +58,9 @@ fi
 #alias lf=lfcd
 
 start_bookmarks() { 
+    if [ ! -f /home/anupam/.cache/projectlist ]; then
+        set_projectdir
+    fi
     selected=`fzf < /home/anupam/.cache/projectlist`
     dirname=`basename $selected`
     tmux switch-client -t $dirname
@@ -69,6 +72,9 @@ start_bookmarks() {
 }
 
 bookmarks() { 
+    if [ ! -f /home/anupam/.cache/projectlist ]; then
+        set_projectdir
+    fi
     selected=`fzf < /home/anupam/.cache/projectlist`
     cd $selected
 }
@@ -114,6 +120,6 @@ alias ec="editconf"
 #alias ta="tmux attach -t"
 #alias tk="tmux kill-session -t"
 alias yy="youtube-dl -f 136+bestaudio"
-alias yym="youtube-dl -f 134+bestaudio"
+alias yym="/home/anupam/scripts/ydlp"
 alias randomwallapaper="/home/anupam/work/build/styli.sh/styli.sh"
 alias dlfile="/home/anupam/scripts/dlfile"
