@@ -7,9 +7,9 @@ require'nvim-treesitter.configs'.setup {
     incremental_selection = { enable = true,
         keymaps = {
             init_selection = "gnn",
-            node_incremental = "grn",
+            node_incremental = "gnn",
             scope_incremental = "grc",
-            node_decremental = "grm",
+            node_decremental = "grp",
         },
     },
     indent = { enable = true, disable = {"python"} },

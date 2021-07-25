@@ -67,5 +67,5 @@ let g:compe.source.nvim_lsp = v:true
 let g:compe.source.nvim_lua = v:true
 let g:compe.source.vsnip = v:false
 let g:compe.source.ultisnips = v:false
-let g:compe.source.luasnip = v:false
+let g:compe.source.luasnip = v:true
 let g:compe.source.emoji = v:false

@@ -41,9 +41,10 @@ noremap <leader>gl :diffget //3<CR>
 "nnoremap <C-p> :Rg<CR>
 " telescope
 nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
+" nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <C-n> <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_branches()<CR>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>
 "nnoremap <leader>vh <cmd>lua require('telescope.builtin').help_tags()<CR>
 "lsp
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
@@ -75,6 +76,27 @@ nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap <leader>gR <cmd>TroubleToggle lsp_references<cr>
+" git signs
+nnoremap <leader>shs <cmd>lua require"gitsigns".stage_hunk()<CR>
+vnoremap <leader>shs <cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
+nnoremap <leader>shu <cmd>lua require"gitsigns".undo_stage_hunk()<CR>
+nnoremap <leader>shr <cmd>lua require"gitsigns".reset_hunk()<CR>
+vnoremap <leader>shr <cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
+nnoremap <leader>shR <cmd>lua require"gitsigns".reset_buffer()<CR>
+nnoremap <leader>shP <cmd>lua require"gitsigns".preview_hunk()<CR>
+nnoremap <leader>shn <cmd>lua require"gitsigns".next_hunk()<CR>
+nnoremap <leader>shp <cmd>lua require"gitsigns".prev_hunk()<CR>
+nnoremap <leader>shb <cmd>lua require"gitsigns".blame_line(true)<CR>
+" lspsaga
+
+
+" luasnip
+imap <silent><expr> <C-e> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+snoremap <silent> <C-e> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+" imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+" smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
 " maximizer
 nnoremap <leader>m <cmd>MaximizerToggle<CR>
@@ -82,7 +104,7 @@ nnoremap <leader>m <cmd>MaximizerToggle<CR>
 nnoremap :ut :UndotreeToggle
 " visual search
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-" Store relative line number jumps in the jumplist. j, k 
+" Store relative line number jumps in the jumplist. j, k
 nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
 nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 " Use <Tab> and <S-Tab> to navigate through popup menu
@@ -94,3 +116,5 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " notes
 nnoremap <leader>n <cmd>tab drop /tmp/notes.md<cr>
+" escape
+imap <C-c> <Esc>

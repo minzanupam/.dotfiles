@@ -29,7 +29,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'rstacruz/vim-closer'
 "Plug 'preservim/nerdcommenter'
-"Plug 'tpope/vim-commentary'
 Plug 'winston0410/commented.nvim'
 "" git
 Plug 'tpope/vim-fugitive' 
@@ -73,7 +72,9 @@ Plug 'mbbill/undotree'
 Plug 'neovim/nvim-lspconfig'
 "Plug 'nvim-lua/completion-nvim'
 Plug 'hrsh7th/nvim-compe'
-"Plug 'ray-x/lsp_signature.nvim'
+Plug 'ray-x/lsp_signature.nvim'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'folke/trouble.nvim'
 "Plug 'tjdevries/nlua.nvim'
 " coc 
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -83,6 +84,8 @@ Plug 'nvim-treesitter/playground'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 "Plug 'nvim-treesitter/completion-treesitter'
 " vim snippets
+Plug 'L3MON4D3/LuaSnip'
+"Plug 'rafamadriz/friendly-snippets'
 "Plug 'mlaursen/vim-react-snippets'
 "Plug 'honza/vim-snippets'
 "Plug 'SirVer/ultisnips'
@@ -96,5 +99,5 @@ Plug 'junegunn/vim-easy-align'
 "Plug 'ActivityWatch/aw-watcher-vim'
 "Plug 'dstein64/nvim-scrollview'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'folke/trouble.nvim'
+
 call plug#end()
