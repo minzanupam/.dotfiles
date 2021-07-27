@@ -19,7 +19,9 @@ nnoremap <C-Up> <cmd>resize +3<cr>
 nnoremap <C-Down> <cmd>resize -3<cr>
 nnoremap <C-Left> <cmd>vertical resize -3<cr>
 nnoremap <C-Right> <cmd>vertical resize +3<cr>
-noremap <leader>i :nohls<CR>
+" multipurpose mapping
+" noremap <leader>i :nohls<CR>
+noremap <leader>i :lua vim.lsp.buf.formatting_sync()<CR>
 "maps for most recently used buffers
 "noremap <C-h> :BufMRUNext<CR>
 "noremap <C-l> :BufMRUPrev<CR>
@@ -44,7 +46,9 @@ nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
 " nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <C-n> <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_branches()<CR>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_code_actions()<CR>
+nnoremap <leader>td <cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>
+nnoremap <leader>tx <cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
 "nnoremap <leader>vh <cmd>lua require('telescope.builtin').help_tags()<CR>
 "lsp
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
@@ -70,12 +74,12 @@ nnoremap <leader>hch <cmd>lua require("harpoon.term").sendCommand(1, "make build
 nnoremap <C-h> <cmd>lua require("harpoon.ui").nav_file(1)<cr>
 nnoremap <C-t> <cmd>lua require("harpoon.ui").nav_file(2)<cr>
 " trouble nvim
-nnoremap <leader>xx <cmd>TroubleToggle<cr>
-nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
-nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
-nnoremap <leader>gR <cmd>TroubleToggle lsp_references<cr>
+" nnoremap <leader>xx <cmd>TroubleToggle<cr>
+" nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+" nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
+" nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+" nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+" nnoremap <leader>gR <cmd>TroubleToggle lsp_references<cr>
 " git signs
 nnoremap <leader>shs <cmd>lua require"gitsigns".stage_hunk()<CR>
 vnoremap <leader>shs <cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>

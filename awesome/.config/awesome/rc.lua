@@ -19,7 +19,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 -- battery indicator widget
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
--- powerline 
+-- powerline
 -- package.path = package.path .. ';/usr/lib/python3.8/site-packages/powerline/bindings/awesome/powerline.lua'
 -- require('powerline')
 
@@ -54,7 +54,7 @@ end
 
 -- my theme
 beautiful.init("/home/anupam/.config/awesome/themes/default.lua")
--- my wallpaper 
+-- my wallpaper
 beautiful.get().wallpaper="/home/anupam/Pictures/wallpapers/minimal/255909-vertical-minimalistic-wallpaper-3840x2160-images.jpg"
 
 -- This is used later as the default terminal and editor to run.
@@ -301,7 +301,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
-    -- wibox visiblity 
+    -- wibox visiblity
     s.mywibox.visible = true
 
     -- Add widgets to the wibox

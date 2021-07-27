@@ -31,7 +31,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'preservim/nerdcommenter'
 Plug 'winston0410/commented.nvim'
 "" git
-Plug 'tpope/vim-fugitive' 
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 "Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
@@ -59,7 +59,7 @@ Plug 'mattn/emmet-vim'
 "Plug 'terryma/vim-multiple-cursors'
 "" maximize the window
 "Plug 'szw/vim-maximizer'
-"" css colors 
+"" css colors
 "Plug 'ap/vim-css-color'
 Plug 'norcalli/nvim-colorizer.lua'
 "" vim table mode
@@ -74,9 +74,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'folke/trouble.nvim'
+" Plug 'folke/trouble.nvim'
 "Plug 'tjdevries/nlua.nvim'
-" coc 
+" coc
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -89,7 +89,7 @@ Plug 'L3MON4D3/LuaSnip'
 "Plug 'mlaursen/vim-react-snippets'
 "Plug 'honza/vim-snippets'
 "Plug 'SirVer/ultisnips'
-" minimap 
+" minimap
 " Plug 'wfxr/minimap.vim'
 "Plug 'chaoren/vim-wordmotion'
 "Plug 'michaelb/sniprun', {'do': 'bash install.sh'}

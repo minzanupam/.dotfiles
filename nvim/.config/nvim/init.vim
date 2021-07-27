@@ -60,12 +60,13 @@ augroup group1
     "autocmd BufEnter * silent! lcd %:p:h
     " add/remove comment/indent to the next line
     autocmd BufNewFile,BufWinEnter * setlocal formatoptions-=cro
-    " dart
-    "autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
     " lsp
     "autocmd BufEnter * lua require'completion'.on_attach()
     "autocmd BufReadPost,FileReadPost * lua require "lsp_signature".on_attach()
     " remove post white spaces
     autocmd BufWritePre * :%s/\s\+$//e
+    " dart
+    " autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
+    autocmd BufWinEnter,BufEnter,BufNewFile *.dart set ts=2 sw=2 et
 augroup END
 

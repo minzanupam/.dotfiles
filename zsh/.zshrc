@@ -39,8 +39,8 @@ eval "$(starship init zsh)"
 #colorscript -r
 # neofetch
 # pfetch
-#figlet 'mark52s' 
-#figlet 'start' 
+#figlet 'mark52s'
+#figlet 'start'
 export EDITOR=nvim
 
 export FFF_CD_ON_EXIT=1
@@ -57,7 +57,7 @@ if [ -f "$LFCD" ]; then
 fi
 #alias lf=lfcd
 
-start_bookmarks() { 
+start_bookmarks() {
     if [ ! -f /home/anupam/.cache/projectlist ]; then
         set_projectdir
     fi
@@ -67,11 +67,11 @@ start_bookmarks() {
     #if [[ $? -eq 0 ]]; then
     #    exit 0
     #fi
-    tmux new-session -c $selected -d -s $dirname && 
+    tmux new-session -c $selected -d -s $dirname &&
     tmux switch-client -t $dirname || tmux new -c $selected -A -s $dirname
 }
 
-bookmarks() { 
+bookmarks() {
     if [ ! -f /home/anupam/.cache/projectlist ]; then
         set_projectdir
     fi
@@ -85,20 +85,20 @@ set_projectdir () {
 
 #  findproj() { cd `find ~/work -maxdepth 3 -mindepth 1 -type d | fzf` }
 
-editconf() { 
+editconf() {
     #  nvim `fzf < /home/anupam/scripts/conflist` -c 'cd %:p:h'
     # nvim `find /home/anupam/.dotfiles -type f | fzf` -c 'cd /home/anupam/.dotfiles'
     nvim -c 'cd /home/anupam/.dotfiles' -c "lua require('telescope.builtin').git_files()"
 }
 
-songsearch() { 
-    find /media/anupam/881f3c4e-63e4-4d5d-a149-e736788e2134/Songs -mindepth 1 -type f | fzf 
+songsearch() {
+    find /media/anupam/881f3c4e-63e4-4d5d-a149-e736788e2134/Songs -mindepth 1 -type f | fzf
 }
 
-recentbook() { 
-    bookname='/home/anupam/Documents/Books/computer/programing language tutorials/c c++/Advanced C and C++ Compiling - 2014.pdf' 
+recentbook() {
+    bookname='/home/anupam/Documents/Books/computer/programing language tutorials/c c++/Advanced C and C++ Compiling - 2014.pdf'
     zathura "$bookname" &
-    disown 
+    disown
     exit 0
 }
 
@@ -120,6 +120,6 @@ alias ec="editconf"
 #alias ta="tmux attach -t"
 #alias tk="tmux kill-session -t"
 alias yy="youtube-dl -f 136+bestaudio"
-alias yym="/home/anupam/scripts/ydlp"
+alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallapaper="/home/anupam/work/build/styli.sh/styli.sh"
 alias dlfile="/home/anupam/scripts/dlfile"
