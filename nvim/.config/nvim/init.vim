@@ -29,7 +29,7 @@ require 'myluasnip'
 require 'mylspsignature'
 
 require 'colorizer'.setup()
-require ("trouble").setup{}
+-- require ("trouble").setup{}
 -- require 'lspsaga'.init_lsp_saga{
 --     use_saga_diagnostic_sign = false
 -- }

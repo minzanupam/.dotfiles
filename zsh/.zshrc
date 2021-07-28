@@ -106,7 +106,7 @@ bvim () {
     lynx $1 --dump | nvim "+%s/\[\d*\]/g"
 }
 
-export PATH="$PATH:/home/anupam/.emacs.d/bin"
+export PATH="$PATH:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin"
 
 export MANWIDTH=79
 export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=80'"
