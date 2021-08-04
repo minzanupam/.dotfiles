@@ -347,31 +347,26 @@ globalkeys = gears.table.join(
     {description = "go back", group = "tag"}),
 
   --my keybindings
-  awful.key({ "Mod4" }, "k",
-    function ()
-      awful.spawn("brave")
-    end
-    ),
+  -- awful.key({ "Mod4" }, "k",
+    -- function ()
+      -- awful.spawn("brave")
+    -- end
+    -- ),
   awful.key({ "Mod4" }, "p",
     function ()
       -- awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
       awful.spawn("clipmenu")
     end
     ),
-  awful.key({ "Mod4" }, "h",
-    function ()
-      awful.spawn("pcmanfm")
-    end
-    ),
+  -- awful.key({ "Mod4" }, "h",
+    -- function ()
+      -- awful.spawn("pcmanfm")
+    -- end
+    -- ),
   awful.key({ "Mod4" }, "Return",
     function ()
       --awful.spawn("tabbed -c -n alacritty alacritty --embed")
-      awful.spawn("alacritty")
-    end
-    ),
-  awful.key({ "Mod4" }, "t",
-    function ()
-      awful.spawn("dmenu_run")
+      awful.spawn(terminal)
     end
     ),
 
@@ -520,6 +515,8 @@ clientkeys = gears.table.join(
   awful.key({ modkey, "Shift" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
     {description = "move to master", group = "client"}),
   awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
+    {description = "move to screen", group = "client"}),
+  awful.key({ modkey, "Shift"   }, "o",      function (c) c:move_to_screen() awful.screen.focus_relative(-1) end,
     {description = "move to screen", group = "client"}),
   awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
     {description = "toggle keep on top", group = "client"}),
