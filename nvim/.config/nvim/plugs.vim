@@ -82,6 +82,8 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+Plug 'theHamsta/nvim-treesitter-pairs'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 "Plug 'nvim-treesitter/completion-treesitter'
 " vim snippets
 Plug 'L3MON4D3/LuaSnip'

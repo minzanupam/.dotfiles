@@ -122,3 +122,10 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <leader>n <cmd>tab drop /tmp/notes.md<cr>
 " escape
 imap <C-c> <Esc>
+" n search center
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+" undo break point
+inoremap , ,<c-g>g
+inoremap . .<c-g>g
