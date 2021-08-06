@@ -17,10 +17,10 @@ do
                 nitrogen --set-zoom-fill "$file" ;;
         "g")
                 gimp "$file";;
-        "y") 
-                ;;
-        "Y") 
-                ;;
+        "y")
+                xclip -sel clip -t `xdg-mime query filetype $file` $file ;;
+        "Y")
+                xclip -sel clip <<< "`pwd`/$file"
         esac
 done
 
