@@ -10,12 +10,12 @@ let g:airline_section_error = 0
 let g:airline_section_warning = 0
 " turn off and disable matching parenthesis
 let g:loaded_matchparen = 1
-" dart / flutter plugin settings 
+" dart / flutter plugin settings
 let g:dart_format_on_save = 1
 " line indentation guide style
 let g:indentguides_spacechar = '┆'
 let g:indentguides_tabchar = '¦'
-" rainbow brackets options 
+" rainbow brackets options
 " let g:rainbow_active = 1
 "let g:AutoPairsShortcutToggle = '<C-j>'
 let g:tex_flavor = 'latex'
@@ -26,7 +26,7 @@ let g:tex_flavor = 'latex'
 let g:netrw_liststyle = 0
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
-let g:netrw_winsize = 20
+let g:netrw_winsize = 50
 " fff file manager
 let g:fff#split = "20new"
 let g:fff#split_direction = "nosplitright splitbelow"

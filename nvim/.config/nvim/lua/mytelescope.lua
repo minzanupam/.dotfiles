@@ -14,7 +14,8 @@ require('telescope').setup {
                 ["<C-x>"] = false,
                 ["<C-q>"] = actions.send_to_qflist,
             },
-        }
+        },
+        layout_strategy = "vertical"
     },
     extensions = {
         fzy_native = {

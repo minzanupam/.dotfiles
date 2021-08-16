@@ -27,13 +27,14 @@ bindkey '^v' edit-command-line
 # alias vifm image preview
 alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 
-alias l="exa -laF --color=always --group-directories-first"
+alias l="exa -lagF --color=always --group-directories-first"
 alias vi="nvim -S"
 
 # source "/home/anupam/.zsh/completion.zsh"
 # source "/home/anupam/.zsh/key-bindings.zsh"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # something to display
 #colorscript -r
@@ -106,7 +107,7 @@ bvim () {
     lynx $1 --dump | nvim "+%s/\[\d*\]/g"
 }
 
-export PATH="$PATH:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin"
+export PATH="$PATH:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin"
 
 export MANWIDTH=79
 export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=80'"

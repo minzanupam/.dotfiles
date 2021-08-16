@@ -1,3 +1,5 @@
 set recolor-darkcolor "#cacaca"
 set recolor-ligthcolor "#0a0d0d"
 
+#set recolor-darkcolor "#000000"
+#set recolor-lightcolor "#EDD1B0"

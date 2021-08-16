@@ -73,6 +73,8 @@ nnoremap <leader>hvs <cmd>lua require("harpoon.term").gotoTerminal(4)<cr>
 nnoremap <leader>hch <cmd>lua require("harpoon.term").sendCommand(1, "make build && ./target/main\n")<cr>
 nnoremap <C-h> <cmd>lua require("harpoon.ui").nav_file(1)<cr>
 nnoremap <C-t> <cmd>lua require("harpoon.ui").nav_file(2)<cr>
+nnoremap <c-s> <cmd>lua require("harpoon.term").gotoTerminal(1)<cr>
+nnoremap <c-l> <cmd>lua require("harpoon.term").gotoTerminal(2)<cr>
 " trouble nvim
 " nnoremap <leader>xx <cmd>TroubleToggle<cr>
 " nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
@@ -127,5 +129,9 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 " undo break point
-inoremap , ,<c-g>g
-inoremap . .<c-g>g
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ( (<c-g>u
+inoremap ) )<c-g>u
+inoremap [ [<c-g>u
+inoremap ; ;<c-g>u
