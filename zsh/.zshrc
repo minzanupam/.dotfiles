@@ -28,7 +28,6 @@ bindkey '^v' edit-command-line
 alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 
 alias l="exa -lagF --color=always --group-directories-first"
-alias vi="nvim -S"
 
 # source "/home/anupam/.zsh/completion.zsh"
 # source "/home/anupam/.zsh/key-bindings.zsh"

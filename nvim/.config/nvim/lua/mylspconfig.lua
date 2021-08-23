@@ -19,6 +19,7 @@ lspconfig.denols.setup{
     filetypes = { "typescript" }
 }
 lspconfig.bashls.setup{}
+lspconfig.java_language_server.setup{}
 lspconfig.sumneko_lua.setup{
     cmd = {
         "/usr/bin/lua-language-server",

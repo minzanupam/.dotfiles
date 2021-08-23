@@ -20,8 +20,9 @@ nnoremap <C-Down> <cmd>resize -3<cr>
 nnoremap <C-Left> <cmd>vertical resize -3<cr>
 nnoremap <C-Right> <cmd>vertical resize +3<cr>
 " multipurpose mapping
-" noremap <leader>i :nohls<CR>
-noremap <leader>i :lua vim.lsp.buf.formatting_sync()<CR>
+" nnoremap <leader>i :nohls<CR>
+nnoremap <leader>i :lua vim.lsp.buf.formatting_sync()<CR>
+" nnoremap <leader>i :lua require('plenary.reload').reload_module('something')<CR>
 "maps for most recently used buffers
 "noremap <C-h> :BufMRUNext<CR>
 "noremap <C-l> :BufMRUPrev<CR>

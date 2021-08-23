@@ -24,9 +24,10 @@ set foldmethod=manual
 set foldlevel=9
 set foldnestmax=5
 " indentation guild
-"set list lcs=tab:\¦\ 
+"set list lcs=tab:\¦\
 "lsp autocompletion
 set completeopt=menuone,noinsert,noselect
 "set shortmess+=c
 set updatetime=50
 set clipboard=unnamedplus
+set syntax=off
