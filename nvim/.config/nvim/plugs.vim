@@ -101,5 +101,6 @@ Plug 'junegunn/vim-easy-align'
 "Plug 'ActivityWatch/aw-watcher-vim'
 "Plug 'dstein64/nvim-scrollview'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()

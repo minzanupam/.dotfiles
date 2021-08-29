@@ -8,7 +8,7 @@ set termguicolors
 set nowrap
 set ignorecase
 set smartcase
-set colorcolumn=80
+set colorcolumn=79
 set undofile
 set swapfile
 set nohlsearch
