@@ -106,6 +106,24 @@ bvim () {
     lynx $1 --dump | nvim "+%s/\[\d*\]/g"
 }
 
+arrange() {
+    mv /home/anupam/Downloads/*.mp4 /home/anupam/Downloads/videos
+    mv /home/anupam/Downloads/*.mkv  /home/anupam/Downloads/videos
+
+    mv /home/anupam/Downloads/*.png /home/anupam/Downloads/images
+    mv /home/anupam/Downloads/*.jpg /home/anupam/Downloads/images
+    mv /home/anupam/Downloads/*.jpeg /home/anupam/Downloads/images
+
+    mv /home/anupam/Downloads/*.svg /home/anupam/Downloads/icons
+
+    mv /home/anupam/Downloads/*.pdf /home/anupam/Downloads/pdfs
+
+    mv /home/anupam/Downloads/*.gz /home/anupam/Downloads/archives
+    mv /home/anupam/Downloads/*.zip /home/anupam/Downloads/archives
+
+    mv /home/anupam/Downloads/*.torrent /home/anupam/Downloads/torrents
+}
+
 export PATH="/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:$PATH"
 
 export MANWIDTH=79
