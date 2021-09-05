@@ -106,10 +106,10 @@ bvim () {
     lynx $1 --dump | nvim "+%s/\[\d*\]/g"
 }
 
-export PATH="$PATH:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin"
+export PATH="/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:$PATH"
 
 export MANWIDTH=79
-export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=80'"
+#  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
 
 alias b=bookmarks
 alias s=start_bookmarks

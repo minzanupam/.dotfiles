@@ -20,7 +20,7 @@ set background=dark
 hi Normal guibg=none
 hi LineNr guibg=none
 " for ayu color scheme
-"hi LineNr guifg=grey
+" hi LineNr guifg=grey
 
 lua <<EOF
 require 'mylspconfig'

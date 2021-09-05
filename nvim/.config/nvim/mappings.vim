@@ -44,10 +44,10 @@ noremap <leader>gl :diffget //3<CR>
 "nnoremap <C-p> :Rg<CR>
 " telescope
 nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
-" nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <C-n> <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_branches()<CR>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_code_actions()<CR>
+" nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_code_actions()<CR>
 nnoremap <leader>td <cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>
 nnoremap <leader>tx <cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
 "nnoremap <leader>vh <cmd>lua require('telescope.builtin').help_tags()<CR>

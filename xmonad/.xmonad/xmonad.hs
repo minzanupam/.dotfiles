@@ -277,7 +277,7 @@ myStartupHook = do
 --
 main = do
     xmproc0 <- spawnPipe "xmobar -x 0 /home/anupam/.xmobarrc"
-    xmproc1 <- spawnPipe "xmobar -x 1 /home/anupam/.xmobarrc"
+    --  xmproc1 <- spawnPipe "xmobar -x 1 /home/anupam/.xmobarrc"
     xmonad $ docks def {
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -297,7 +297,7 @@ main = do
         handleEventHook    = myEventHook,
         logHook            = dynamicLogWithPP $ xmobarPP {
                                 ppOutput = \x -> hPutStrLn xmproc0 x
-                                    >> hPutStrLn xmproc1 x
+                                    --  >> hPutStrLn xmproc1 x
                             },
         manageHook         = myManageHook,
         startupHook        = myStartupHook
