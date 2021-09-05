@@ -106,7 +106,7 @@ bvim () {
     lynx $1 --dump | nvim "+%s/\[\d*\]/g"
 }
 
-export PATH="/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:$PATH"
 
 export MANWIDTH=79
 #  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
@@ -122,4 +122,4 @@ alias ec="editconf"
 alias yy="youtube-dl -f 136+bestaudio"
 alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallapaper="/home/anupam/work/build/styli.sh/styli.sh"
-alias dlfile="/home/anupam/scripts/dlfile"
+#  alias dlfile="/home/anupam/scripts/dlfile"
