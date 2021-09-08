@@ -21,8 +21,8 @@ nnoremap <C-Left> <cmd>vertical resize -3<cr>
 nnoremap <C-Right> <cmd>vertical resize +3<cr>
 " multipurpose mapping
 " nnoremap <leader>i :nohls<CR>
-nnoremap <leader>i :lua vim.lsp.buf.formatting_sync()<CR>
-" nnoremap <leader>i :lua require('plenary.reload').reload_module('something')<CR>
+" nnoremap <leader>i :lua vim.lsp.buf.formatting_sync()<CR>
+nnoremap <leader>i :lua require('plenary.reload').reload_module('something')<CR>
 "maps for most recently used buffers
 "noremap <C-h> :BufMRUNext<CR>
 "noremap <C-l> :BufMRUPrev<CR>
@@ -44,10 +44,11 @@ noremap <leader>gl :diffget //3<CR>
 "nnoremap <C-p> :Rg<CR>
 " telescope
 nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
+" nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_code_actions()<CR>
 nnoremap <C-n> <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_branches()<CR>
-" nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_code_actions()<CR>
+nnoremap <leader>gw <cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>td <cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>
 nnoremap <leader>tx <cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
 "nnoremap <leader>vh <cmd>lua require('telescope.builtin').help_tags()<CR>

@@ -10,7 +10,7 @@ source ~/.config/nvim/global_variables.vim
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme nord
+colorscheme solarized8_dark
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
@@ -70,5 +70,6 @@ augroup group1
     " dart
     " autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
     autocmd BufWinEnter,BufEnter,BufNewFile *.dart set ts=2 sw=2 et
+    autocmd BufWinEnter,BufEnter,BufNewFile *.json set ts=2 sw=2 et
 augroup END
 

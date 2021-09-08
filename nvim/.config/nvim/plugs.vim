@@ -35,6 +35,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 "Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'ThePrimeagen/git-worktree.nvim'
 "" indentation guide
 " Plug 'thaerkh/vim-indentguides'
 "" global languge highlights
