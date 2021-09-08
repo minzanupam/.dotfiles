@@ -8,17 +8,17 @@
 " noremap <leader>y "+y
 " noremap <leader>d "+d
 " noremap <leader>p "+p
-nnoremap <leader>ypwd <cmd>let @+ = expand("%:p")<cr>
+nnoremap <leader>ypwd :let @+ = expand("%:p")<cr>
 " maps for ecsape, save and quit
 "imap <C-L> <Esc>
 " map <C-K> :w<CR>
 " map <C-J> :q<CR>
-"nnoremap <leader>cd <cmd>lcd %:p:h<cr>
+"nnoremap <leader>cd :lcd %:p:h<cr>
 "nnoremap <leader>e :e %:p:h/
-nnoremap <C-Up> <cmd>resize +3<cr>
-nnoremap <C-Down> <cmd>resize -3<cr>
-nnoremap <C-Left> <cmd>vertical resize -3<cr>
-nnoremap <C-Right> <cmd>vertical resize +3<cr>
+nnoremap <C-Up> :resize +3<cr>
+nnoremap <C-Down> :resize -3<cr>
+nnoremap <C-Left> :vertical resize -3<cr>
+nnoremap <C-Right> :vertical resize +3<cr>
 " multipurpose mapping
 " nnoremap <leader>i :nohls<CR>
 " nnoremap <leader>i :lua vim.lsp.buf.formatting_sync()<CR>
@@ -43,71 +43,71 @@ noremap <leader>gl :diffget //3<CR>
 " fzf ripgrep
 "nnoremap <C-p> :Rg<CR>
 " telescope
-nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
-" nnoremap <C-p> <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').lsp_code_actions()<CR>
-nnoremap <C-n> <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_branches()<CR>
-nnoremap <leader>gw <cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
-nnoremap <leader>td <cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>
-nnoremap <leader>tx <cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
-"nnoremap <leader>vh <cmd>lua require('telescope.builtin').help_tags()<CR>
+nnoremap <leader>tff :lua require('telescope.builtin').find_files()<cr>
+" nnoremap <C-p> :lua require('telescope.builtin').live_grep()<cr>
+nnoremap <C-p> :lua require('telescope.builtin').lsp_code_actions()<CR>
+nnoremap <C-n> :lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
+nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
+nnoremap <leader>td :lua require('telescope.builtin').lsp_document_symbols()<CR>
+nnoremap <leader>tx :lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
+"nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 "lsp
-nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
-nnoremap <leader>gd <cmd>lua vim.lsp.buf.definition()<cr>
-nnoremap <leader>gr <cmd>lua vim.lsp.buf.references()<cr>
-" nnoremap <leader>gl <cmd>lua vim.lsp.buf.implementation()<cr>
-nnoremap <leader>gl <cmd>lua vim.lsp.buf.signature_help()<cr>
-nnoremap <leader>vll <cmd>lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
-nnoremap <leader>vsd <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
-nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<cr>
+nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
+nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
+" nnoremap <leader>gl :lua vim.lsp.buf.implementation()<cr>
+nnoremap <leader>gl :lua vim.lsp.buf.signature_help()<cr>
+nnoremap <leader>vll :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
+nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
+nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
 " harpoon
-nnoremap <leader>ha <cmd>lua require("harpoon.mark").add_file()<cr>
-nnoremap <leader>hl <cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>
-nnoremap <leader>hh <cmd>lua require("harpoon.ui").nav_file(1)<cr>
-nnoremap <leader>ht <cmd>lua require("harpoon.ui").nav_file(2)<cr>
-nnoremap <leader>hn <cmd>lua require("harpoon.ui").nav_file(3)<cr>
-nnoremap <leader>hs <cmd>lua require("harpoon.ui").nav_file(4)<cr>
-nnoremap <leader>hvh <cmd>lua require("harpoon.term").gotoTerminal(1)<cr>
-nnoremap <leader>hvt <cmd>lua require("harpoon.term").gotoTerminal(2)<cr>
-nnoremap <leader>hvn <cmd>lua require("harpoon.term").gotoTerminal(3)<cr>
-nnoremap <leader>hvs <cmd>lua require("harpoon.term").gotoTerminal(4)<cr>
-nnoremap <leader>hch <cmd>lua require("harpoon.term").sendCommand(1, "make build && ./target/main\n")<cr>
-nnoremap <C-h> <cmd>lua require("harpoon.ui").nav_file(1)<cr>
-nnoremap <C-t> <cmd>lua require("harpoon.ui").nav_file(2)<cr>
-nnoremap <c-s> <cmd>lua require("harpoon.term").gotoTerminal(1)<cr>
-nnoremap <c-l> <cmd>lua require("harpoon.term").gotoTerminal(2)<cr>
+nnoremap <leader>ha :lua require("harpoon.mark").add_file()<cr>
+nnoremap <leader>hl :lua require("harpoon.ui").toggle_quick_menu()<cr>
+nnoremap <leader>hh :lua require("harpoon.ui").nav_file(1)<cr>
+nnoremap <leader>ht :lua require("harpoon.ui").nav_file(2)<cr>
+nnoremap <leader>hn :lua require("harpoon.ui").nav_file(3)<cr>
+nnoremap <leader>hs :lua require("harpoon.ui").nav_file(4)<cr>
+nnoremap <leader>hvh :lua require("harpoon.term").gotoTerminal(1)<cr>
+nnoremap <leader>hvt :lua require("harpoon.term").gotoTerminal(2)<cr>
+nnoremap <leader>hvn :lua require("harpoon.term").gotoTerminal(3)<cr>
+nnoremap <leader>hvs :lua require("harpoon.term").gotoTerminal(4)<cr>
+nnoremap <leader>hch :lua require("harpoon.term").sendCommand(1, "make build && ./target/main\n")<cr>
+nnoremap <C-h> :lua require("harpoon.ui").nav_file(1)<cr>
+nnoremap <C-t> :lua require("harpoon.ui").nav_file(2)<cr>
+nnoremap <c-s> :lua require("harpoon.term").gotoTerminal(1)<cr>
+nnoremap <c-l> :lua require("harpoon.term").gotoTerminal(2)<cr>
 " trouble nvim
-" nnoremap <leader>xx <cmd>TroubleToggle<cr>
-" nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-" nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
-" nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
-" nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
-" nnoremap <leader>gR <cmd>TroubleToggle lsp_references<cr>
+" nnoremap <leader>xx :TroubleToggle<cr>
+" nnoremap <leader>xw :TroubleToggle lsp_workspace_diagnostics<cr>
+" nnoremap <leader>xd :TroubleToggle lsp_document_diagnostics<cr>
+" nnoremap <leader>xq :TroubleToggle quickfix<cr>
+" nnoremap <leader>xl :TroubleToggle loclist<cr>
+" nnoremap <leader>gR :TroubleToggle lsp_references<cr>
 " git signs
-nnoremap <leader>shs <cmd>lua require"gitsigns".stage_hunk()<CR>
-vnoremap <leader>shs <cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
-nnoremap <leader>shu <cmd>lua require"gitsigns".undo_stage_hunk()<CR>
-nnoremap <leader>shr <cmd>lua require"gitsigns".reset_hunk()<CR>
-vnoremap <leader>shr <cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
-nnoremap <leader>shR <cmd>lua require"gitsigns".reset_buffer()<CR>
-nnoremap <leader>shP <cmd>lua require"gitsigns".preview_hunk()<CR>
-nnoremap <leader>shn <cmd>lua require"gitsigns".next_hunk()<CR>
-nnoremap <leader>shp <cmd>lua require"gitsigns".prev_hunk()<CR>
-nnoremap <leader>shb <cmd>lua require"gitsigns".blame_line(true)<CR>
+nnoremap <leader>shs :lua require"gitsigns".stage_hunk()<CR>
+vnoremap <leader>shs :lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
+nnoremap <leader>shu :lua require"gitsigns".undo_stage_hunk()<CR>
+nnoremap <leader>shr :lua require"gitsigns".reset_hunk()<CR>
+vnoremap <leader>shr :lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
+nnoremap <leader>shR :lua require"gitsigns".reset_buffer()<CR>
+nnoremap <leader>shP :lua require"gitsigns".preview_hunk()<CR>
+nnoremap <leader>shn :lua require"gitsigns".next_hunk()<CR>
+nnoremap <leader>shp :lua require"gitsigns".prev_hunk()<CR>
+nnoremap <leader>shb :lua require"gitsigns".blame_line(true)<CR>
 " lspsaga
 
 
 " luasnip
 imap <silent><expr> <C-e> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-snoremap <silent> <C-e> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+inoremap <silent> <S-Tab> :lua require'luasnip'.jump(-1)<Cr>
+snoremap <silent> <C-e> :lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> :lua require('luasnip').jump(-1)<Cr>
 " imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 " smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
 " maximizer
-nnoremap <leader>m <cmd>MaximizerToggle<CR>
+nnoremap <leader>m :MaximizerToggle<CR>
 " undotree config
 nnoremap :ut :UndotreeToggle
 " visual search
@@ -123,7 +123,7 @@ vmap<leader>f <Plug>SnipRun
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " notes
-nnoremap <leader>n <cmd>tab drop /tmp/notes.md<cr>
+nnoremap <leader>n :tab drop /tmp/notes.md<cr>
 " escape
 imap <C-c> <Esc>
 " n search center
