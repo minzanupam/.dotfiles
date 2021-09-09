@@ -124,7 +124,7 @@ arrange() {
     mv /home/anupam/Downloads/*.torrent /home/anupam/Downloads/torrents
 }
 
-export PATH="/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin"
 
 export MANWIDTH=79
 #  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
