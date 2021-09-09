@@ -29,8 +29,8 @@ nnoremap <leader>i :lua require('plenary.reload').reload_module('something')<CR>
 "noremap <C-j> <C-w>w
 "noremap <C-k> <C-w>W
 " maps quick fix list
-nnoremap <C-j> :cnext<CR>
-nnoremap <C-k> :cprev<CR>
+nnoremap <C-j> :cnext <bar> :normal zz<CR>
+nnoremap <C-k> :cprev <bar> :normal zz<CR>
 nnoremap <leader>j :lnext<CR>
 nnoremap <leader>k :lprev<CR>
 " vim fugitive mapings
