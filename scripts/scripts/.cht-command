@@ -3,3 +3,6 @@ curl
 sed
 grep
 vim
+ps
+top
+git

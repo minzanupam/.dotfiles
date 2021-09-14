@@ -141,3 +141,4 @@ alias yy="youtube-dl -f 136+bestaudio"
 alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallapaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
+alias vi=nvim

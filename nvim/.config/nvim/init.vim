@@ -10,15 +10,15 @@ source ~/.config/nvim/global_variables.vim
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme solarized8_dark
+colorscheme gruvbox
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
 "set t_8b=\[[48;2;%lu;%lu;%lum
 " to get a transparent background
 "hi Normal ctermbg=NONE guibg=none
-hi Normal guibg=none
-hi LineNr guibg=none
+" hi Normal guibg=none
+" hi LineNr guibg=none
 " for ayu color scheme
 " hi LineNr guifg=grey
 
@@ -57,7 +57,7 @@ set statusline=%{gitbranch#name()}\ %f\ %=%(%l,%c%V\ %=\ %)
 augroup group1
     autocmd!
     " latex auto compile
-    " autocmd BufWritePost *.tex !pdflatex %
+    autocmd BufWritePost *.tex !pdflatex -halt-on-error %
     " change directory on buffer enter (works with fzf)
     "autocmd BufEnter * silent! lcd %:p:h
     " add/remove comment/indent to the next line
@@ -69,7 +69,6 @@ augroup group1
     autocmd BufWritePre * :%s/\s\+$//e
     " dart
     " autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
-    autocmd BufWinEnter,BufEnter,BufNewFile *.dart set ts=2 sw=2 et
-    autocmd BufWinEnter,BufEnter,BufNewFile *.json set ts=2 sw=2 et
+    autocmd FileType dart,json,typescriptreact set ts=2 sw=2 et
 augroup END
 
