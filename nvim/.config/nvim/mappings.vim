@@ -20,9 +20,9 @@ nnoremap <C-Down> :resize -3<cr>
 nnoremap <C-Left> :vertical resize -3<cr>
 nnoremap <C-Right> :vertical resize +3<cr>
 " multipurpose mapping
-" nnoremap <leader>i :nohls<CR>
-" nnoremap <leader>i :lua vim.lsp.buf.formatting_sync()<CR>
-nnoremap <leader>i :lua require('plenary.reload').reload_module('something')<CR>
+nnoremap ,i :nohls<CR>
+nnoremap <leader>if :lua vim.lsp.buf.formatting_sync()<CR>
+nnoremap <leader>ir :lua require('plenary.reload').reload_module('something')<CR>
 "maps for most recently used buffers
 "noremap <C-h> :BufMRUNext<CR>
 "noremap <C-l> :BufMRUPrev<CR>
@@ -51,6 +51,7 @@ nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
 nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>td :lua require('telescope.builtin').lsp_document_symbols()<CR>
 nnoremap <leader>tx :lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
+nnoremap <leader>mm :lua require('telescope.builtin').man_pages()<CR>
 "nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 "lsp
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<cr>
@@ -107,7 +108,7 @@ snoremap <silent> <S-Tab> :lua require('luasnip').jump(-1)<Cr>
 " smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
 " maximizer
-nnoremap <leader>m :MaximizerToggle<CR>
+" nnoremap <leader>m :MaximizerToggle<CR>
 " undotree config
 nnoremap :ut :UndotreeToggle
 " visual search
@@ -118,7 +119,7 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-vmap<leader>f <Plug>SnipRun
+" vmap<leader>f <Plug>SnipRun
 " easy align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -137,3 +138,6 @@ inoremap ( (<c-g>u
 inoremap ) )<c-g>u
 inoremap [ [<c-g>u
 inoremap ; ;<c-g>u
+" edit/open file in the same dir as current file
+nnoremap ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap ,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>
