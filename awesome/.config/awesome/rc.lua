@@ -187,7 +187,7 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({1,2,3,4,5,6}, s, awful.layout.layouts[1])
+  awful.tag({1,2,3,4,5,6,7,8,9}, s, awful.layout.layouts[1])
   --
   -- my tags
   -- work1
@@ -347,11 +347,11 @@ globalkeys = gears.table.join(
     {description = "go back", group = "tag"}),
 
   --my keybindings
-  -- awful.key({ "Mod4" }, "k",
-    -- function ()
-      -- awful.spawn("brave")
-    -- end
-    -- ),
+  awful.key({ "Mod4" }, "k",
+    function ()
+      awful.spawn("brave")
+    end
+    ),
   awful.key({ "Mod4" }, "p",
     function ()
       -- awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
@@ -363,6 +363,16 @@ globalkeys = gears.table.join(
       -- awful.spawn("pcmanfm")
     -- end
     -- ),
+  awful.key({ "Mod4" }, "h",
+    function ()
+      awful.spawn("yad --color")
+    end
+    ),
+  awful.key({ "Mod4" }, "d",
+    function ()
+      awful.spawn("pavucontrol-qt")
+    end
+    ),
   awful.key({ "Mod4" }, "Return",
     function ()
       --awful.spawn("tabbed -c -n alacritty alacritty --embed")
