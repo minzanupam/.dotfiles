@@ -24,11 +24,6 @@ bindkey '^ ' autosuggest-accept
 bindkey '^v' edit-command-line
 #bindkey -M vicmd v edit-command-line
 
-# alias vifm image preview
-alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
-
-alias l="exa -lagF --color=always --group-directories-first"
-
 # source "/home/anupam/.zsh/completion.zsh"
 # source "/home/anupam/.zsh/key-bindings.zsh"
 
@@ -129,6 +124,8 @@ export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.
 export MANWIDTH=79
 #  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
 
+alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
+alias l="exa -lagF --color=always --group-directories-first"
 alias b=bookmarks
 alias s=start_bookmarks
 alias c="pwd | xclip -sel clip"
@@ -137,7 +134,8 @@ alias ec="editconf"
 #alias tl="tmux list-sessions"
 #alias ta="tmux attach -t"
 #alias tk="tmux kill-session -t"
-alias yy="youtube-dl -f 136+bestaudio"
+alias yy720="/home/anupam/scripts/ydlp.sh 136"
+alias yymax="/home/anupam/scripts/ydlp.sh bestvideo"
 alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallapaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
