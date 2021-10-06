@@ -5,10 +5,10 @@
 " nerd commenter
 "map <leader>/ <plug>NERDCommenterToggle
 " maps for cut copy and paste from clipboard
-" noremap <leader>y "+y
-" noremap <leader>d "+d
-" noremap <leader>p "+p
-nnoremap <leader>ypwd :let @+ = expand("%:p")<cr>
+noremap <leader>y "+y
+noremap <leader>d "+d
+noremap <leader>p "+p
+" nnoremap <leader>ypwd :let @+ = expand("%:p")<cr>
 " maps for ecsape, save and quit
 "imap <C-L> <Esc>
 " map <C-K> :w<CR>
