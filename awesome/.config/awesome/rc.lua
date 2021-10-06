@@ -355,7 +355,7 @@ globalkeys = gears.table.join(
   awful.key({ "Mod4" }, "p",
     function ()
       -- awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
-      awful.spawn("clipmenu")
+      --  awful.spawn("clipmenu")
     end
     ),
   -- awful.key({ "Mod4" }, "h",
@@ -365,12 +365,12 @@ globalkeys = gears.table.join(
     -- ),
   awful.key({ "Mod4" }, "h",
     function ()
-      awful.spawn("yad --color")
+      awful.spawn("pavucontrol-qt")
     end
     ),
   awful.key({ "Mod4" }, "d",
     function ()
-      awful.spawn("pavucontrol-qt")
+      awful.spawn("yad --color")
     end
     ),
   awful.key({ "Mod4" }, "Return",
@@ -768,8 +768,10 @@ local autorunApps =
 {
   "/usr/bin/picom -b",
   "/usr/bin/nitrogen --restore &",
+  "/usr/bin/copyq &",
+  "/usr/bin/aw-qt &",
   -- "/usr/bin/greenclip daemon &",
-  "/usr/bin/clipmenud &",
+  --  "/usr/bin/clipmenud &",
 }
 
 if autorun then
