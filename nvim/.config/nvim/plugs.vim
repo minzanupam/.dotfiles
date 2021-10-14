@@ -99,9 +99,10 @@ Plug 'L3MON4D3/LuaSnip'
 "Plug 'rhysd/open-pdf.vim'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
-Plug 'ActivityWatch/aw-watcher-vim'
 "Plug 'dstein64/nvim-scrollview'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'vimwiki/vimwiki'
+Plug 'HiPhish/info.vim'
+Plug 'ActivityWatch/aw-watcher-vim'
 
 call plug#end()

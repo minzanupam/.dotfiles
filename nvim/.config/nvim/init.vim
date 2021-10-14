@@ -17,8 +17,8 @@ set background=dark
 "set t_8b=\[[48;2;%lu;%lu;%lum
 " to get a transparent background
 "hi Normal ctermbg=NONE guibg=none
-" hi Normal guibg=none
-" hi LineNr guibg=none
+hi Normal guibg=none
+hi LineNr guibg=none
 " for ayu color scheme
 " hi LineNr guifg=grey
 
