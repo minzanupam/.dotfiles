@@ -1,46 +1,55 @@
 local lspconfig = require'lspconfig'
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+-- The following example advertise capabilities to `clangd`.
+require'lspconfig'.clangd.setup {
+}
+
 lspconfig.texlab.setup{ autostart = false }
-lspconfig.rust_analyzer.setup{}
-lspconfig.hls.setup{}
-lspconfig.gopls.setup{}
-lspconfig.svelte.setup{}
-lspconfig.cssls.setup{}
-lspconfig.clangd.setup{}
+lspconfig.rust_analyzer.setup{ capabilities = capabilities }
+lspconfig.hls.setup{ capabilities = capabilities }
+lspconfig.gopls.setup{ capabilities = capabilities }
+lspconfig.svelte.setup{ capabilities = capabilities }
+lspconfig.cssls.setup{ capabilities = capabilities }
+lspconfig.clangd.setup{ capabilities = capabilities }
 -- lspconfig.ccls.setup{
 --     autostart = false,
 --     init_options = { cache = {directory = ""} }
 -- }
-lspconfig.jedi_language_server.setup{}
-lspconfig.dartls.setup{}
-lspconfig.tsserver.setup{}
+lspconfig.jedi_language_server.setup{ capabilities = capabilities }
+lspconfig.dartls.setup{ capabilities = capabilities }
+lspconfig.tsserver.setup{ capabilities = capabilities }
 lspconfig.denols.setup{
     autostart = false,
-    filetypes = { "typescript" }
+    filetypes = { "typescript" },
+    capabilities = capabilities,
 }
-lspconfig.bashls.setup{}
-lspconfig.java_language_server.setup{}
+lspconfig.bashls.setup{ capabilities = capabilities }
+lspconfig.java_language_server.setup{ capabilities = capabilities }
 lspconfig.sumneko_lua.setup{
     cmd = {
         "/usr/bin/lua-language-server",
         "-E",
         "/usr/share/lua-language-server/main.lua"
     },
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = vim.split(package.path, ';'),
-      },
-      diagnostics = {
-        globals = {'vim', 'use'},
-      },
-      workspace = {
-        library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+                path = vim.split(package.path, ';'),
+            },
+            diagnostics = {
+                globals = {'vim', 'use'},
+            },
+            workspace = {
+                library = {
+                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                },
+            },
         },
-      },
     },
-  },
+    capabilities = capabilities,
 }

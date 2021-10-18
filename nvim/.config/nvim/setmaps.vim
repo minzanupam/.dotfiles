@@ -2,7 +2,6 @@
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 " set the tab globaly
 set termguicolors
 set nowrap
@@ -31,5 +30,5 @@ set completeopt=menuone,noinsert,noselect
 set updatetime=50
 set clipboard=unnamedplus
 set syntax=off
-set autoindent
-set smarttab
+set noautoindent
+set nosmarttab

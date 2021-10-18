@@ -24,7 +24,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'akinsho/flutter-tools.nvim'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'rstacruz/vim-closer'
@@ -35,7 +35,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 "Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'ThePrimeagen/git-worktree.nvim'
+" Plug 'ThePrimeagen/git-worktree.nvim'
 "" indentation guide
 " Plug 'thaerkh/vim-indentguides'
 "" global languge highlights
@@ -64,7 +64,7 @@ Plug 'mattn/emmet-vim'
 "Plug 'ap/vim-css-color'
 Plug 'norcalli/nvim-colorizer.lua'
 "" vim table mode
-Plug 'dhruvasagar/vim-table-mode'
+" Plug 'dhruvasagar/vim-table-mode'
 "" vim debugging
 "Plug 'puremourning/vimspector'
 "" Undotree
@@ -72,7 +72,10 @@ Plug 'mbbill/undotree'
 "vim lsp config
 Plug 'neovim/nvim-lspconfig'
 "Plug 'nvim-lua/completion-nvim'
-Plug 'hrsh7th/nvim-compe'
+" Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'glepnir/lspsaga.nvim'
 " Plug 'folke/trouble.nvim'

@@ -23,8 +23,9 @@ hi LineNr guibg=none
 " hi LineNr guifg=grey
 
 lua <<EOF
-require 'mylspconfig'
 require 'mytelescope'
+require 'mynvimcmp'
+require 'mylspconfig'
 require 'mytreesitter'
 require 'mygitsigns'
 require 'myluasnip'
@@ -41,6 +42,11 @@ require 'commented'.setup {
         set_keybindings = true,
         ex_mode_cmd = "Comment"
 }
+
+-- Setup lspconfig.
+-- require('lspconfig')[%YOUR_LSP_SERVER%].setup {
+-- capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- }
 
 -- require("luasnip/loaders/from_vscode").load()
 
