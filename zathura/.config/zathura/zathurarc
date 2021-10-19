@@ -1,5 +1,5 @@
-#set recolor-darkcolor "#cccccc"
-#set recolor-lightcolor "#232323"
+set recolor-darkcolor "#cccccc"
+set recolor-lightcolor "#1C323E"
 
-set recolor-darkcolor "#000000"
-set recolor-lightcolor "#EDD1B0"
+#set recolor-darkcolor "#000000"
+#set recolor-lightcolor "#EDD1B0"
