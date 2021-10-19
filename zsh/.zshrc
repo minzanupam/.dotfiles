@@ -137,6 +137,6 @@ alias ec="editconf"
 alias yy720="/home/anupam/scripts/ydlp.sh 136"
 alias yymax="/home/anupam/scripts/ydlp.sh bestvideo"
 alias yym="/home/anupam/scripts/ydlp.sh"
-alias randomwallapaper="/home/anupam/work/build/styli.sh/styli.sh"
+alias randomwallpaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
 alias vi=nvim
