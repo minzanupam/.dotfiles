@@ -769,7 +769,7 @@ local autorunApps =
   "/usr/bin/picom -b",
   "/usr/bin/nitrogen --restore &",
   "/usr/bin/copyq &",
-  "/usr/bin/aw-qt &",
+  "/opt/activitywatch/aw-qt &",
   -- "/usr/bin/greenclip daemon &",
   --  "/usr/bin/clipmenud &",
 }
