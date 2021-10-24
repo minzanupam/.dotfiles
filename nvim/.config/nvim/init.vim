@@ -10,7 +10,7 @@ source ~/.config/nvim/global_variables.vim
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum

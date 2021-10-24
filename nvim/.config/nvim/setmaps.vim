@@ -10,22 +10,21 @@ set smartcase
 set colorcolumn=79
 set undofile
 set swapfile
-set hlsearch
+set nohlsearch
 set nosplitbelow
 set nu
 set rnu
 set autowriteall
 set hidden
-set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
+" set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 "set textwidth=80
-"set hlsearch
 set foldmethod=manual
 set foldlevel=9
 set foldnestmax=5
 " indentation guild
 "set list lcs=tab:\¦\
 "lsp autocompletion
-set completeopt=menuone,noinsert,noselect
+set completeopt=noinsert,noselect
 "set shortmess+=c
 set updatetime=50
 set clipboard=unnamedplus

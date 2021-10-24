@@ -23,20 +23,20 @@ let g:tex_flavor = 'latex'
 "let g:table_mode_corner='+'
 "let g:table_mode_corner_corner='+'
 " netrw
-let g:netrw_liststyle = 0
+let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
-let g:netrw_winsize = 50
+let g:netrw_winsize = 25
 " fff file manager
 let g:fff#split = "20new"
 let g:fff#split_direction = "nosplitright splitbelow"
 let g:NERDDefaultAlign='left'
 " multiple cursors mappings
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_word_key      = '<leader><C-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_quit_key            = '<Esc>'
-let g:wordmotion_nomap = 1
+" let g:multi_cursor_use_default_mapping=0
+" let g:multi_cursor_start_word_key      = '<leader><C-n>'
+" let g:multi_cursor_next_key            = '<C-n>'
+" let g:multi_cursor_quit_key            = '<Esc>'
+" let g:wordmotion_nomap = 1
 " lsp completion
 "let g:completion_confirm_key = "<CR>"
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
