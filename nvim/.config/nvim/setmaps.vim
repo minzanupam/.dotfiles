@@ -24,10 +24,11 @@ set foldnestmax=5
 " indentation guild
 "set list lcs=tab:\¦\
 "lsp autocompletion
-set completeopt=noinsert,noselect
+set completeopt=menu,noinsert,noselect
 "set shortmess+=c
 set updatetime=50
 set clipboard=unnamedplus
 set syntax=off
 set noautoindent
 set nosmarttab
+set incsearch
