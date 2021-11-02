@@ -140,3 +140,4 @@ alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallpaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
 alias vi=nvim
+alias dra=dragon-drag-and-drop
