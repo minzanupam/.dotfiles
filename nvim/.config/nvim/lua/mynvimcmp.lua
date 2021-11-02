@@ -34,6 +34,6 @@ cmp.setup({
         -- { name = 'luasnip' },
         -- { name = 'ultisnips' },
     },
-	preselect = "none",
+	preselect = false,
 })
 
