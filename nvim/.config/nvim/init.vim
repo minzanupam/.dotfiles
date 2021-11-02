@@ -75,6 +75,7 @@ augroup group1
     autocmd BufWritePre * :%s/\s\+$//e
     " dart
     " autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
-    " autocmd FileType dart,json,typescriptreact set ts=2 sw=2 et
+    autocmd BufEnter *.dart set ts=2 sw=2 et
+    autocmd BufEnter *.c,*.h set ts=8 sw=8 noet
 augroup END
 
