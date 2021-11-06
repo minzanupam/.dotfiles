@@ -76,6 +76,7 @@ augroup group1
     " dart
     " autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
     autocmd BufEnter *.dart set ts=2 sw=2 et
-    autocmd BufEnter *.c,*.h set ts=8 sw=8 noet
+    autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
+    autocmd BufEnter *.md set ts=4 sw=4 et
 augroup END
 

@@ -15,7 +15,7 @@ set nosplitbelow
 set nu
 set rnu
 set autowriteall
-set hidden
+set nohidden
 " set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 "set textwidth=80
 set foldmethod=manual
