@@ -65,10 +65,10 @@ nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
 " harpoon
 nnoremap <leader>ha :lua require("harpoon.mark").add_file()<cr>
 nnoremap <leader>hl :lua require("harpoon.ui").toggle_quick_menu()<cr>
-nnoremap <leader>hh :lua require("harpoon.ui").nav_file(1)<cr>
-nnoremap <leader>ht :lua require("harpoon.ui").nav_file(2)<cr>
-nnoremap <leader>hn :lua require("harpoon.ui").nav_file(3)<cr>
-nnoremap <leader>hs :lua require("harpoon.ui").nav_file(4)<cr>
+" nnoremap <leader>hh :lua require("harpoon.ui").nav_file(1)<cr>
+" nnoremap <leader>ht :lua require("harpoon.ui").nav_file(2)<cr>
+" nnoremap <leader>hn :lua require("harpoon.ui").nav_file(3)<cr>
+" nnoremap <leader>hs :lua require("harpoon.ui").nav_file(4)<cr>
 nnoremap <leader>hvh :lua require("harpoon.term").gotoTerminal(1)<cr>
 nnoremap <leader>hvt :lua require("harpoon.term").gotoTerminal(2)<cr>
 nnoremap <leader>hvn :lua require("harpoon.term").gotoTerminal(3)<cr>
@@ -76,8 +76,8 @@ nnoremap <leader>hvs :lua require("harpoon.term").gotoTerminal(4)<cr>
 nnoremap <leader>hch :lua require("harpoon.term").sendCommand(1, "make build && ./target/main\n")<cr>
 nnoremap <C-h> :lua require("harpoon.ui").nav_file(1)<cr>
 nnoremap <C-t> :lua require("harpoon.ui").nav_file(2)<cr>
-nnoremap <c-s> :lua require("harpoon.term").gotoTerminal(1)<cr>
-nnoremap <c-l> :lua require("harpoon.term").gotoTerminal(2)<cr>
+nnoremap <c-s> :lua require("harpoon.ui").nav_file(4)<cr>
+nnoremap <c-l> :lua require("harpoon.ui").nav_file(3)<cr>
 " trouble nvim
 " nnoremap <leader>xx :TroubleToggle<cr>
 " nnoremap <leader>xw :TroubleToggle lsp_workspace_diagnostics<cr>
@@ -130,9 +130,9 @@ nnoremap <leader>n :tab drop /tmp/notes.md<cr>
 " escape
 imap <C-c> <Esc>
 " n search center
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
+" nnoremap J mzJ`z
 " undo break point
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
