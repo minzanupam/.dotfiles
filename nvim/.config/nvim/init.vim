@@ -17,8 +17,8 @@ set background=dark
 "set t_8b=\[[48;2;%lu;%lu;%lum
 " to get a transparent background
 "hi Normal ctermbg=NONE guibg=none
-" hi Normal guibg=none
-" hi LineNr guibg=none
+hi Normal guibg=none
+hi LineNr guibg=none
 " for ayu color scheme
 " hi LineNr guifg=grey
 
@@ -43,6 +43,41 @@ require 'commented'.setup {
         ex_mode_cmd = "Comment"
 }
 
+local gps = require('nvim-gps')
+gps.setup()
+
+require'lualine'.setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff',
+                  {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+    lualine_c = {'filename'},
+    lualine_x = {
+		{ gps.get_location, cond = gps.is_available },
+		'encoding', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
+
 -- Setup lspconfig.
 -- require('lspconfig')[%YOUR_LSP_SERVER%].setup {
 -- capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -55,10 +90,11 @@ require 'commented'.setup {
 --     "Classic",                    -- "display results in the command-line  area
 --     },
 -- })
+
 EOF
 
-set statusline=
-set statusline=%{gitbranch#name()}\ %f\ %=%(%l,%c%V\ %=\ %)
+" set statusline=
+" set statusline=%{gitbranch#name()}\ %f\ %=%(%l,%c%V\ %=\ %)
 
 augroup group1
     autocmd!

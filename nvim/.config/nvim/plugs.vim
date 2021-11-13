@@ -45,6 +45,7 @@ Plug 'lewis6991/gitsigns.nvim'
 " " react css styled components
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
   "Plug 'vim-airline/vim-airline-themes'
 Plug 'itchyny/vim-gitbranch'
 Plug 'mattn/emmet-vim'
@@ -64,7 +65,7 @@ Plug 'mattn/emmet-vim'
 "Plug 'ap/vim-css-color'
 Plug 'norcalli/nvim-colorizer.lua'
 "" vim table mode
-" Plug 'dhruvasagar/vim-table-mode'
+Plug 'dhruvasagar/vim-table-mode'
 "" vim debugging
 "Plug 'puremourning/vimspector'
 "" Undotree
@@ -80,6 +81,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'ray-x/cmp-treesitter'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'SmiteshP/nvim-gps'
 " vim snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'ray-x/lsp_signature.nvim'
