@@ -8,7 +8,7 @@ read -p "Enter Query: " query
 
 if grep -qs "$selected" $lang_file; then
 query=`echo $query | tr ' ' '+'`
-    curl cht.sh/$selected/$query | bat
+    curl cht.sh/$selected/$query
 else
-    curl cht.sh/$selected~$query | bat
+    curl cht.sh/$selected~$query
 fi

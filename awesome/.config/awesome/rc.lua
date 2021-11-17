@@ -358,6 +358,11 @@ globalkeys = gears.table.join(
       --  awful.spawn("clipmenu")
     end
     ),
+  awful.key({ "Mod4" }, "s",
+    function ()
+      awful.spawn("alacritty --hold -e /home/anupam/scripts/cht.sh")
+    end
+    ),
   awful.key({ "Mod4" }, "l",
     function ()
       awful.spawn("lowriter")
