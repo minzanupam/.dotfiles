@@ -20,7 +20,7 @@ nnoremap <C-Down> :resize -3<cr>
 nnoremap <C-Left> :vertical resize -3<cr>
 nnoremap <C-Right> :vertical resize +3<cr>
 " multipurpose mapping
-nnoremap ,i :nohls<CR>
+nnoremap <leader>,i :nohls<CR>
 nnoremap <leader>if :lua vim.lsp.buf.formatting_sync()<CR>
 nnoremap <leader>ir :lua require('plenary.reload').reload_module('something')<CR>
 "maps for most recently used buffers
@@ -141,5 +141,5 @@ inoremap ) )<c-g>u
 inoremap [ [<c-g>u
 inoremap ; ;<c-g>u
 " edit/open file in the same dir as current file
-nnoremap ,e :e <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap ,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <leader>,e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <leader>,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>
