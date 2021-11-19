@@ -1,7 +1,13 @@
 let mapleader = " "
 
+lua <<EOF
+
+require 'plugins'
+
+EOF
+
 source ~/.config/nvim/setmaps.vim
-source ~/.config/nvim/plugs.vim
+" source ~/.config/nvim/plugs.vim
 source ~/.config/nvim/mappings.vim
 "source ~/.config/nvim/coc_config.vim
 "source ~/.config/nvim/snippet_config.vim
@@ -10,7 +16,7 @@ source ~/.config/nvim/global_variables.vim
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
@@ -79,6 +85,9 @@ require'lualine'.setup {
   extensions = {}
 }
 
+--  require('nvim-autopairs').setup{}
+require "pears".setup()
+
 -- Setup lspconfig.
 -- require('lspconfig')[%YOUR_LSP_SERVER%].setup {
 -- capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -115,5 +124,6 @@ augroup group1
     autocmd BufEnter *.dart set ts=2 sw=2 et
     autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
     autocmd BufEnter *.md set ts=4 sw=4 et
+
 augroup END
 
