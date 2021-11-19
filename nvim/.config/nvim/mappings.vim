@@ -98,6 +98,9 @@ nnoremap <leader>shp :lua require"gitsigns".prev_hunk()<CR>
 nnoremap <leader>shb :lua require"gitsigns".blame_line(true)<CR>
 " lspsaga
 
+" lsp extensions
+nnoremap <Leader>ht :lua require'lsp_extensions'.inlay_hints{ only_current_line = true, enabled = { "TypeHint", "ChainingHint", "ParameterHint" } }<CR>
+
 
 " luasnip
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'

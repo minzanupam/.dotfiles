@@ -28,6 +28,8 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 "Plug 'akinsho/flutter-tools.nvim'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'rstacruz/vim-closer'
+" Plug 'windwp/nvim-autopairs'
+Plug 'steelsojka/pears.nvim'
 "Plug 'preservim/nerdcommenter'
 Plug 'winston0410/commented.nvim'
 "" git
@@ -42,6 +44,7 @@ Plug 'lewis6991/gitsigns.nvim'
 "Plug 'sheerun/vim-polyglot'
 "" different colored brackets paranthesis
 " Plug 'frazrepo/vim-rainbow'
+" Plug 'p00f/nvim-ts-rainbow'
 " " react css styled components
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 "Plug 'vim-airline/vim-airline'
@@ -82,6 +85,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'ray-x/cmp-treesitter'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'SmiteshP/nvim-gps'
+Plug 'nvim-lua/lsp_extensions.nvim'
 " vim snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'ray-x/lsp_signature.nvim'
