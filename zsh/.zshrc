@@ -83,7 +83,16 @@ set_projectdir () {
 editconf() {
     #  nvim `fzf < /home/anupam/scripts/conflist` -c 'cd %:p:h'
     # nvim `find /home/anupam/.dotfiles -type f | fzf` -c 'cd /home/anupam/.dotfiles'
-    nvim -c 'cd /home/anupam/.dotfiles' -c "lua require('telescope.builtin').git_files()"
+
+	selected="/home/anupam/.dotfiles"
+	tmux switch-client -t "config"
+	if [[ $? -eq 0 ]]; then
+		tmux send-keys "C-n"
+		exit 0
+	fi
+	tmux new-session -c $selected -d -s "config" && tmux switch-client -t "config" || tmux new -c $selected -A -s "config"
+    tmux send-keys -t config:0 "nvim -c 'cd /home/anupam/.dotfiles' -c \"lua require('telescope.builtin').git_files()\"
+"
 }
 
 songsearch() {

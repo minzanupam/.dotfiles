@@ -360,7 +360,7 @@ globalkeys = gears.table.join(
     ),
   awful.key({ "Mod4" }, "s",
     function ()
-      awful.spawn("alacritty --hold -e /home/anupam/scripts/cht.sh")
+      awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
     end
     ),
   awful.key({ "Mod4" }, "l",
