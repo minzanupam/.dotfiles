@@ -13,8 +13,10 @@ do
                 ;;
         "d")
                 dragon-drag-and-drop "$file" -x;;
-        "C-w")
-                nitrogen --set-zoom-fill "$file" ;;
+        "w")
+                nitrogen --set-zoom-fill --head=0 "$file" ;;
+		"W")
+                nitrogen --set-zoom-fill --head=1 "$file" ;;
         "g")
                 gimp "$file";;
         "y")
