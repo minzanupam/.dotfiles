@@ -11,3 +11,5 @@ typescript
 sql
 haskell
 latex
+makefile
+cmake

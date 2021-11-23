@@ -9,3 +9,6 @@ git
 find
 fg
 rg
+gcc
+make
+less
