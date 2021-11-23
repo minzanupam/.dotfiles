@@ -28,9 +28,9 @@ let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 " fff file manager
-let g:fff#split = "20new"
-let g:fff#split_direction = "nosplitright splitbelow"
-let g:NERDDefaultAlign='left'
+" let g:fff#split = "20new"
+" let g:fff#split_direction = "nosplitright splitbelow"
+" let g:NERDDefaultAlign='left'
 " multiple cursors mappings
 " let g:multi_cursor_use_default_mapping=0
 " let g:multi_cursor_start_word_key      = '<leader><C-n>'
