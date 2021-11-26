@@ -171,13 +171,12 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-
-
 # Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
     background: '#1d2021'
+    # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
 
   # Normal colors
@@ -201,7 +200,6 @@ colors:
     magenta: '#d3869b'
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
-
 
 
   # The indexed colors include all colors from 16 to 256.
@@ -326,11 +324,6 @@ colors:
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 1
-# background_opacity: 0.99
-# background_opacity: 0.97
-#  background_opacity: 0.96
-#  background_opacity: 0.93
-#  background_opacity: 0.87
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

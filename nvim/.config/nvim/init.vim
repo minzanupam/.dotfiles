@@ -16,15 +16,15 @@ source ~/.config/nvim/global_variables.vim
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme nord
+colorscheme gruvbox
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
 "set t_8b=\[[48;2;%lu;%lu;%lum
 " to get a transparent background
 "hi Normal ctermbg=NONE guibg=none
-hi Normal guibg=none
-hi LineNr guibg=none
+" hi Normal guibg=none
+" hi LineNr guibg=none
 " for ayu color scheme
 " hi LineNr guifg=grey
 

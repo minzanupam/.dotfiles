@@ -4,7 +4,6 @@ return require('packer').startup(function()
 	use 'nvim-lua/plenary.nvim'
 	-- lsp
 	use 'neovim/nvim-lspconfig'
-	use 'nvim-lua/lsp_extensions.nvim'
 	use 'SmiteshP/nvim-gps'
 	-- treesitter
     use {
