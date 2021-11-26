@@ -10,7 +10,7 @@ set smartcase
 set colorcolumn=79
 set undofile
 set swapfile
-set nohlsearch
+set hlsearch
 set nosplitbelow
 set nu
 set rnu

@@ -44,9 +44,9 @@ noremap <leader>gl :diffget //3<CR>
 "nnoremap <C-p> :Rg<CR>
 " telescope
 nnoremap <leader>tff :lua require('telescope.builtin').find_files()<cr>
-" nnoremap <C-p> :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <C-p> :lua require('telescope.builtin').lsp_code_actions()<CR>
 nnoremap <C-n> :lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>gt :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
 nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>td :lua require('telescope.builtin').lsp_document_symbols()<CR>
@@ -59,6 +59,7 @@ nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
 nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
 " nnoremap <leader>gl :lua vim.lsp.buf.implementation()<cr>
 nnoremap <leader>gl :lua vim.lsp.buf.signature_help()<cr>
+nnoremap <leader>ht :lua vim.lsp.buf.hover()<cr>
 nnoremap <leader>vll :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
 nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
 nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
@@ -96,10 +97,13 @@ nnoremap <leader>shP :lua require"gitsigns".preview_hunk()<CR>
 nnoremap <leader>shn :lua require"gitsigns".next_hunk()<CR>
 nnoremap <leader>shp :lua require"gitsigns".prev_hunk()<CR>
 nnoremap <leader>shb :lua require"gitsigns".blame_line(true)<CR>
+" binay editing
+nnoremap <leader>hbo :lua require"mybinary".binary_mode_open()<CR>
+nnoremap <leader>hbc :lua require"mybinary".binary_mode_close()<CR>
 " lspsaga
 
 " lsp extensions
-nnoremap <Leader>ht :lua require'lsp_extensions'.inlay_hints{ only_current_line = true, enabled = { "TypeHint", "ChainingHint", "ParameterHint" } }<CR>
+" nnoremap <Leader>ht :lua require'lsp_extensions'.inlay_hints{ only_current_line = true, enabled = { "TypeHint", "ChainingHint", "ParameterHint" } }<CR>
 
 
 " luasnip
