@@ -141,12 +141,12 @@ imap <C-c> <Esc>
 " nnoremap N Nzzzv
 " nnoremap J mzJ`z
 " undo break point
-inoremap , ,<c-g>u
-inoremap . .<c-g>u
-inoremap ( (<c-g>u
-inoremap ) )<c-g>u
-inoremap [ [<c-g>u
-inoremap ; ;<c-g>u
+" inoremap , ,<c-g>u
+" inoremap . .<c-g>u
+" inoremap ( (<c-g>u
+" inoremap ) )<c-g>u
+" inoremap [ [<c-g>u
+" inoremap ; ;<c-g>u
 " edit/open file in the same dir as current file
 nnoremap <leader>,e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>

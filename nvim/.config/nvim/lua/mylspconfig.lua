@@ -18,7 +18,11 @@ lspconfig.clangd.setup{ capabilities = capabilities }
 --     autostart = false,
 --     init_options = { cache = {directory = ""} }
 -- }
-lspconfig.jedi_language_server.setup{ capabilities = capabilities }
+lspconfig.jedi_language_server.setup{ capabilities = capabilities, cmd={
+	"/usr/bin/jedi-language-server" },
+	single_file_support=true,
+	root_dir = require('lspconfig.util').root_pattern(".git", "*.py")
+}
 lspconfig.dartls.setup{ capabilities = capabilities }
 lspconfig.tsserver.setup{ capabilities = capabilities }
 lspconfig.denols.setup{
@@ -27,7 +31,7 @@ lspconfig.denols.setup{
     capabilities = capabilities,
 }
 lspconfig.bashls.setup{ capabilities = capabilities }
-lspconfig.java_language_server.setup{ capabilities = capabilities }
+--  lspconfig.java_language_server.setup{ capabilities = capabilities }
 lspconfig.sumneko_lua.setup{
     cmd = {
         "/usr/bin/lua-language-server",
