@@ -34,20 +34,20 @@ theme.border_marked = "#91231c"
 ]]--
 
 theme.bg_normal     = "#212121"
-theme.bg_focus      = "#b06bfc"
-theme.bg_urgent     = "#f64a8a"
+theme.bg_focus      = "#212121"
+theme.bg_urgent     = "#b06bfc"
 theme.bg_minimize   = "#616161"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#e5e5e5"
-theme.fg_focus      = "#ffffff"
+theme.fg_normal     = "#e3588d"
+theme.fg_focus      = "#b06bfc"
 theme.fg_urgent     = "#ff4040"
 theme.fg_minimize   = "#aaaaaa"
 
-theme.useless_gap   = dpi(2)
+theme.useless_gap   = dpi(3)
 theme.border_width  = dpi(2)
 theme.border_normal = "#616161"
-theme.border_focus = "#2aa198"
+theme.border_focus = "#00bcbc"
 theme.border_marked = "#ff4040"
 
 --[[
