@@ -133,7 +133,9 @@ nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " notes
-nnoremap <leader>n :tab drop /tmp/notes.md<cr>
+" nnoremap <leader>ns :tab drop /tmp/notes.md<CR>
+" nnoremap <leader>n :tab drop /home/anupam/Documents/notes/index.md<CR>
+nnoremap <leader>n :tab drop /home/anupam/orgs/init.org<CR>
 " escape
 imap <C-c> <Esc>
 " n search center

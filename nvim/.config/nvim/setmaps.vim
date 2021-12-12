@@ -15,7 +15,7 @@ set nosplitbelow
 set nu
 set rnu
 set autowriteall
-set nohidden
+set hidden
 " set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 "set textwidth=80
 " set foldmethod=manual
@@ -32,3 +32,4 @@ set clipboard=unnamedplus
 set autoindent
 set smarttab
 set incsearch
+set nrformats+=alpha

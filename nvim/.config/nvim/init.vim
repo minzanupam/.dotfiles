@@ -16,7 +16,7 @@ source ~/.config/nvim/global_variables.vim
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme gruvbox
+colorscheme luna
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
@@ -84,6 +84,15 @@ require'lualine'.setup {
   tabline = {},
   extensions = {}
 }
+
+require('orgmode').setup({
+	org_agenda_files = {'~/orgs/**/*'},
+	org_default_notes_file = '~/orgs/init.org',
+	mappings = {
+		global = {
+		},
+	}
+})
 
 --  require('nvim-autopairs').setup{}
 require "pears".setup()

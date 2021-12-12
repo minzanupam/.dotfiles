@@ -6,10 +6,10 @@ return require('packer').startup(function()
 	use 'neovim/nvim-lspconfig'
 	use 'SmiteshP/nvim-gps'
 	-- treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate'
+	}
 	use 'nvim-treesitter/playground'
 	use 'theHamsta/nvim-treesitter-pairs'
 	use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -24,8 +24,8 @@ return require('packer').startup(function()
 		requires = {{ 'nvim-lua/plenary.nvim' }}
 	}
 	use {
-	  'nvim-telescope/telescope.nvim',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use 'nvim-telescope/telescope-fzy-native.nvim'
 	-- emmet
@@ -60,10 +60,28 @@ return require('packer').startup(function()
 	use 'nvim-lualine/lualine.nvim'
 	-- #hex colors
 	use 'norcalli/nvim-colorizer.lua'
+	-- org
+	use 'vimwiki/vimwiki'
+	use 'nvim-orgmode/orgmode'
+	use {
+		'lukas-reineke/headlines.nvim',
+		config = function()
+			require('headlines').setup()
+		end,
+	}
+	use {"akinsho/org-bullets.nvim", config = function()
+	  require("org-bullets").setup {
+		symbols = { "◉", "○", "✸", "✿" },
+		-- or a function that receives the defaults and returns a list
+		--  symbols = function(default_list)
+		  --  table.insert(default_list, "♥")
+		  --  return default_list
+		--  end
+	  }
+	end}
 	-- utils
 	use 'tpope/vim-surround'
 	use 'junegunn/vim-easy-align'
 	use 'kyazdani42/nvim-web-devicons'
-	use 'vimwiki/vimwiki'
 	use 'ActivityWatch/aw-watcher-vim'
 end)
