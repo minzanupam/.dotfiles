@@ -791,6 +791,7 @@ if autorun then
   end
 end
 
+--[[
 -- hide the border for max windows / clients
 screen.connect_signal("arrange", function (s)
   local max = s.selected_tag.layout.name == "max"
@@ -804,4 +805,4 @@ screen.connect_signal("arrange", function (s)
     end
   end
 end)
-
+]]--

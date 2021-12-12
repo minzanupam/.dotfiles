@@ -13,6 +13,7 @@ local theme = {}
 
 theme.font          = "sans 8"
 
+--[[ my theme
 theme.bg_normal     = "#3a3a3a"
 theme.bg_focus      = "#242424"
 theme.bg_urgent     = "#006b8e"
@@ -30,6 +31,47 @@ theme.border_normal = "#111111"
 --theme.border_focus  = "#0099cc"
 theme.border_focus = "#11566d"
 theme.border_marked = "#91231c"
+]]--
+
+theme.bg_normal     = "#212121"
+theme.bg_focus      = "#b06bfc"
+theme.bg_urgent     = "#f64a8a"
+theme.bg_minimize   = "#616161"
+theme.bg_systray    = theme.bg_normal
+
+theme.fg_normal     = "#e5e5e5"
+theme.fg_focus      = "#ffffff"
+theme.fg_urgent     = "#ff4040"
+theme.fg_minimize   = "#aaaaaa"
+
+theme.useless_gap   = dpi(2)
+theme.border_width  = dpi(2)
+theme.border_normal = "#616161"
+theme.border_focus = "#2aa198"
+theme.border_marked = "#ff4040"
+
+--[[
+    foreground: '#e5e5e5'
+    background: '#212121'
+  normal:
+    black: '#616161'
+    blue: '#e3588d'
+    green: '#b06bfc'
+    yellow: '#2aa198'
+    red: '#fa8072'
+    magenta: '#ff8da1'
+    cyan: '#8ddaff'
+    white: '#e5e5e5'
+  bright:
+    black: '#616161'
+    magenta: '#f64a8a'
+    green: '#bada55'
+    yellow: '#00bcbc'
+    red: '#ff4040'
+    blue: '#ff8da1'
+    cyan: '#c9f0fa'
+    white: '#e5e5e5'
+]]--
 
 -- There are other variable sets
 -- overriding the default one when
