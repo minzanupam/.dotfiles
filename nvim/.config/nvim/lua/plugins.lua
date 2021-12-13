@@ -1,4 +1,6 @@
-return require('packer').startup(function()
+return require('packer').startup{function()
+	-- speed
+	use 'lewis6991/impatient.nvim'
 	-- deps
 	use 'nvim-lua/popup.nvim'
 	use 'nvim-lua/plenary.nvim'
@@ -60,7 +62,7 @@ return require('packer').startup(function()
 	use 'nvim-lualine/lualine.nvim'
 	-- #hex colors
 	use 'norcalli/nvim-colorizer.lua'
-	-- org
+	-- org / wiki
 	use 'vimwiki/vimwiki'
 	use 'nvim-orgmode/orgmode'
 	use {
@@ -70,18 +72,23 @@ return require('packer').startup(function()
 		end,
 	}
 	use {"akinsho/org-bullets.nvim", config = function()
-	  require("org-bullets").setup {
-		symbols = { "◉", "○", "✸", "✿" },
-		-- or a function that receives the defaults and returns a list
-		--  symbols = function(default_list)
-		  --  table.insert(default_list, "♥")
-		  --  return default_list
-		--  end
-	  }
+		require("org-bullets").setup {
+			symbols = { "◉", "○", "✸", "✿" },
+			-- or a function that receives the defaults and returns a list
+			--  symbols = function(default_list)
+			--  table.insert(default_list, "♥")
+			--  return default_list
+			--  end
+		}
 	end}
 	-- utils
 	use 'tpope/vim-surround'
 	use 'junegunn/vim-easy-align'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'ActivityWatch/aw-watcher-vim'
-end)
+end,
+	config = {
+		-- Move to lua dir so impatient.nvim can cache it
+		compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
+	}
+}

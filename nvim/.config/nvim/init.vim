@@ -3,6 +3,8 @@ let mapleader = " "
 lua <<EOF
 
 require 'plugins'
+require('packer_compiled')
+require('impatient')
 
 EOF
 
@@ -64,7 +66,7 @@ require'lualine'.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff',
-                  {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+                  {'diagnostics', sources={'nvim_diagnostic', 'coc'}}},
     lualine_c = { 'filename' },
     lualine_x = {
 		{ gps.get_location, cond = gps.is_available },

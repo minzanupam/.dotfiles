@@ -50,6 +50,7 @@ nnoremap <leader>gt :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
 nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>td :lua require('telescope.builtin').lsp_document_symbols()<CR>
+nnoremap <leader>tw :lua require('telescope.builtin').lsp_workspace_symbols()<CR>
 nnoremap <leader>tx :lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
 nnoremap <leader>mm :lua require('telescope.builtin').man_pages()<CR>
 "nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
