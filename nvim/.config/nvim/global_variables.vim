@@ -26,7 +26,7 @@ let g:tex_flavor = 'latex'
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
-let g:netrw_winsize = 25
+let g:netrw_winsize = 50
 let g:netrw_keepdir = 1
 " fff file manager
 " let g:fff#split = "20new"
@@ -44,3 +44,5 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_auto_popup = 1
 let g:completion_enable_auto_hover = 0
 let g:completion_enable_auto_signature = 0
+
+let g:bujo#window_width = 50

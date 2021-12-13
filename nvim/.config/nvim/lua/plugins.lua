@@ -64,6 +64,7 @@ return require('packer').startup{function()
 	use 'norcalli/nvim-colorizer.lua'
 	-- org / wiki
 	use 'vimwiki/vimwiki'
+	use 'vuciv/vim-bujo'
 	use 'nvim-orgmode/orgmode'
 	use {
 		'lukas-reineke/headlines.nvim',
