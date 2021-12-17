@@ -45,4 +45,4 @@ let g:completion_enable_auto_popup = 1
 let g:completion_enable_auto_hover = 0
 let g:completion_enable_auto_signature = 0
 
-let g:bujo#window_width = 50
+let g:bujo#window_width = 100

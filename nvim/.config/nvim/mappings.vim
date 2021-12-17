@@ -136,8 +136,9 @@ nmap ga <Plug>(EasyAlign)
 " notes
 " nnoremap <leader>ns :tab drop /tmp/notes.md<CR>
 " nnoremap <leader>n :tab drop /home/anupam/Documents/notes/index.md<CR>
-nnoremap <leader>n :tab drop /home/anupam/orgs/init.org<CR>
-"  nnoremap <leader>n :Todo<CR>
+"  nnoremap <leader>n :tab drop /home/anupam/orgs/init.org<CR>
+"  nnoremap <leader>n :tabnew <bar> :Todo <CR>
+nnoremap <leader>n :Todo <CR>
 " escape
 imap <C-c> <Esc>
 " n search center
