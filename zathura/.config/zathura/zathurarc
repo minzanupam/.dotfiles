@@ -1,5 +1,15 @@
-set recolor-darkcolor "#cccccc"
-set recolor-lightcolor "#1C323E"
+# gruvbox
+set recolor-lightcolor "#282828"
+set recolor-darkcolor "#ebdbb2"
 
+# solarized dark
+#  set recolor-darkcolor "#cccccc"
+#  set recolor-lightcolor "#1C323E"
+
+# sepia light
 #  set recolor-darkcolor "#000000"
 #  set recolor-lightcolor "#EDD1B0"
+
+# dark
+#  set recolor-darkcolor "#ffffff"
+#  set recolor-lightcolor "#000000"

@@ -99,11 +99,11 @@ songsearch() {
     find /media/anupam/881f3c4e-63e4-4d5d-a149-e736788e2134/Songs -mindepth 1 -type f | fzf
 }
 
-recentbook() {
-    bookname='/home/anupam/Documents/Books/computer/programing language tutorials/c c++/Advanced C and C++ Compiling - 2014.pdf'
+readbook() {
+    bookname=`find /home/anupam/Documents/Books/ | fzf`
     zathura "$bookname" &
-    disown
-    exit 0
+	disown
+    exit
 }
 
 bvim () {
