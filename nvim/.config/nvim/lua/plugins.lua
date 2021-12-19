@@ -46,6 +46,8 @@ return require('packer').startup{function()
 	use 'steelsojka/pears.nvim'
 	-- snip
 	use 'L3MON4D3/LuaSnip'
+	-- formater
+	use 'sbdchd/neoformat'
 	-- signatures
 	use 'ray-x/lsp_signature.nvim'
 	-- table mode

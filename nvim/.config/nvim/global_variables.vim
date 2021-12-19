@@ -46,3 +46,10 @@ let g:completion_enable_auto_hover = 0
 let g:completion_enable_auto_signature = 0
 
 let g:bujo#window_width = 100
+
+let g:neoformat_svelte_prettier={
+	\ 'exe': 'prettier',
+	\ 'args': ['--stdin-filepath', '--parser=svelte', '--plugin-search-dir=/usr/lib', '"%:p"'],
+	\ 'stdin': 1,
+	\ 'try_node_exe': 1,
+	\ }

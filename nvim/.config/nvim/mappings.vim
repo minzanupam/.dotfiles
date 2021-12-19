@@ -80,6 +80,8 @@ nnoremap <C-h> :lua require("harpoon.ui").nav_file(1)<cr>
 nnoremap <C-t> :lua require("harpoon.ui").nav_file(2)<cr>
 nnoremap <c-s> :lua require("harpoon.ui").nav_file(4)<cr>
 nnoremap <c-l> :lua require("harpoon.ui").nav_file(3)<cr>
+" neoformater
+nnoremap <C-g> :Neoformat<CR>
 " trouble nvim
 " nnoremap <leader>xx :TroubleToggle<cr>
 " nnoremap <leader>xw :TroubleToggle lsp_workspace_diagnostics<cr>

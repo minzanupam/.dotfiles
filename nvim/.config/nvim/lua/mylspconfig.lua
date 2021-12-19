@@ -14,6 +14,7 @@ lspconfig.gopls.setup{ capabilities = capabilities }
 lspconfig.svelte.setup{ capabilities = capabilities }
 lspconfig.cssls.setup{ capabilities = capabilities }
 lspconfig.clangd.setup{ capabilities = capabilities }
+lspconfig.sumneko_lua.setup{ capabilities = capabilities }
 -- lspconfig.ccls.setup{
 --     autostart = false,
 --     init_options = { cache = {directory = ""} }
@@ -32,28 +33,3 @@ lspconfig.denols.setup{
 }
 lspconfig.bashls.setup{ capabilities = capabilities }
 --  lspconfig.java_language_server.setup{ capabilities = capabilities }
-lspconfig.sumneko_lua.setup{
-    cmd = {
-        "/usr/bin/lua-language-server",
-        "-E",
-        "/usr/share/lua-language-server/main.lua"
-    },
-    settings = {
-        Lua = {
-            runtime = {
-                version = 'LuaJIT',
-                path = vim.split(package.path, ';'),
-            },
-            diagnostics = {
-                globals = {'vim', 'use'},
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-                },
-            },
-        },
-    },
-    capabilities = capabilities,
-}

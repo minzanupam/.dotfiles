@@ -170,6 +170,11 @@ _G.packer_plugins = {
     path = "/home/anupam/.local/share/nvim/site/pack/packer/start/molokai",
     url = "https://github.com/tomasr/molokai"
   },
+  neoformat = {
+    loaded = true,
+    path = "/home/anupam/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
+  },
   ["nord-vim"] = {
     loaded = true,
     path = "/home/anupam/.local/share/nvim/site/pack/packer/start/nord-vim",
