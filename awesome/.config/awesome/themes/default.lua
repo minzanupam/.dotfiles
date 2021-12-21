@@ -33,45 +33,23 @@ theme.border_focus = "#11566d"
 theme.border_marked = "#91231c"
 ]]--
 
-theme.bg_normal     = "#212121"
-theme.bg_focus      = "#212121"
-theme.bg_urgent     = "#b06bfc"
-theme.bg_minimize   = "#616161"
-theme.bg_systray    = theme.bg_normal
-
-theme.fg_normal     = "#e3588d"
-theme.fg_focus      = "#b06bfc"
-theme.fg_urgent     = "#ff4040"
-theme.fg_minimize   = "#aaaaaa"
-
-theme.useless_gap   = dpi(3)
-theme.border_width  = dpi(2)
-theme.border_normal = "#616161"
-theme.border_focus = "#00bcbc"
-theme.border_marked = "#ff4040"
-
---[[
-    foreground: '#e5e5e5'
-    background: '#212121'
-  normal:
-    black: '#616161'
-    blue: '#e3588d'
-    green: '#b06bfc'
-    yellow: '#2aa198'
-    red: '#fa8072'
-    magenta: '#ff8da1'
-    cyan: '#8ddaff'
-    white: '#e5e5e5'
-  bright:
-    black: '#616161'
-    magenta: '#f64a8a'
-    green: '#bada55'
-    yellow: '#00bcbc'
-    red: '#ff4040'
-    blue: '#ff8da1'
-    cyan: '#c9f0fa'
-    white: '#e5e5e5'
-]]--
+theme.fg_normal                                 = "#DDDDFF"
+theme.fg_focus                                  = "#EA6F81"
+theme.fg_urgent                                 = "#CC9393"
+theme.bg_normal                                 = "#1A1A1A"
+theme.bg_focus                                  = "#313131"
+theme.bg_urgent                                 = "#1A1A1A"
+theme.border_width                              = dpi(1)
+theme.border_normal                             = "#3F3F3F"
+theme.border_focus                              = "#7F7F7F"
+theme.border_marked                             = "#CC9393"
+theme.tasklist_bg_focus                         = "#1A1A1A"
+theme.titlebar_bg_focus                         = theme.bg_focus
+theme.titlebar_bg_normal                        = theme.bg_normal
+theme.titlebar_fg_focus                         = theme.fg_focus
+theme.menu_height                               = dpi(16)
+theme.menu_width                                = dpi(140)
+theme.useless_gap                               = dpi(0)
 
 -- There are other variable sets
 -- overriding the default one when
