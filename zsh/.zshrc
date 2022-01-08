@@ -93,6 +93,7 @@ editconf() {
 	tmux new-session -c $selected -d -s "config" && tmux switch-client -t "config" || tmux new -c $selected -A -s "config"
     tmux send-keys -t config:0 "nvim -c 'cd /home/anupam/.dotfiles' -c \"lua require('telescope.builtin').git_files()\"
 "
+	exit 0
 }
 
 songsearch() {
