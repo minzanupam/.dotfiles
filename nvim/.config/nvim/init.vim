@@ -18,7 +18,7 @@ source ~/.config/nvim/global_variables.vim
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
@@ -28,7 +28,8 @@ set background=dark
 hi Normal guibg=none
 hi LineNr guibg=none
 " for ayu color scheme
-" hi LineNr guifg=grey
+hi LineNr guifg=grey
+hi MatchParen guifg=white guibg=black
 
 lua <<EOF
 require 'mytelescope'
@@ -97,7 +98,7 @@ augroup group1
     autocmd BufWritePre * :%s/\s\+$//e
     " dart / flutter
     "  autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
-    autocmd BufEnter *.dart set ts=2 sw=2 et
+    autocmd BufEnter *.dart,*.org set ts=2 sw=2 et
     autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
     autocmd BufEnter *.md set ts=4 sw=4 noet
 	autocmd BufEnter *.py set ts=4 sw=4 et

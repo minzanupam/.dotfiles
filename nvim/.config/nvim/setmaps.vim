@@ -33,3 +33,6 @@ set autoindent
 set smarttab
 set incsearch
 set nrformats+=alpha
+
+"  set cursorcolumn
+"  set cursorline

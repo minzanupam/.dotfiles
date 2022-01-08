@@ -71,7 +71,11 @@ return require('packer').startup{function()
 	use {
 		'lukas-reineke/headlines.nvim',
 		config = function()
-			require('headlines').setup()
+			require('headlines').setup({
+				org = {
+					headline_pattern = false,
+				},
+			})
 		end,
 	}
 	use {"akinsho/org-bullets.nvim", config = function()
@@ -89,6 +93,7 @@ return require('packer').startup{function()
 	use 'junegunn/vim-easy-align'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'ActivityWatch/aw-watcher-vim'
+	use 'dylanaraps/fff.vim'
 end,
 	config = {
 		-- Move to lua dir so impatient.nvim can cache it
