@@ -50,8 +50,8 @@ nnoremap <leader>gt :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
 nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>td :lua require('telescope.builtin').lsp_document_symbols()<CR>
-nnoremap <leader>tw :lua require('telescope.builtin').lsp_workspace_symbols()<CR>
-nnoremap <leader>tx :lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>
+nnoremap <leader>tw :lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>
+nnoremap <leader>tx :lua require('telescope.builtin').diagnostics()<CR>
 nnoremap <leader>mm :lua require('telescope.builtin').man_pages()<CR>
 "nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 "lsp
@@ -63,6 +63,9 @@ nnoremap <leader>gl :lua vim.lsp.buf.signature_help()<cr>
 nnoremap <leader>ht :lua vim.lsp.buf.hover()<cr>
 nnoremap <leader>vll :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
 nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
+nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap <leader>va :lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <leader>vi :lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
 " harpoon
 nnoremap <leader>ha :lua require("harpoon.mark").add_file()<cr>
