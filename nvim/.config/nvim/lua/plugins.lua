@@ -41,7 +41,13 @@ return require('packer').startup{function()
 	use 'ray-x/cmp-treesitter'
 	use 'saadparwaiz1/cmp_luasnip'
 	-- comment
-	use 'winston0410/commented.nvim'
+	--  use 'winston0410/commented.nvim'
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
 	-- close parenthesis / brackets
 	use 'steelsojka/pears.nvim'
 	-- snip

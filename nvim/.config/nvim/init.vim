@@ -46,12 +46,12 @@ require 'colorizer'.setup()
 -- require 'lspsaga'.init_lsp_saga{
 --     use_saga_diagnostic_sign = false
 -- }
-require 'commented'.setup {
-        comment_padding = " ",
-        keybindings = {n = "<leader>/", v = "<leader>/", nl = "<leader>/"},
-        set_keybindings = true,
-        ex_mode_cmd = "Comment"
-}
+-- require 'commented'.setup {
+--         comment_padding = " ",
+--         keybindings = {n = "<leader>/", v = "<leader>/", nl = "<leader>/"},
+--         set_keybindings = true,
+--         ex_mode_cmd = "Comment"
+-- }
 
 require('orgmode').setup({
 	org_agenda_files = {'~/orgs/**/*'},
