@@ -160,3 +160,5 @@ imap <C-c> <Esc>
 " edit/open file in the same dir as current file
 nnoremap <leader>,e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>
+nmap <F2> "=strftime('%Y-%m-%d %H:%M:%S %z')<C-M>p
+"  imap <F2> <C-R>=strftime('%c')<C-M>
