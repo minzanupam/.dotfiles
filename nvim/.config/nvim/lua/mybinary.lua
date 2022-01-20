@@ -24,7 +24,6 @@ local function binary_mode_close()
 	]])
 end
 
-
 return {
 	binary_mode_open = binary_mode_open,
 	binary_mode_close = binary_mode_close,

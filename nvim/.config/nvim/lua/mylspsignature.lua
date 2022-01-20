@@ -25,10 +25,9 @@
 --
 -- }
 
-
 --  require'lsp_signature'.on_attach(cfg)
-require'lsp_signature'.setup({
-    use_lspsaga = false,
-    floating_window = true,
-    hint_enable = false,
+require("lsp_signature").setup({
+	use_lspsaga = false,
+	floating_window = true,
+	hint_enable = false,
 })
