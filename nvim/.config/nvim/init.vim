@@ -4,7 +4,7 @@ lua <<EOF
 
 require 'plugins'
 require('packer_compiled')
-require('impatient')
+-- require('impatient')
 
 EOF
 
