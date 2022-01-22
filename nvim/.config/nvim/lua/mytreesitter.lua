@@ -1,17 +1,21 @@
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.org = {
-	install_info = {
-		url = "https://github.com/milisims/tree-sitter-org",
-		revision = "main",
-		files = { "src/parser.c", "src/scanner.cc" },
-	},
-	filetype = "org",
-}
-
+-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+-- parser_config.org = {
+-- 	install_info = {
+-- 		url = "https://github.com/milisims/tree-sitter-org",
+-- 		revision = "main",
+-- 		files = { "src/parser.c", "src/scanner.cc" },
+-- 	},
+-- 	filetype = "org",
+-- }
+--
 require("nvim-treesitter.configs").setup({
 	-- base
 	-- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	ensure_installed = "all",
+	ensure_installed = { "rust", "bash", "typescript", "javascript", "lua", "python", "c", "cpp",
+	"css", "bibtex", "dart", "gdscript", "glsl", "go", "haskell", "html", "java", "jsdoc", "json",
+	"julia", "kotlin", "dockerfile", "latex", "make", "llvm", "nix", "scss", "svelte", "vim", "vue",
+	"zig"
+	},
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = {}, -- list of language that will be disabled
