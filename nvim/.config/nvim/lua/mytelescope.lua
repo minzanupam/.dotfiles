@@ -66,7 +66,7 @@
 
 require("telescope").setup({
 	defaults = {
-		layout_strategy = 'cursor'
+		layout_strategy = 'vertical'
 	}
 })
 require('telescope').load_extension('fzy_native')

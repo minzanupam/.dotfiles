@@ -42,16 +42,6 @@ require 'mylspsignature'
 require 'mylualine'
 
 require 'colorizer'.setup()
--- require ("trouble").setup{}
--- require 'lspsaga'.init_lsp_saga{
---     use_saga_diagnostic_sign = false
--- }
--- require 'commented'.setup {
---         comment_padding = " ",
---         keybindings = {n = "<leader>/", v = "<leader>/", nl = "<leader>/"},
---         set_keybindings = true,
---         ex_mode_cmd = "Comment"
--- }
 
 require('orgmode').setup({
 	org_agenda_files = {'~/orgs/**/*'},
@@ -62,21 +52,8 @@ require('orgmode').setup({
 	}
 })
 
---  require('nvim-autopairs').setup{}
-require "pears".setup()
-
--- Setup lspconfig.
--- require('lspconfig')[%YOUR_LSP_SERVER%].setup {
--- capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- }
-
--- require("luasnip/loaders/from_vscode").load()
-
--- require'sniprun'.setup({
---   display = {
---     "Classic",                    -- "display results in the command-line  area
---     },
--- })
+-- require "pears".setup()
+require("luasnip.loaders.from_vscode").load()
 
 EOF
 
@@ -98,7 +75,7 @@ augroup group1
     autocmd BufWritePre * :%s/\s\+$//e
     " dart / flutter
     "  autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
-    autocmd BufEnter *.dart,*.org set ts=2 sw=2 et
+    autocmd BufEnter *.dart,*.org,*.js,*.tsx,*.ts set ts=2 sw=2 et
     autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
     autocmd BufEnter *.md set ts=4 sw=4 noet
 	autocmd BufEnter *.py set ts=4 sw=4 et

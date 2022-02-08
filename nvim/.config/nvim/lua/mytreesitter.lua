@@ -1,21 +1,22 @@
--- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
--- parser_config.org = {
--- 	install_info = {
--- 		url = "https://github.com/milisims/tree-sitter-org",
--- 		revision = "main",
--- 		files = { "src/parser.c", "src/scanner.cc" },
--- 	},
--- 	filetype = "org",
--- }
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.org = {
+	install_info = {
+		url = "https://github.com/milisims/tree-sitter-org",
+		revision = "main",
+		files = { "src/parser.c", "src/scanner.cc" },
+	},
+	filetype = "org",
+}
 --
 require("nvim-treesitter.configs").setup({
 	-- base
 	-- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	ensure_installed = { "rust", "bash", "typescript", "javascript", "lua", "python", "c", "cpp",
+	ensure_installed = { "rust", "bash", "typescript", "tsx", "javascript", "lua", "python", "c", "cpp",
 	"css", "bibtex", "dart", "gdscript", "glsl", "go", "haskell", "html", "java", "jsdoc", "json",
 	"julia", "kotlin", "dockerfile", "latex", "make", "llvm", "nix", "scss", "svelte", "vim", "vue",
 	"zig"
 	},
+	-- ensure_installed = "all",
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = {}, -- list of language that will be disabled
@@ -25,12 +26,12 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		keymaps = {
 			init_selection = "gnn",
-			node_incremental = "(",
+			-- node_incremental = "(",
 			scope_incremental = "gnc",
-			node_decremental = ")",
+			-- node_decremental = ")",
 		},
 	},
-	indent = { enable = true, disable = { "python" } },
+	indent = { enable = true },
 	-- nvim-ts-context-commentstring
 	context_commentstring = {
 		enable = true,

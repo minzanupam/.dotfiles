@@ -27,10 +27,13 @@ lspconfig.jedi_language_server.setup({
 	root_dir = require("lspconfig.util").root_pattern(".git", "*.py"),
 })
 lspconfig.dartls.setup({ capabilities = capabilities })
-lspconfig.tsserver.setup({ capabilities = capabilities })
+lspconfig.tsserver.setup({
+	-- root_dir = lspconfig.util.root_pattern("package.json"),
+	capabilities = capabilities,
+})
 lspconfig.denols.setup({
 	autostart = false,
-	filetypes = { "typescript" },
+	-- root_dir = lspconfig.util.root_pattern("deno.json"),
 	capabilities = capabilities,
 })
 lspconfig.bashls.setup({ capabilities = capabilities })

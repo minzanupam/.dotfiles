@@ -13,10 +13,10 @@ return require("packer").startup({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 		})
-		-- use("nvim-treesitter/playground")
-		-- use("theHamsta/nvim-treesitter-pairs")
-		-- use("nvim-treesitter/nvim-treesitter-textobjects")
-		-- use("JoosepAlviste/nvim-ts-context-commentstring")
+		use("nvim-treesitter/playground")
+		use("theHamsta/nvim-treesitter-pairs")
+		use("nvim-treesitter/nvim-treesitter-textobjects")
+		use("JoosepAlviste/nvim-ts-context-commentstring")
 		-- git
 		use("tpope/vim-fugitive")
 		use("junegunn/gv.vim")
@@ -51,9 +51,10 @@ return require("packer").startup({
 			end,
 		})
 		-- close parenthesis / brackets
-		use("steelsojka/pears.nvim")
+		-- use("steelsojka/pears.nvim")
 		-- snip
 		use("L3MON4D3/LuaSnip")
+		use("rafamadriz/friendly-snippets")
 		-- formater
 		use("sbdchd/neoformat")
 		-- signatures
@@ -103,7 +104,7 @@ return require("packer").startup({
 		use("tpope/vim-surround")
 		use("junegunn/vim-easy-align")
 		use("kyazdani42/nvim-web-devicons")
-		use("ActivityWatch/aw-watcher-vim")
+		-- use("ActivityWatch/aw-watcher-vim")
 		use("dylanaraps/fff.vim")
 	end,
 	config = {
