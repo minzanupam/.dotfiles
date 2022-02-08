@@ -18,6 +18,8 @@ setopt SHARE_HISTORY             # Share history between all sessions.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/anupam/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/anupam/.zsh/vi-mode.plugin.zsh
+source /home/anupam/.zsh/key-bindings.zsh
+source /home/anupam/.zsh/completion.zsh
 
 # zsh-autosuggestions config
 bindkey '^ ' autosuggest-accept
@@ -30,12 +32,6 @@ bindkey '^v' edit-command-line
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-# something to display
-#colorscript -r
-# neofetch
-# pfetch
-#figlet 'mark52s'
-#figlet 'start'
 export EDITOR=nvim
 
 export FFF_CD_ON_EXIT=1
@@ -101,7 +97,7 @@ songsearch() {
 }
 
 readbook() {
-    bookname=`find /home/anupam/Documents/Books/ | fzf`
+    bookname=`find /home/anupam/Documents/Books/ | fzf --height=20 --layout=reverse`
     zathura "$bookname" &
 	disown
     exit
@@ -127,6 +123,9 @@ arrange() {
     mv /home/anupam/Downloads/*.zip /home/anupam/Downloads/archives
 
     mv /home/anupam/Downloads/*.torrent /home/anupam/Downloads/torrents
+
+    mv /home/anupam/Downloads/*.pptx /home/anupam/Downloads/docs
+    mv /home/anupam/Downloads/*.docx /home/anupam/Downloads/docs
 }
 
 countdown(){
@@ -145,13 +144,14 @@ stopwatch(){
    done
 }
 
-export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:/home/anupam/.local/bin"
+export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:/home/anupam/.local/bin:/home/anupam/.deno/bin"
 
 export MANWIDTH=79
 #  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
 
 alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 alias l="exa -lagF --color=always --group-directories-first"
+alias ll="l | less -r"
 alias b=bookmarks
 alias s=start_bookmarks
 alias c="pwd | xclip -sel clip"
@@ -173,3 +173,17 @@ alias sob="countdown 300 && alarm"
 alias lob="countdown 600 && alarm"
 alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
+alias liveaudio='mpv --ytdl-format=91 --vid=no'
+alias finso='flatpak run rest.insomnia.Insomnia'
+nwal() {
+	nitrogen "/home/anupam/Pictures/wallpapers/${1}"
+}
+
+# something to display
+figlet 'mark52s' -f mini | lolcat
+colorscript -r
+# neofetch
+# pfetch
+# figlet 'mark52s'
+# figlet 'start' | lolcat
+# fortune

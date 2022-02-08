@@ -8,12 +8,21 @@ $directory\
 $git_branch\
 $git_commit\
 $git_status\
+$rust\
+$python\
 $env_var\
+$cmd_duration\
+$jobs\
+$line_break\
 $custom\
 $character
 """
 
 command_timeout = 50
+
+[cmd_duration]
+min_time=2000
+show_milliseconds=false
 
 [character]
 success_symbol = "[λ](bold white)"
@@ -24,9 +33,6 @@ vicmd_symbol = "[Λ](bold green)"
 # [vi](bold green)
 
 [package]
-disabled = true
-
-[cmd_duration]
 disabled = true
 
 [git_branch]
