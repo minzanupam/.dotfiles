@@ -28,12 +28,11 @@ lspconfig.jedi_language_server.setup({
 })
 lspconfig.dartls.setup({ capabilities = capabilities })
 lspconfig.tsserver.setup({
-	-- root_dir = lspconfig.util.root_pattern("package.json"),
+	root_dir = lspconfig.util.root_pattern("package.json"),
 	capabilities = capabilities,
 })
 lspconfig.denols.setup({
-	autostart = false,
-	-- root_dir = lspconfig.util.root_pattern("deno.json"),
+	root_dir = lspconfig.util.root_pattern("deno.json"),
 	capabilities = capabilities,
 })
 lspconfig.bashls.setup({ capabilities = capabilities })
