@@ -44,12 +44,7 @@ return require("packer").startup({
 		use("saadparwaiz1/cmp_luasnip")
 		-- comment
 		--  use 'winston0410/commented.nvim'
-		use({
-			"numToStr/Comment.nvim",
-			config = function()
-				require("Comment").setup()
-			end,
-		})
+		use("numToStr/Comment.nvim")
 		-- close parenthesis / brackets
 		-- use("steelsojka/pears.nvim")
 		-- snip
