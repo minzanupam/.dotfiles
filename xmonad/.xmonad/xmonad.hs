@@ -7,25 +7,25 @@
 -- Normally, you'd only override those defaults you care about.
 --
 
-import XMonad
-import Data.Monoid
-import System.Exit
+import           Data.Monoid
+import           System.Exit
+import           XMonad
 
-import XMonad.Util.Run
-import XMonad.Util.SpawnOnce
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.EwmhDesktops
-import XMonad.Layout.Fullscreen
-import XMonad.Layout.NoBorders
+import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.EwmhDesktops
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Layout.Fullscreen
+import           XMonad.Layout.NoBorders
+import           XMonad.Util.Run
+import           XMonad.Util.SpawnOnce
 
-import qualified XMonad.StackSet as W
-import qualified Data.Map        as M
+import qualified Data.Map                  as M
+import qualified XMonad.StackSet           as W
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "kitty"
+myTerminal      = "alacritty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -70,7 +70,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
+    -- launch terminal
     , ((mod4Mask, xK_Return), spawn $ XMonad.terminal conf)
+
+    -- systemctl suspend
+    , ((mod4Mask,               xK_q     ), spawn "systemctl suspend")
+
+    -- cht.sh
+    , ((mod4Mask,               xK_s     ), spawn "alacritty -e /home/anupam/scripts/cht.sh")
+    -- emoji
+    , ((mod4Mask,               xK_e     ), spawn "/home/anupam/scripts/dmenuunicode.sh")
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
@@ -133,7 +142,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
+    , ((modm .|. shiftMask, xK_q     ), io exitSuccess)
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
@@ -158,7 +167,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     [((m .|. modm, k), windows $ f i)
 
-        | (i, k) <- zip (XMonad.workspaces conf) [ xK_ampersand, xK_bracketleft, xK_braceleft, xK_braceright, xK_parenleft ,xK_equal, xK_asterisk, xK_parenright, xK_plus, xK_bracketright, xK_exclam ]
+        -- | (i, k) <- zip (XMonad.workspaces conf) [ xK_ampersand, xK_bracketleft, xK_braceleft, xK_braceright, xK_parenleft ,xK_equal, xK_asterisk, xK_parenright, xK_plus, xK_bracketright, xK_exclam ]
+        | (i, k) <- zip (XMonad.workspaces conf) [ xK_plus, xK_bracketleft, xK_braceleft, xK_parenleft, xK_ampersand, xK_equal, xK_parenright, xK_braceright, xK_bracketright ]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
     ++
 
@@ -175,18 +185,18 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 ------------------------------------------------------------------------
 -- Mouse bindings: default actions bound to mouse events
 --
-myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
+myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList
 
     -- mod-button1, Set the window to floating mode and move by dragging
-    [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w
-                                       >> windows W.shiftMaster))
+    [ ((modm, button1), \w -> focus w >> mouseMoveWindow w
+                                       >> windows W.shiftMaster)
 
     -- mod-button2, Raise the window to the top of the stack
-    , ((modm, button2), (\w -> focus w >> windows W.shiftMaster))
+    , ((modm, button2), \w -> focus w >> windows W.shiftMaster)
 
     -- mod-button3, Set the window to floating mode and resize by dragging
-    , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
-                                       >> windows W.shiftMaster))
+    , ((modm, button3), \w -> focus w >> mouseResizeWindow w
+                                       >> windows W.shiftMaster)
 
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
@@ -202,7 +212,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (tiled)  ||| noBorders (Full) ||| avoidStruts (Mirror tiled) ||| avoidStruts (Full)
+myLayout = avoidStruts tiled  ||| avoidStruts Full ||| avoidStruts (Mirror tiled) ||| noBorders Full
 
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -269,6 +279,7 @@ myLogHook = return ()
 myStartupHook = do
     spawnOnce "nitrogen --restore &"
     spawnOnce "picom -b"
+    spawnOnce "trayer --edge top --align right --widthtype request --expand true --SetDockType true --SetPartialStrut true --transparent true --alpha 0 --tint 0x1A1918 --heighttype pixel --monitor 0 --height 18 --distancefrom right --distance 430"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -277,7 +288,8 @@ myStartupHook = do
 --
 main = do
     xmproc0 <- spawnPipe "xmobar -x 0 /home/anupam/.xmobarrc"
-    --  xmproc1 <- spawnPipe "xmobar -x 1 /home/anupam/.xmobarrc"
+    -- xmproc1 <- spawnPipe "xmobar -x 1 /home/anupam/.xmobarrc"
+
     xmonad $ docks def {
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -296,8 +308,7 @@ main = do
         layoutHook         = myLayout,
         handleEventHook    = myEventHook,
         logHook            = dynamicLogWithPP $ xmobarPP {
-                                ppOutput = \x -> hPutStrLn xmproc0 x
-                                    --  >> hPutStrLn xmproc1 x
+                                ppOutput = \x -> hPutStrLn xmproc0 x {- >> hPutStrLn xmproc1 x -}
                             },
         manageHook         = myManageHook,
         startupHook        = myStartupHook

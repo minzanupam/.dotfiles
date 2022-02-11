@@ -100,7 +100,7 @@ augroup group1
     autocmd BufEnter *.dart,*.org,*.js,*.tsx,*.ts set ts=2 sw=2 et
     autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
     autocmd BufEnter *.md set ts=4 sw=4 noet
-	autocmd BufEnter *.py set ts=4 sw=4 et
+	autocmd BufEnter *.py,*.hs set ts=4 sw=4 et
 augroup END
 
 " augroup fmt

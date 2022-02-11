@@ -144,9 +144,17 @@ stopwatch(){
    done
 }
 
+nwal() {
+	choice=`ls -1 /home/anupam/Pictures/wallpapers | fzf`
+	nitrogen "/home/anupam/Pictures/wallpapers/${choice}"
+}
+
+export DENO_INSTALL=$HOME/.deno
+
 export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:/home/anupam/.local/bin:/home/anupam/.deno/bin"
 
 export MANWIDTH=79
+export CHROME_EXECUTABLE=/usr/bin/chromium
 #  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
 
 alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
@@ -175,9 +183,8 @@ alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
 alias liveaudio='mpv --ytdl-format=91 --vid=no'
 alias finso='flatpak run rest.insomnia.Insomnia'
-nwal() {
-	nitrogen "/home/anupam/Pictures/wallpapers/${1}"
-}
+alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
+# alias cht="/home/anupam/scripts/cht.sh"
 
 # something to display
 figlet 'mark52s' -f mini | lolcat
@@ -187,3 +194,4 @@ colorscript -r
 # figlet 'mark52s'
 # figlet 'start' | lolcat
 # fortune
+
