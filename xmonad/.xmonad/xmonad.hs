@@ -60,7 +60,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#a0a0ae"
+myFocusedBorderColor = "#00B2E0"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -72,17 +72,17 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch terminal
     , ((mod4Mask, xK_Return), spawn $ XMonad.terminal conf)
-
     -- systemctl suspend
     , ((mod4Mask,               xK_q     ), spawn "systemctl suspend")
-
     -- cht.sh
     , ((mod4Mask,               xK_s     ), spawn "alacritty -e /home/anupam/scripts/cht.sh")
     -- emoji
     , ((mod4Mask,               xK_e     ), spawn "/home/anupam/scripts/dmenuunicode.sh")
+    -- screenshot
+    , ((0,                      xK_Print     ), spawn "/home/anupam/scripts/screenshot.sh")
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    , ((modm,                   xK_p     ), spawn "dmenu_run")
 
     -- launch gmrun
     --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -212,7 +212,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts tiled  ||| avoidStruts Full ||| avoidStruts (Mirror tiled) ||| noBorders Full
+myLayout = avoidStruts tiled  ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
 
   where
      -- default tiling algorithm partitions the screen into two panes
