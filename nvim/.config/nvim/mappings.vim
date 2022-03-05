@@ -61,12 +61,12 @@ nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
 " nnoremap <leader>gl :lua vim.lsp.buf.implementation()<cr>
 nnoremap <leader>gl :lua vim.lsp.buf.signature_help()<cr>
 nnoremap <leader>ht :lua vim.lsp.buf.hover()<cr>
-nnoremap <leader>vll :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})<cr>
-nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
-nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap <leader>vll :lua vim.diagnostic.setloclist({open_loclist = false})<cr>
+nnoremap <leader>vsd :lua vim.diagnostic.open_float()<cr>
+" TODO deprecated find some altenative
+" nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
 nnoremap <leader>va :lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <leader>vi :lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<cr>
 " harpoon
 nnoremap <leader>ha :lua require("harpoon.mark").add_file()<cr>
 nnoremap <leader>hl :lua require("harpoon.ui").toggle_quick_menu()<cr>
