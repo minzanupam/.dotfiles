@@ -18,14 +18,14 @@ lspconfig.sumneko_lua.setup({ capabilities = capabilities })
 --     autostart = false,
 --     init_options = { cache = {directory = ""} }
 -- }
-lspconfig.jedi_language_server.setup({
-	capabilities = capabilities,
-	cmd = {
-		"/usr/bin/jedi-language-server",
-	},
-	single_file_support = true,
-	root_dir = require("lspconfig.util").root_pattern(".git", "*.py"),
-})
+-- lspconfig.jedi_language_server.setup({
+-- 	capabilities = capabilities,
+-- 	cmd = {
+-- 		"/usr/bin/jedi-language-server",
+-- 	},
+-- 	single_file_support = true,
+-- 	root_dir = require("lspconfig.util").root_pattern(".git", "*.py"),
+-- })
 lspconfig.dartls.setup({ capabilities = capabilities })
 lspconfig.tsserver.setup({
 	root_dir = lspconfig.util.root_pattern("package.json"),
@@ -36,4 +36,7 @@ lspconfig.denols.setup({
 	capabilities = capabilities,
 })
 lspconfig.bashls.setup({ capabilities = capabilities })
---  lspconfig.java_language_server.setup{ capabilities = capabilities }
+lspconfig.java_language_server.setup{cmd = {"/usr/bin/java-language-server"},  capabilities = capabilities}
+
+lspconfig.jedi_language_server.setup{capabilities = capabilities}
+-- lspconfig.pylsp.setup({capabilities = capabilities})

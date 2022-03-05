@@ -52,8 +52,14 @@ require('orgmode').setup({
 	}
 })
 
--- require "pears".setup()
+require('lint').linters_by_ft = {
+  python = {'pylint'}
+}
+
+require "pears".setup()
+require("luasnip.loaders.from_snipmate").load({include={"java"}})
 require("luasnip.loaders.from_vscode").load()
+
 require("Comment").setup({
     ---@param ctx Ctx
     pre_hook = function(ctx)
@@ -101,6 +107,7 @@ augroup group1
     autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
     autocmd BufEnter *.md set ts=4 sw=4 noet
 	autocmd BufEnter *.py,*.hs set ts=4 sw=4 et
+	autocmd BufWritePost <buffer> lua require('lint').try_lint()
 augroup END
 
 " augroup fmt

@@ -8,6 +8,7 @@ return require("packer").startup({
 		-- lsp
 		use("neovim/nvim-lspconfig")
 		use("SmiteshP/nvim-gps")
+		use 'mfussenegger/nvim-lint'
 		-- treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -46,9 +47,10 @@ return require("packer").startup({
 		--  use 'winston0410/commented.nvim'
 		use("numToStr/Comment.nvim")
 		-- close parenthesis / brackets
-		-- use("steelsojka/pears.nvim")
+		use("steelsojka/pears.nvim")
 		-- snip
 		use("L3MON4D3/LuaSnip")
+		use("honza/vim-snippets")
 		use("rafamadriz/friendly-snippets")
 		-- formater
 		use("sbdchd/neoformat")
