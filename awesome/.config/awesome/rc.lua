@@ -396,7 +396,7 @@ globalkeys = gears.table.join(
 	end),
 	awful.key({ "Mod4" }, "Return", function()
 		--awful.spawn("tabbed -c -n alacritty alacritty --embed")
-		awful.spawn(terminal)
+		awful.spawn("st -e zsh")
 	end),
 
 	awful.key({ "Mod4" }, "n", function()

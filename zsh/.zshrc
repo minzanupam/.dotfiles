@@ -149,6 +149,11 @@ nwal() {
 	nitrogen "/home/anupam/Pictures/wallpapers/${choice}"
 }
 
+fr() {
+	flatpak_choice=`flatpak list | fzf | cut -f2`
+	flatpak run $flatpak_choice
+}
+
 export DENO_INSTALL=$HOME/.deno
 
 export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:/home/anupam/.local/bin:/home/anupam/.deno/bin"
@@ -182,13 +187,14 @@ alias lob="countdown 600 && alarm"
 alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
 alias liveaudio='mpv --ytdl-format=91 --vid=no'
-alias finso='flatpak run rest.insomnia.Insomnia'
+# alias finso='flatpak run rest.insomnia.Insomnia'
 alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
+alias aud="/home/anupam/work/build/audacium/builds/bin/Release/audacium"
 # alias cht="/home/anupam/scripts/cht.sh"
 
 # something to display
-figlet 'mark52s' -f mini | lolcat
-colorscript -r
+# figlet 'mark52s' -f mini | lolcat
+# colorscript -r
 # neofetch
 # pfetch
 # figlet 'mark52s'
