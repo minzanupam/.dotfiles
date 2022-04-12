@@ -1,25 +1,13 @@
 let mapleader = " "
 
-lua <<EOF
-
-require 'plugins'
-require('packer_compiled')
--- require('impatient')
-
-EOF
-
-source ~/.config/nvim/setmaps.vim
-" source ~/.config/nvim/plugs.vim
-source ~/.config/nvim/mappings.vim
-"source ~/.config/nvim/coc_config.vim
-"source ~/.config/nvim/snippet_config.vim
-"source ~/.config/nvim/vimspector_config.vim
-source ~/.config/nvim/global_variables.vim
+lua require("impatient")
+" lua require'impatient'.enable_profile()
 
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme gruvbox
+set termguicolors
 set background=dark
+colorscheme gruvbox
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
 "set t_8b=\[[48;2;%lu;%lu;%lum
@@ -28,10 +16,14 @@ set background=dark
 hi Normal guibg=none
 hi LineNr guibg=none
 " for ayu color scheme
-hi LineNr guifg=grey
-hi MatchParen guifg=white guibg=black
+" hi LineNr guifg=grey
+" hi MatchParen guifg=white guibg=black
+" for set laststatus=3
+" hi WinSeparator guibg=None
 
 lua <<EOF
+
+require 'plugins'
 require 'mytelescope'
 require 'mynvimcmp'
 require 'mylspconfig'
@@ -51,14 +43,11 @@ require('orgmode').setup({
 		},
 	}
 })
-
-require('lint').linters_by_ft = {
-  python = {'pylint'}
-}
+-- require('orgmode').setup_ts_grammar()
 
 require "pears".setup()
-require("luasnip.loaders.from_snipmate").load({include={"java"}})
-require("luasnip.loaders.from_vscode").load()
+-- require("luasnip.loaders.from_snipmate").load({include={"java"}})
+-- require("luasnip.loaders.from_vscode").load()
 
 require("Comment").setup({
     ---@param ctx Ctx
@@ -83,7 +72,19 @@ require("Comment").setup({
     end,
 });
 
+require("lint").linters_by_ft = {
+  python = { "pylint" }
+}
+
 EOF
+
+source ~/.config/nvim/setmaps.vim
+" source ~/.config/nvim/plugs.vim
+source ~/.config/nvim/mappings.vim
+"source ~/.config/nvim/coc_config.vim
+"source ~/.config/nvim/snippet_config.vim
+"source ~/.config/nvim/vimspector_config.vim
+source ~/.config/nvim/global_variables.vim
 
 " set statusline=
 " set statusline=%{gitbranch#name()}\ %f\ %=%(%l,%c%V\ %=\ %)
@@ -107,7 +108,8 @@ augroup group1
     autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
     autocmd BufEnter *.md set ts=4 sw=4 noet
 	autocmd BufEnter *.py,*.hs set ts=4 sw=4 et
-	autocmd BufWritePost <buffer> lua require('lint').try_lint()
+	autocmd BufEnter *.go set ts=4 sw=4 noet
+	" autocmd BufWritePost <buffer> lua require('lint').try_lint()
 augroup END
 
 " augroup fmt

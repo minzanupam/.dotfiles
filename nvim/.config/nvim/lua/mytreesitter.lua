@@ -1,13 +1,3 @@
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.org = {
-	install_info = {
-		url = "https://github.com/milisims/tree-sitter-org",
-		revision = "main",
-		files = { "src/parser.c", "src/scanner.cc" },
-	},
-	filetype = "org",
-}
---
 require("nvim-treesitter.configs").setup({
 	-- base
 	-- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -19,7 +9,8 @@ require("nvim-treesitter.configs").setup({
 	-- ensure_installed = "all",
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = {}, -- list of language that will be disabled
+		disable = {"org"}, -- list of language that will be disabled
+		additional_vim_regex_highlighting = {'org'},
 	},
 	ignore_install = { "phpdoc", "godot_resource" },
 	incremental_selection = {

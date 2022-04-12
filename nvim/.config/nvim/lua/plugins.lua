@@ -1,14 +1,14 @@
 return require("packer").startup({
 	function()
 		-- speed
-		use("lewis6991/impatient.nvim")
+		use("lewis6991/impatient.nvim", {})
 		-- deps
 		use("nvim-lua/popup.nvim")
 		use("nvim-lua/plenary.nvim")
 		-- lsp
 		use("neovim/nvim-lspconfig")
 		use("SmiteshP/nvim-gps")
-		use 'mfussenegger/nvim-lint'
+		use("mfussenegger/nvim-lint")
 		-- treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -42,7 +42,6 @@ return require("packer").startup({
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/cmp-path")
 		-- use("ray-x/cmp-treesitter")
-		use("saadparwaiz1/cmp_luasnip")
 		-- comment
 		--  use 'winston0410/commented.nvim'
 		use("numToStr/Comment.nvim")
@@ -50,8 +49,9 @@ return require("packer").startup({
 		use("steelsojka/pears.nvim")
 		-- snip
 		use("L3MON4D3/LuaSnip")
-		use("honza/vim-snippets")
-		use("rafamadriz/friendly-snippets")
+		use("saadparwaiz1/cmp_luasnip")
+		-- use("honza/vim-snippets")
+		-- use("rafamadriz/friendly-snippets")
 		-- formater
 		use("sbdchd/neoformat")
 		-- signatures
@@ -74,29 +74,29 @@ return require("packer").startup({
 		use("vimwiki/vimwiki")
 		use("vuciv/vim-bujo")
 		use("nvim-orgmode/orgmode")
-		use({
-			"lukas-reineke/headlines.nvim",
-			config = function()
-				require("headlines").setup({
-					org = {
-						headline_pattern = false,
-					},
-				})
-			end,
-		})
-		use({
-			"akinsho/org-bullets.nvim",
-			config = function()
-				require("org-bullets").setup({
-					symbols = { "◉", "○", "✸", "✿" },
-					-- or a function that receives the defaults and returns a list
-					--  symbols = function(default_list)
-					--  table.insert(default_list, "♥")
-					--  return default_list
-					--  end
-				})
-			end,
-		})
+		-- use({
+		-- 	"lukas-reineke/headlines.nvim",
+		-- 	config = function()
+		-- 		require("headlines").setup({
+		-- 			org = {
+		-- 				headline_pattern = false,
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- })
+		-- use({
+		-- 	"akinsho/org-bullets.nvim",
+		-- 	config = function()
+		-- 		require("org-bullets").setup({
+		-- 			symbols = { "◉", "○", "✸", "✿" },
+		-- 			-- or a function that receives the defaults and returns a list
+		-- 			--  symbols = function(default_list)
+		-- 			--  table.insert(default_list, "♥")
+		-- 			--  return default_list
+		-- 			--  end
+		-- 		})
+		-- 	end,
+		-- })
 		-- utils
 		use("tpope/vim-surround")
 		use("junegunn/vim-easy-align")
@@ -104,8 +104,8 @@ return require("packer").startup({
 		-- use("ActivityWatch/aw-watcher-vim")
 		use("dylanaraps/fff.vim")
 	end,
-	config = {
-		-- Move to lua dir so impatient.nvim can cache it
-		compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
-	},
+	-- config = {
+	-- -- 	-- Move to lua dir so impatient.nvim can cache it
+	-- 	compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
+	-- },
 })

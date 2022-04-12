@@ -3,7 +3,6 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 " set the tab globaly
-set termguicolors
 set nowrap
 set ignorecase
 set smartcase
@@ -33,6 +32,11 @@ set autoindent
 set smarttab
 set incsearch
 set nrformats+=alpha
+" set formatoptions-=n2or
+" set cursorcolumn
+" set cursorline
+set laststatus=3
 
-"  set cursorcolumn
-"  set cursorline
+filetype indent off
+filetype plugin off
+filetype off

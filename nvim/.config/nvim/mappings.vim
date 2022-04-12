@@ -31,8 +31,8 @@ nnoremap <leader>ir :lua require('plenary.reload').reload_module('something')<CR
 " maps quick fix list
 nnoremap <C-j> :cnext <bar> :normal zz<CR>
 nnoremap <C-k> :cprev <bar> :normal zz<CR>
-nnoremap <leader>j :lnext<CR>
-nnoremap <leader>k :lprev<CR>
+" nnoremap <leader>j :lnext<CR>
+" nnoremap <leader>k :lprev<CR>
 " vim fugitive mapings
 noremap <leader>gh :diffget //2<CR>
 noremap <leader>gl :diffget //3<CR>
@@ -49,7 +49,7 @@ nnoremap <C-n> :lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>gt :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
 nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
-nnoremap <leader>td :lua require('telescope.builtin').lsp_document_symbols()<CR>
+nnoremap <leader>ts :lua require('telescope.builtin').lsp_document_symbols()<CR>
 nnoremap <leader>tw :lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>
 nnoremap <leader>tx :lua require('telescope.builtin').diagnostics()<CR>
 nnoremap <leader>mm :lua require('telescope.builtin').man_pages()<CR>
@@ -94,18 +94,18 @@ nnoremap <C-g> :Neoformat<CR>
 " nnoremap <leader>gR :TroubleToggle lsp_references<cr>
 " git signs
 nnoremap <leader>shs :lua require"gitsigns".stage_hunk()<CR>
-vnoremap <leader>shs :lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
+" vnoremap <leader>shs :lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
 nnoremap <leader>shu :lua require"gitsigns".undo_stage_hunk()<CR>
-nnoremap <leader>shr :lua require"gitsigns".reset_hunk()<CR>
-vnoremap <leader>shr :lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
-nnoremap <leader>shR :lua require"gitsigns".reset_buffer()<CR>
-nnoremap <leader>shP :lua require"gitsigns".preview_hunk()<CR>
-nnoremap <leader>shn :lua require"gitsigns".next_hunk()<CR>
-nnoremap <leader>shp :lua require"gitsigns".prev_hunk()<CR>
+" nnoremap <leader>shr :lua require"gitsigns".reset_hunk()<CR>
+" vnoremap <leader>shr :lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
+" nnoremap <leader>shR :lua require"gitsigns".reset_buffer()<CR>
+nnoremap <leader>shp :lua require"gitsigns".preview_hunk()<CR>
+" nnoremap <leader>shn :lua require"gitsigns".next_hunk()<CR>
+" nnoremap <leader>shp :lua require"gitsigns".prev_hunk()<CR>
 nnoremap <leader>shb :lua require"gitsigns".blame_line(true)<CR>
 " binay editing
-nnoremap <leader>hbo :lua require"mybinary".binary_mode_open()<CR>
-nnoremap <leader>hbc :lua require"mybinary".binary_mode_close()<CR>
+" nnoremap <leader>hbo :lua require"mybinary".binary_mode_open()<CR>
+" nnoremap <leader>hbc :lua require"mybinary".binary_mode_close()<CR>
 " lspsaga
 
 " lsp extensions
