@@ -71,7 +71,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch terminal
-    , ((mod4Mask, xK_Return), spawn "st -e zsh")
+    -- , ((mod4Mask, xK_Return), spawn "st -e zsh")
+    , ((mod4Mask, xK_Return), spawn myTerminal)
     -- systemctl suspend
     , ((mod4Mask,               xK_q     ), spawn "systemctl suspend")
     -- cht.sh
