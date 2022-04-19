@@ -84,6 +84,40 @@ ls.add_snippets("java", {
 			}
 		)
 	),
+	s(
+		"set",
+		fmt(
+			[[
+				void set{}({} {val}) {{
+					this.{val} = {val};
+				}}
+			]],
+			{
+				i(1, "Name"),
+				i(2, "String"),
+				val = f(function(args)
+					local str = args[1][1]
+					local ret = str:gsub("^%u", string.lower)
+					return ret
+				end, { 1 }),
+			}
+		)
+	),
+	s(
+		"get",
+		fmt(
+			[[
+				{} get{}() {{
+					return this.{};
+				}}
+			]],
+			{
+				i(1, "returnType"),
+				i(2, "Name"),
+				i(3, "val"),
+			}
+		)
+	),
 })
 
 ls.add_snippets("typescriptreact", {

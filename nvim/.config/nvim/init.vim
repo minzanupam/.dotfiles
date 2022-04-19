@@ -45,7 +45,7 @@ require('orgmode').setup({
 })
 -- require('orgmode').setup_ts_grammar()
 
-require "pears".setup()
+-- require "pears".setup()
 -- require("luasnip.loaders.from_snipmate").load({include={"java"}})
 -- require("luasnip.loaders.from_vscode").load()
 
@@ -110,6 +110,7 @@ augroup group1
 	autocmd BufEnter *.py,*.hs set ts=4 sw=4 et
 	autocmd BufEnter *.go set ts=4 sw=4 noet
 	" autocmd BufWritePost <buffer> lua require('lint').try_lint()
+	autocmd BufWritePost *.py lua require('lint').try_lint()
 augroup END
 
 " augroup fmt
