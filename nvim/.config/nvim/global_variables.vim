@@ -26,7 +26,7 @@ let g:tex_flavor = 'latex'
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
-let g:netrw_winsize = 50
+let g:netrw_winsize = 20
 let g:netrw_keepdir = 0
 " fff file manager
 " let g:fff#split = "20new"

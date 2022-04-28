@@ -11,7 +11,7 @@ cmp.setup({
 	snippet = {
 		expand = function(args)
 			-- For `luasnip` user.
-			require('luasnip').lsp_expand(args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	mapping = {
@@ -22,6 +22,8 @@ cmp.setup({
 			select = true,
 			behavior = cmp.ConfirmBehavior.Insert,
 		}),
+		["<C-n>"] = cmp.mapping.select_next_item(),
+		["<C-p>"] = cmp.mapping.select_prev_item(),
 	},
 	sources = {
 		{ name = "luasnip" },
@@ -33,5 +35,5 @@ cmp.setup({
 		-- { name = 'vsnip' },
 		-- { name = 'ultisnips' },
 	},
-	preselect = false,
+	-- preselect = cmp.PreselectMode.Item,
 })
