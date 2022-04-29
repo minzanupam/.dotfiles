@@ -214,6 +214,8 @@ bindsym $mod+semicolon layout stacking
 
 bindsym $mod+m fullscreen toggle
 
+exec autotiling
+
 exec picom &
 exec nitrogen --restore
 
@@ -224,4 +226,4 @@ new_window 1pixel
 # start in opposite orientation from your monitor
 #for_window [class=".*"] split toggle #toggles split at each new window
 
-exec autotile
+gaps inner 6

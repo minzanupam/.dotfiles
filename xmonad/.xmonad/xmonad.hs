@@ -16,6 +16,7 @@ import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Layout.Fullscreen
 import           XMonad.Layout.NoBorders
+import           XMonad.Layout.Spacing
 import           XMonad.Util.Run
 import           XMonad.Util.SpawnOnce
 
@@ -213,7 +214,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts tiled  ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
+myLayout = (avoidStruts $ spacingWithEdge 4 $ tiled) ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
 
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -307,6 +308,7 @@ main = do
 
       -- hooks, layouts
         layoutHook         = myLayout,
+        -- layoutHook         = spacingWithEdge 4 $ myLayout,
         handleEventHook    = myEventHook,
         logHook            = dynamicLogWithPP $ xmobarPP {
                                 ppOutput = \x -> hPutStrLn xmproc0 x {- >> hPutStrLn xmproc1 x -}
