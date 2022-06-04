@@ -35,5 +35,5 @@ cmp.setup({
 		-- { name = 'vsnip' },
 		-- { name = 'ultisnips' },
 	},
-	-- preselect = cmp.PreselectMode.Item,
+	preselect = cmp.PreselectMode.None,
 })

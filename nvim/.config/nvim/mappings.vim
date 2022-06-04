@@ -5,7 +5,7 @@
 " nerd commenter
 "map <leader>/ <plug>NERDCommenterToggle
 " maps for cut copy and paste from clipboard
-" noremap <leader>y "+y
+noremap <leader>y "+y
 " noremap <leader>d "+d
 " noremap <leader>p "+p
 " nnoremap <leader>ypwd :let @+ = expand("%:p")<cr>
@@ -29,8 +29,8 @@ nnoremap <leader>ir :lua require('plenary.reload').reload_module('something')<CR
 "noremap <C-j> <C-w>w
 "noremap <C-k> <C-w>W
 " maps quick fix list
-nnoremap <C-j> :cnext <bar> :normal zz<CR>
-nnoremap <C-k> :cprev <bar> :normal zz<CR>
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
 " nnoremap <leader>j :lnext<CR>
 " nnoremap <leader>k :lprev<CR>
 " vim fugitive mapings
@@ -43,8 +43,7 @@ noremap <leader>gl :diffget //3<CR>
 " fzf ripgrep
 "nnoremap <C-p> :Rg<CR>
 " telescope
-nnoremap <leader>tff :lua require('telescope.builtin').find_files()<cr>
-nnoremap <C-p> :lua require('telescope.builtin').lsp_code_actions()<CR>
+nnoremap <leader>gf :lua require('telescope.builtin').find_files()<cr>
 nnoremap <C-n> :lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>gt :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>gc :lua require('telescope.builtin').git_branches()<CR>
@@ -55,6 +54,7 @@ nnoremap <leader>tx :lua require('telescope.builtin').diagnostics()<CR>
 nnoremap <leader>mm :lua require('telescope.builtin').man_pages()<CR>
 "nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 "lsp
+nnoremap <C-p> :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<cr>
 nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
 nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>

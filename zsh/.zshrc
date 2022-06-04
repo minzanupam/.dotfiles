@@ -154,9 +154,9 @@ fr() {
 	flatpak run $flatpak_choice
 }
 
-export DENO_INSTALL=$HOME/.deno
+# export DENO_INSTALL=$HOME/.deno
 
-export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:/home/anupam/.local/bin:/home/anupam/.deno/bin"
+export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:/home/anupam/.local/bin"
 
 export MANWIDTH=79
 export CHROME_EXECUTABLE=/usr/bin/chromium

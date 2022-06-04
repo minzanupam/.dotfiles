@@ -518,7 +518,7 @@ globalkeys = gears.table.join(
 	-- Menubar
 	--    awful.key({ modkey }, "p", function() menubar.show() end,
 	awful.key({ modkey }, "p", function()
-		awful.spawn("dmenu_run")
+		awful.spawn("dmenu_run -i")
 	end, { description = "show the menubar", group = "launcher" })
 )
 

@@ -13,7 +13,8 @@ set hlsearch
 set nosplitbelow
 set nu
 set rnu
-set autowriteall
+" set autowriteall
+set autowrite
 set hidden
 set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 "set textwidth=80
@@ -26,17 +27,17 @@ set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20
 set completeopt=menu,noinsert,noselect
 "set shortmess+=c
 set updatetime=50
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 " set syntax=off
 set autoindent
 set smarttab
 set incsearch
 set nrformats+=alpha
 " set formatoptions-=n2or
-" set cursorcolumn
-" set cursorline
+set cursorcolumn
+set cursorline
 set laststatus=3
 
 filetype indent off
-filetype plugin off
+filetype plugin on
 filetype off

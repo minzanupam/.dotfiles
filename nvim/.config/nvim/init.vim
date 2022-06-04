@@ -7,7 +7,7 @@ let g:gruvbox_contrast_dark = 'hard'
 
 set termguicolors
 set background=dark
-colorscheme gruvbox
+colorscheme luna
 " xterm or tmux values I don't know
 "set t_8f=\[[38;2;%lu;%lu;%lum
 "set t_8b=\[[48;2;%lu;%lu;%lum
@@ -45,7 +45,7 @@ require('orgmode').setup({
 })
 require('orgmode').setup_ts_grammar()
 
--- require "pears".setup()
+require "pears".setup()
 -- require("luasnip.loaders.from_snipmate").load({include={"java"}})
 -- require("luasnip.loaders.from_vscode").load()
 
@@ -72,9 +72,9 @@ require("Comment").setup({
     end,
 });
 
-require("lint").linters_by_ft = {
-  python = { "pylint" }
-}
+-- require("lint").linters_by_ft = {
+--   python = { "pylint" }
+-- }
 
 EOF
 
@@ -113,7 +113,7 @@ augroup group1
 	autocmd BufWritePost *.py lua require('lint').try_lint()
 augroup END
 
-" augroup fmt
-"   autocmd!
-"   autocmd BufWritePre * Neoformat
-" augroup END
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.rust,*.go,*.c Neoformat
+augroup END

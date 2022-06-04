@@ -99,7 +99,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: UbuntuMono
+    family: FiraCode
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -138,7 +138,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 16.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -172,36 +172,31 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Gruvbox dark)
+# custom alacritty theme based on luna
 colors:
-  # Default colors
   primary:
-    background: '#1d2021'
-    # background: '#282828'
-    # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2'
-
-  # Normal colors
+    foreground: '#e5e5e5'
+    background: '#212121'
   normal:
-    black:   '#282828'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
-
-  # Bright colors
+    black: '#616161'
+    blue: '#e3588d'
+    green: '#b06bfc'
+    yellow: '#2aa198'
+    red: '#fa8072'
+    magenta: '#ff8da1'
+    cyan: '#8ddaff'
+    white: '#e5e5e5'
   bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
+    black: '#616161'
+    magenta: '#f64a8a'
+    green: '#bada55'
+    yellow: '#00bcbc'
+    red: '#ff4040'
+    blue: '#ff8da1'
+    cyan: '#c9f0fa'
+    white: '#e5e5e5'
+
+
 
 
   # The indexed colors include all colors from 16 to 256.

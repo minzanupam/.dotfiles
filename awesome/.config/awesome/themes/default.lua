@@ -30,40 +30,7 @@ theme.border_normal = "#111111"
 --theme.border_focus  = "#0099cc"
 theme.border_focus = "#11566d"
 theme.border_marked = "#91231c"
-theme.useless_gap = dpi(8)
-
---[[ old
-theme.fg_normal                                 = "#DDDDFF"
-theme.fg_focus                                  = "#EA6F81"
-theme.fg_urgent                                 = "#CC9393"
-theme.bg_normal                                 = "#1A1A1A"
-theme.bg_focus                                  = "#313131"
-theme.bg_urgent                                 = "#1A1A1A"
-theme.border_width                              = dpi(1)
-theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = "#7F7F7F"
-theme.border_marked                             = "#CC9393"
-theme.tasklist_bg_focus                         = "#1A1A1A"
-theme.titlebar_bg_focus                         = theme.bg_focus
-theme.titlebar_bg_normal                        = theme.bg_normal
-theme.titlebar_fg_focus                         = theme.fg_focus
-theme.menu_height                               = dpi(16)
-theme.menu_width                                = dpi(140)
-theme.useless_gap                               = dpi(8)
--- ]]
-
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- mouse_finder_[color|timeout|animate_timeout|radius|factor]
--- prompt_[fg|bg|fg_cursor|bg_cursor|font]
--- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.useless_gap = dpi(0)
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
