@@ -1,7 +1,7 @@
 return require("packer").startup({
 	function()
 		-- speed
-		use("lewis6991/impatient.nvim", {})
+		-- use("lewis6991/impatient.nvim", {})
 		-- deps
 		use("nvim-lua/popup.nvim")
 		use("nvim-lua/plenary.nvim")
@@ -9,6 +9,8 @@ return require("packer").startup({
 		use("neovim/nvim-lspconfig")
 		use("SmiteshP/nvim-gps")
 		use("mfussenegger/nvim-lint")
+		use("simrat39/rust-tools.nvim")
+
 		-- treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -101,9 +103,13 @@ return require("packer").startup({
 		-- utils
 		use("tpope/vim-surround")
 		use("junegunn/vim-easy-align")
+		use({
+			"AckslD/nvim-trevJ.lua",
+			config = 'require("trevj").setup()',
+		})
 		use("kyazdani42/nvim-web-devicons")
-		-- use("ActivityWatch/aw-watcher-vim")
-		use("dylanaraps/fff.vim")
+		use("ActivityWatch/aw-watcher-vim")
+		-- use("dylanaraps/fff.vim")
 		use("wfxr/minimap.vim")
 	end,
 	-- config = {

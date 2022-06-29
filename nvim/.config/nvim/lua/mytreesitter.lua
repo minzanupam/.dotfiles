@@ -1,12 +1,12 @@
 require("nvim-treesitter.configs").setup({
 	-- base
 	-- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	ensure_installed = { "rust", "bash", "typescript", "tsx", "javascript", "lua", "python", "c", "cpp",
-	"css", "bibtex", "dart", "gdscript", "glsl", "go", "haskell", "html", "java", "jsdoc", "json",
-	"julia", "kotlin", "dockerfile", "latex", "make", "llvm", "nix", "scss", "svelte", "vim", "vue",
-	"zig"
-	},
-	-- ensure_installed = "all",
+	-- ensure_installed = { "rust", "bash", "typescript", "tsx", "javascript", "lua", "python", "c", "cpp",
+	-- "css", "bibtex", "gdscript", "glsl", "go", "haskell", "html", "java", "jsdoc", "json",
+	-- "julia", "kotlin", "dockerfile", "latex", "make", "llvm", "nix", "scss", "svelte", "vim", "vue",
+	-- "zig"
+	-- },
+	ensure_installed = {},
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = {"org"}, -- list of language that will be disabled
@@ -15,6 +15,7 @@ require("nvim-treesitter.configs").setup({
 	ignore_install = { "phpdoc", "godot_resource" },
 	incremental_selection = {
 		enable = true,
+		disable = { "dart" },
 		keymaps = {
 			init_selection = "gnn",
 			-- node_incremental = "(",
@@ -22,7 +23,9 @@ require("nvim-treesitter.configs").setup({
 			-- node_decremental = ")",
 		},
 	},
-	indent = { enable = true },
+	indent = {
+		enable = true,
+	},
 	-- nvim-ts-context-commentstring
 	context_commentstring = {
 		enable = true,
@@ -30,7 +33,6 @@ require("nvim-treesitter.configs").setup({
 	-- nvim-treesitter-pairs
 	pairs = {
 		enable = true,
-		disable = {},
 		highlight_pair_events = {}, -- e.g. {"CursorMoved"}, -- when to highlight the pairs, use {} to deactivate highlighting
 		highlight_self = false, -- whether to highlight also the part of the pair under cursor (or only the partner)
 		goto_right_end = false, -- whether to go to the end of the right partner or the beginning
@@ -43,6 +45,7 @@ require("nvim-treesitter.configs").setup({
 	textobjects = {
 		select = {
 			enable = true,
+			disable = { "dart" },
 			-- Automatically jump forward to textobj, similar to targets.vim
 			lookahead = true,
 			keymaps = {
@@ -55,6 +58,7 @@ require("nvim-treesitter.configs").setup({
 		},
 		move = {
 			enable = true,
+			disable = { "dart" },
 			set_jumps = true, -- whether to set jumps in the jumplist
 			goto_next_start = {
 				["]m"] = "@function.outer",

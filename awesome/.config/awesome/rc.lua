@@ -372,9 +372,6 @@ globalkeys = gears.table.join(
 	awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
 	--my keybindings
-	awful.key({ "Mod4" }, "k", function()
-		awful.spawn("brave")
-	end),
 	awful.key({ "Mod4", "Shift" }, "p", function()
 		awful.spawn("/home/anupam/scripts/change_window_name.sh")
 	end),
@@ -384,15 +381,6 @@ globalkeys = gears.table.join(
 	end),
 	awful.key({ "Mod4" }, "s", function()
 		awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
-	end),
-	awful.key({ "Mod4" }, "l", function()
-		awful.spawn("lowriter")
-	end),
-	awful.key({ "Mod4" }, "h", function()
-		awful.spawn("pavucontrol-qt")
-	end),
-	awful.key({ "Mod4" }, "d", function()
-		awful.spawn("yad --color")
 	end),
 	awful.key({ "Mod4" }, "Return", function()
 		--awful.spawn("tabbed -c -n alacritty alacritty --embed")

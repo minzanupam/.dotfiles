@@ -1,6 +1,6 @@
 let mapleader = " "
 
-lua require("impatient")
+" lua require("impatient")
 " lua require'impatient'.enable_profile()
 
 let g:gruvbox_contrast_dark = 'hard'
@@ -76,6 +76,8 @@ require("Comment").setup({
 --   python = { "pylint" }
 -- }
 
+require('rust-tools').setup({})
+
 EOF
 
 source ~/.config/nvim/setmaps.vim
@@ -115,5 +117,11 @@ augroup END
 
 augroup fmt
   autocmd!
-  autocmd BufWritePre *.rust,*.go,*.c Neoformat
+  " autocmd BufWritePre *.rs,*.go,*.c,*.py Neoformat
+	autocmd BufWritePre *.go Neoformat
 augroup END
+
+" augroup guivim
+"   autocmd!
+"   autocmd UIEnter * colorscheme gruvbox
+" augroup END

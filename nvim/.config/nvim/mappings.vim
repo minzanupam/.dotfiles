@@ -6,8 +6,8 @@
 "map <leader>/ <plug>NERDCommenterToggle
 " maps for cut copy and paste from clipboard
 noremap <leader>y "+y
+noremap <leader>p "+p
 " noremap <leader>d "+d
-" noremap <leader>p "+p
 " nnoremap <leader>ypwd :let @+ = expand("%:p")<cr>
 " maps for ecsape, save and quit
 "imap <C-L> <Esc>
@@ -85,6 +85,8 @@ nnoremap <c-s> :lua require("harpoon.ui").nav_file(4)<cr>
 nnoremap <c-l> :lua require("harpoon.ui").nav_file(3)<cr>
 " neoformater
 nnoremap <C-g> :Neoformat<CR>
+" reverse J
+nnoremap <leader>rj :lua require('trevj').format_at_cursor()<cr>
 " trouble nvim
 " nnoremap <leader>xx :TroubleToggle<cr>
 " nnoremap <leader>xw :TroubleToggle lsp_workspace_diagnostics<cr>
@@ -96,13 +98,13 @@ nnoremap <C-g> :Neoformat<CR>
 nnoremap <leader>shs :lua require"gitsigns".stage_hunk()<CR>
 " vnoremap <leader>shs :lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
 nnoremap <leader>shu :lua require"gitsigns".undo_stage_hunk()<CR>
-" nnoremap <leader>shr :lua require"gitsigns".reset_hunk()<CR>
+nnoremap <leader>shr :lua require"gitsigns".reset_hunk()<CR>
 " vnoremap <leader>shr :lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>
 " nnoremap <leader>shR :lua require"gitsigns".reset_buffer()<CR>
-nnoremap <leader>shp :lua require"gitsigns".preview_hunk()<CR>
-" nnoremap <leader>shn :lua require"gitsigns".next_hunk()<CR>
-" nnoremap <leader>shp :lua require"gitsigns".prev_hunk()<CR>
-nnoremap <leader>shb :lua require"gitsigns".blame_line(true)<CR>
+nnoremap <leader>shv :lua require"gitsigns".preview_hunk()<CR>
+nnoremap <leader>shn :lua require"gitsigns".next_hunk()<CR>
+nnoremap <leader>shp :lua require"gitsigns".prev_hunk()<CR>
+nnoremap <leader>shx :lua require"gitsigns".blame_line(true)<CR>
 " binay editing
 " nnoremap <leader>hbo :lua require"mybinary".binary_mode_open()<CR>
 " nnoremap <leader>hbc :lua require"mybinary".binary_mode_close()<CR>

@@ -34,10 +34,13 @@ set smarttab
 set incsearch
 set nrformats+=alpha
 " set formatoptions-=n2or
-set cursorcolumn
-set cursorline
+" set cursorcolumn
+" set cursorline
 set laststatus=3
 
 filetype indent off
 filetype plugin on
 filetype off
+
+set guifont=Ubuntu\ Mono:h18
+" set guifont=Comic\ Mono:h15

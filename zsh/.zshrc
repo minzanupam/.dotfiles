@@ -42,11 +42,12 @@ f() {
 
 source /home/anupam/.config/fff/fffrc.sh
 
+alias lf=lfrun
 LFCD="/home/anupam/.config/lf/lfcd.sh"
 if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi
-#alias lf=lfcd
+alias lf=lfcd
 
 start_bookmarks() {
     if [ ! -f /home/anupam/.cache/projectlist ]; then
@@ -107,27 +108,6 @@ bvim () {
     lynx $1 --dump | nvim "+%s/\[\d*\]/g"
 }
 
-arrange() {
-    mv /home/anupam/Downloads/*.mp4 /home/anupam/Downloads/videos
-    mv /home/anupam/Downloads/*.mkv  /home/anupam/Downloads/videos
-
-    mv /home/anupam/Downloads/*.png /home/anupam/Downloads/images
-    mv /home/anupam/Downloads/*.jpg /home/anupam/Downloads/images
-    mv /home/anupam/Downloads/*.jpeg /home/anupam/Downloads/images
-
-    mv /home/anupam/Downloads/*.svg /home/anupam/Downloads/icons
-
-    mv /home/anupam/Downloads/*.pdf /home/anupam/Downloads/pdfs
-
-    mv /home/anupam/Downloads/*.gz /home/anupam/Downloads/archives
-    mv /home/anupam/Downloads/*.zip /home/anupam/Downloads/archives
-
-    mv /home/anupam/Downloads/*.torrent /home/anupam/Downloads/torrents
-
-    mv /home/anupam/Downloads/*.pptx /home/anupam/Downloads/docs
-    mv /home/anupam/Downloads/*.docx /home/anupam/Downloads/docs
-}
-
 countdown(){
    date1=$((`date +%s` + $1));
    while [ "$date1" -ge `date +%s` ]; do
@@ -179,8 +159,9 @@ alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallpaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
 #  alias vi=nvim
-alias dra=dragon-drag-and-drop
+alias dra=dragon-drop
 alias alarm="mpv /home/anupam/Documents/emergency_alarm.wav"
+alias alertsound="mpv /home/anupam/Documents/bell-notify.wav"
 alias pom="countdown 1500 && alarm"
 alias sob="countdown 300 && alarm"
 alias lob="countdown 600 && alarm"
@@ -203,3 +184,13 @@ alias sxiv=nsxiv
 # figlet 'start' | lolcat
 # fortune
 
+export http_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
+export ftp_proxy="ftp://edcguest:edcguest@172.31.100.27:3128/"
+export rsync_proxy="rsync://edcguest:edcguest@172.31.100.27:3128/"
+export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export HTTP_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
+export FTP_PROXY="ftp://edcguest:edcguest@172.31.100.27:3128/"
+export RSYNC_PROXY="rsync://edcguest:edcguest@172.31.100.27:3128/"
+export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export https_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
+export HTTPS_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"

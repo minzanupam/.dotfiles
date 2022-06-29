@@ -38,3 +38,7 @@ let g:bujo#window_width = 100
 " let g:minimap_width = 10
 " let g:minimap_auto_start = 1
 " let g:minimap_auto_start_win_enter = 1
+
+let g:neovide_transparency=0.92
+let g:neovide_floating_blur_amount_x = 2.0
+let g:neovide_floating_blur_amount_y = 2.0
