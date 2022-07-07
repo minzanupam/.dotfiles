@@ -106,11 +106,11 @@ augroup group1
     autocmd BufWritePre * :%s/\s\+$//e
     " dart / flutter
     "  autocmd BufWritePre *.dart lua vim.lsp.buf.formatting_sync()
-    autocmd BufEnter *.dart,*.org,*.js,*.tsx,*.ts set ts=2 sw=2 et
+    autocmd BufEnter *.dart,*.org,*.js,*.tsx,*.ts,*.svelte,*.html set ts=2 sw=2 et
     autocmd BufEnter *.c,*.h,*.cpp,*.hpp set ts=8 sw=8 noet
     autocmd BufEnter *.md set ts=4 sw=4 noet
 	autocmd BufEnter *.py,*.hs set ts=4 sw=4 et
-	autocmd BufEnter *.go set ts=4 sw=4 noet
+	autocmd BufEnter *.go,*.rust set ts=4 sw=4 noet
 	" autocmd BufWritePost <buffer> lua require('lint').try_lint()
 	autocmd BufWritePost *.py lua require('lint').try_lint()
 augroup END

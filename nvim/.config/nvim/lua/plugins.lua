@@ -108,7 +108,7 @@ return require("packer").startup({
 			config = 'require("trevj").setup()',
 		})
 		use("kyazdani42/nvim-web-devicons")
-		use("ActivityWatch/aw-watcher-vim")
+		-- use("ActivityWatch/aw-watcher-vim")
 		-- use("dylanaraps/fff.vim")
 		use("wfxr/minimap.vim")
 	end,
