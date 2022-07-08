@@ -1,7 +1,7 @@
 return require("packer").startup({
 	function()
 		-- speed
-		-- use("lewis6991/impatient.nvim", {})
+		use("lewis6991/impatient.nvim", {})
 		-- deps
 		use("nvim-lua/popup.nvim")
 		use("nvim-lua/plenary.nvim")
