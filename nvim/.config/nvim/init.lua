@@ -1,16 +1,11 @@
 vim.g.mapleader = " "
 
-require("impatient").enable_profile()
+-- require("impatient").enable_profile()
 
 vim.g.gruvbox_contrast_dark = "hard"
 
 vim.o.termguicolors = true
 vim.o.background = "dark"
-vim.cmd([[
-colorscheme gruvbox
-hi Normal guibg=none
-hi LineNr guibg=none
-]])
 
 -- set laststatus=3
 -- hi WinSeparator guibg=none
@@ -29,8 +24,25 @@ require("colorizer").setup()
 require("pears").setup()
 require("rust-tools").setup({})
 
+require("themer").setup({
+	colorscheme = "nord",
+	transparent = true,
+	term_colors = true,
+
+	styles = {
+		constant = { style = "bold" },
+		constantBuiltIn = { style = "bold" },
+		keyword = { style = "italic" },
+		keywordBuiltIn = { style = "italic" },
+	},
+})
+
+-- vim.cmd("colorscheme nord")
+-- vim.cmd("hi Normal guibg=none")
+-- vim.cmd("hi LineNr guibg=none")
+
 require("Comment").setup({
-	---@param ctx Ctx
+	--@param ctx Ctx
 	pre_hook = function(ctx)
 		-- Only calculate commentstring for tsx filetypes
 		if vim.bo.filetype == "typescriptreact" then
@@ -102,3 +114,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	group = augroup_fmt,
 	command = ":Neoformat",
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = {
+		"*.svelte",
+	},
+	group = augroup_fmt,
+	command = "set ts=2 sw=2 et",
+})
+
+-- vim.cmd([[syntax off]])

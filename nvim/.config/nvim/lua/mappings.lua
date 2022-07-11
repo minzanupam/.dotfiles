@@ -29,7 +29,13 @@ vim.keymap.set("n", "<leader>mm", require('telescope.builtin').man_pages)
 vim.keymap.set("n", "<C-p>", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
+
+vim.keymap.set("n", "<leader>gl", vim.lsp.buf.signature_help)
+vim.keymap.set("n", "<leader>ht", vim.lsp.buf.hover)
+vim.keymap.set("n", "<leader>vll", function() vim.diagnostic.setloclist({open_loclist = false}) end)
+vim.keymap.set("n", "<leader>vsd",vim.diagnostic.open_float)
 
 vim.keymap.set("n", "<leader>va", vim.lsp.buf.workspace_symbol)
 vim.keymap.set("n", "<leader>vi", vim.lsp.buf.document_symbol)

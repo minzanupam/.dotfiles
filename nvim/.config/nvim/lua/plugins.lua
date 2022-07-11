@@ -64,11 +64,12 @@ return require("packer").startup({
 		-- undotree
 		use("mbbill/undotree")
 		-- color schemes
-		use("flazz/vim-colorschemes")
-		use("morhetz/gruvbox")
-		use("arcticicestudio/nord-vim")
-		use("jnurmine/Zenburn")
-		use("tomasr/molokai")
+		use("themercorp/themer.lua")
+		-- use("flazz/vim-colorschemes")
+		-- use("morhetz/gruvbox")
+		-- use("arcticicestudio/nord-vim")
+		-- use("jnurmine/Zenburn")
+		-- use("tomasr/molokai")
 		-- status line
 		use("nvim-lualine/lualine.nvim")
 		-- #hex colors

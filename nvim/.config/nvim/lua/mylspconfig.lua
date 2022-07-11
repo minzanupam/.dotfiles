@@ -13,7 +13,25 @@ lspconfig.gopls.setup({})
 lspconfig.svelte.setup({})
 lspconfig.cssls.setup({})
 lspconfig.clangd.setup({})
-lspconfig.sumneko_lua.setup({})
+-- lspconfig.sumneko_lua.setup({})
+lspconfig.sumneko_lua.setup({
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})
 -- lspconfig.ccls.setup{
 --     autostart = false,
 --     init_options = { cache = {directory = ""} }
@@ -34,7 +52,7 @@ lspconfig.denols.setup({
 	root_dir = lspconfig.util.root_pattern("deno.json"),
 })
 -- lspconfig.bashls.setup({})
-lspconfig.java_language_server.setup{cmd = {"/usr/bin/java-language-server"}}
+lspconfig.java_language_server.setup({ cmd = { "/usr/bin/java-language-server" } })
 
 lspconfig.pylsp.setup({})
 -- lspconfig.jedi_language_server.setup({})
