@@ -6,7 +6,8 @@ vim.o.expandtab = false
 vim.o.wrap = false
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.colorcolumn=79
+-- vim.o.colorcolumn=79
+vim.cmd("set colorcolumn=79")
 vim.o.undofile = true
 vim.o.swapfile = true
 vim.o.hlsearch = true
@@ -15,7 +16,7 @@ vim.o.nu = true
 vim.o.rnu = true
 -- set autowriteall
 vim.o.autowrite = true
-vim.o.hidden = true
+vim.o.hidden = false
 vim.o.guicursor="n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
 -- set textwidth=80
 -- set foldmethod=manual
@@ -34,7 +35,7 @@ vim.o.autoindent = true
 vim.o.smarttab = true
 vim.o.incsearch = true
 -- vim.o.nrformats = vim.o.nrformats .. "alpha"
--- set formatoptions-=n2or
+vim.cmd([[ set formatoptions=cron ]])
 -- set cursorcolumn
 -- set cursorline
 vim.o.laststatus=3

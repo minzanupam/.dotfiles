@@ -24,22 +24,34 @@ require("colorizer").setup()
 require("pears").setup()
 require("rust-tools").setup({})
 
-require("themer").setup({
-	colorscheme = "nord",
-	transparent = true,
-	term_colors = true,
+-- require("themer").setup({
+-- 	colorscheme = "gruvbox",
+-- 	transparent = false,
+-- 	term_colors = true,
+--
+-- 	styles = {
+-- 		-- constant = { style = "bold" },
+-- 		-- constantBuiltIn = { style = "bold" },
+-- 		keyword = { style = "italic" },
+-- 		keywordBuiltIn = { style = "italic" },
+-- 	},
+-- 	plugins = {
+-- 		treesitter = true,
+-- 		indentline = true,
+-- 		barbar = true,
+-- 		bufferline = true,
+-- 		cmp = true,
+-- 		gitsigns = true,
+-- 		lsp = true,
+-- 		telescope = true,
+-- 	},
+-- })
 
-	styles = {
-		constant = { style = "bold" },
-		constantBuiltIn = { style = "bold" },
-		keyword = { style = "italic" },
-		keywordBuiltIn = { style = "italic" },
-	},
-})
+-- gruvbox
+vim.cmd("colorscheme gruvbox")
 
--- vim.cmd("colorscheme nord")
--- vim.cmd("hi Normal guibg=none")
--- vim.cmd("hi LineNr guibg=none")
+vim.cmd("hi Normal guibg=none")
+vim.cmd("hi LineNr guibg=none")
 
 require("Comment").setup({
 	--@param ctx Ctx
@@ -109,7 +121,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = {
 		"*.go",
-		"*.rs",
 	},
 	group = augroup_fmt,
 	command = ":Neoformat",
@@ -122,5 +133,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	group = augroup_fmt,
 	command = "set ts=2 sw=2 et",
 })
-
 -- vim.cmd([[syntax off]])

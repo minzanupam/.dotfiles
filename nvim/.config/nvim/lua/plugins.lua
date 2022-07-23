@@ -66,8 +66,8 @@ return require("packer").startup({
 		-- color schemes
 		use("themercorp/themer.lua")
 		-- use("flazz/vim-colorschemes")
-		-- use("morhetz/gruvbox")
-		-- use("arcticicestudio/nord-vim")
+		use("ellisonleao/gruvbox.nvim")
+		use("shaunsingh/nord.nvim")
 		-- use("jnurmine/Zenburn")
 		-- use("tomasr/molokai")
 		-- status line
