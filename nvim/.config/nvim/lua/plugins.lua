@@ -68,6 +68,12 @@ return require("packer").startup({
 		-- use("flazz/vim-colorschemes")
 		use("ellisonleao/gruvbox.nvim")
 		use("shaunsingh/nord.nvim")
+		use("folke/tokyonight.nvim")
+		use("shaunsingh/moonlight.nvim")
+		use("lifepillar/vim-solarized8")
+		use("rktjmp/lush.nvim")
+		use("RishabhRD/gruvy")
+		use("mcchrish/zenbones.nvim")
 		-- use("jnurmine/Zenburn")
 		-- use("tomasr/molokai")
 		-- status line

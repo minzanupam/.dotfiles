@@ -184,13 +184,3 @@ alias sxiv=nsxiv
 # figlet 'start' | lolcat
 # fortune
 
-export http_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
-export ftp_proxy="ftp://edcguest:edcguest@172.31.100.27:3128/"
-export rsync_proxy="rsync://edcguest:edcguest@172.31.100.27:3128/"
-export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
-export HTTP_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
-export FTP_PROXY="ftp://edcguest:edcguest@172.31.100.27:3128/"
-export RSYNC_PROXY="rsync://edcguest:edcguest@172.31.100.27:3128/"
-export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
-export https_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
-export HTTPS_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
