@@ -64,6 +64,7 @@ return require("packer").startup({
 		-- undotree
 		use("mbbill/undotree")
 		-- color schemes
+		use("RRethy/nvim-base16")
 		use("themercorp/themer.lua")
 		-- use("flazz/vim-colorschemes")
 		use("ellisonleao/gruvbox.nvim")

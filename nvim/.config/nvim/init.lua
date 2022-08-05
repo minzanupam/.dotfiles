@@ -25,7 +25,7 @@ require("pears").setup()
 require("rust-tools").setup({})
 
 require("themer").setup({
-	colorscheme = "ayu_dark",
+	colorscheme = "gruvbox",
 	transparent = true,
 	term_colors = true,
 
@@ -48,8 +48,10 @@ require("themer").setup({
 })
 
 -- gruvbox
+vim.cmd("hi LineNr guifg=#7c6f64")
+vim.cmd("hi ColorColumn guibg=#3c3836")
 -- vim.cmd("colorscheme gruvbox")
-
+--
 -- vim.cmd("hi Normal guibg=none")
 -- vim.cmd("hi LineNr guibg=none")
 
@@ -126,9 +128,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	command = ":Neoformat",
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
+vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = {
 		"*.svelte",
+		"*.html",
+		"*.tsx",
+		"*.js",
+		"*.ts",
 	},
 	group = augroup_fmt,
 	command = "set ts=2 sw=2 et",

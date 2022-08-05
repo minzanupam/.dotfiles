@@ -758,8 +758,7 @@ client.connect_signal("unfocus", function(c)
 end)
 -- }}}
 
--- my autorun programs
-
+-- my autorun programs i.e. autostart
 local autorun = true
 local autorunApps = {
 	"/usr/bin/picom -b",

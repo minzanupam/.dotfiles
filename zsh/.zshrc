@@ -170,10 +170,11 @@ alias rsmv='rsync -aP --remove-source-files'
 alias liveaudio='mpv --ytdl-format=91 --vid=no'
 # alias finso='flatpak run rest.insomnia.Insomnia'
 alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
-alias aud="/home/anupam/work/build/audacium/builds/bin/Release/audacium"
 # alias cht="/home/anupam/scripts/cht.sh"
 alias vim=nvim
 alias sxiv=nsxiv
+alias tl="tmux ls"
+alias ta="tmux attach"
 
 # something to display
 # figlet 'mark52s' -f mini | lolcat
@@ -183,4 +184,3 @@ alias sxiv=nsxiv
 # figlet 'mark52s'
 # figlet 'start' | lolcat
 # fortune
-
