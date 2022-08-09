@@ -16,7 +16,8 @@ SAVEHIST=50000
 setopt SHARE_HISTORY             # Share history between all sessions.
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/anupam/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /home/anupam/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/anupam/.zsh/vi-mode.plugin.zsh
 source /home/anupam/.zsh/key-bindings.zsh
 source /home/anupam/.zsh/completion.zsh
@@ -42,12 +43,12 @@ f() {
 
 source /home/anupam/.config/fff/fffrc.sh
 
-alias lf=lfrun
-LFCD="/home/anupam/.config/lf/lfcd.sh"
-if [ -f "$LFCD" ]; then
-    source "$LFCD"
-fi
-alias lf=lfcd
+# alias lf=lfrun
+# LFCD="/home/anupam/.config/lf/lfcd.sh"
+# if [ -f "$LFCD" ]; then
+#     source "$LFCD"
+# fi
+# alias lf=lfcd
 
 start_bookmarks() {
     if [ ! -f /home/anupam/.cache/projectlist ]; then
@@ -136,7 +137,10 @@ fr() {
 
 # export DENO_INSTALL=$HOME/.deno
 
-export PATH="$PATH:/home/anupam/scripts:/home/anupam/.emacs.d/bin:/home/anupam/.local/myBin:/home/anupam/go/bin:/home/anupam/.local/share/solana/install/active_release/bin:/home/anupam/.local/bin"
+# export PATH="$PATH:/home/anupam/scripts
+# PATH="$PATH:/home/anupam/go/bin"
+# PATH="$PATH:/home/anupam/scripts"
+# export PATH
 
 export MANWIDTH=79
 export CHROME_EXECUTABLE=/usr/bin/chromium
@@ -146,12 +150,11 @@ alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 alias l="exa -lagF --color=always --group-directories-first"
 alias ll="l | less -r"
 alias b=bookmarks
-alias s=start_bookmarks
-alias c="pwd | xclip -sel clip"
+# alias s=start_bookmarks
+# alias c="pwd | xclip -sel clip"
 alias ec="editconf"
 #alias tn="tmux new -s"
 #alias tl="tmux list-sessions"
-#alias ta="tmux attach -t"
 #alias tk="tmux kill-session -t"
 alias yy720="/home/anupam/scripts/ydlp.sh 136"
 alias yymax="/home/anupam/scripts/ydlp.sh bestvideo"
@@ -174,7 +177,8 @@ alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
 alias vim=nvim
 alias sxiv=nsxiv
 alias tl="tmux ls"
-alias ta="tmux attach"
+alias ta="tmux attach -t"
+alias o=xdg-open
 
 # something to display
 # figlet 'mark52s' -f mini | lolcat

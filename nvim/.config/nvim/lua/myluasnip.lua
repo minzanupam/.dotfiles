@@ -177,7 +177,7 @@ ls.add_snippets("typescriptreact", {
 	),
 })
 
-ls.add_snippets("html", {
+local web_snippets = {
 	s(
 		"paper",
 		fmt(
@@ -250,18 +250,10 @@ ls.add_snippets("html", {
 			{}
 		)
 	),
-})
+}
 
-ls.add_snippets("css", {
-	s(
-		"paper",
-		fmt(
-			[[
-				box-shadow: 0px 1px 3px rgba(0,0,0,.24), 0 1px 2px rgba(0,0,0,.24);
-				transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-			]],
-			{ }
-		)
-	),
-})
+local web_langs = {'html', 'css', 'typescripreact', 'typescript', 'react', 'svelte' }
+for _,lang in pairs(web_langs) do
+	ls.add_snippets(lang, web_snippets)
+end
 

@@ -139,4 +139,23 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	group = augroup_fmt,
 	command = "set ts=2 sw=2 et",
 })
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = {
+		"*.go",
+		"*.rust",
+	},
+	group = augroup_fmt,
+	command = "set ts=4 sw=4 noet",
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = {
+		"*.c",
+		"*.cpp",
+	},
+	group = augroup_fmt,
+	command = "set ts=8 sw=8 noet",
+})
+
 -- vim.cmd([[syntax off]])

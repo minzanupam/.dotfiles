@@ -392,8 +392,9 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal .. " -e /home/anupam/scripts/tmux_opener.sh")
 	end),
 
-	awful.key({ "Mod4" }, "e", function()
-		awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
+	awful.key({ modkey }, "e", function()
+		-- awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
+		awful.spawn("rofi -show emoji")
 	end),
 
 	awful.key({ "Mod4" }, "q", function()
@@ -506,7 +507,7 @@ globalkeys = gears.table.join(
 	-- Menubar
 	--    awful.key({ modkey }, "p", function() menubar.show() end,
 	awful.key({ modkey }, "p", function()
-		awful.spawn("dmenu_run -i")
+		awful.spawn("rofi -show run -theme dmenu")
 	end, { description = "show the menubar", group = "launcher" })
 )
 
@@ -761,12 +762,12 @@ end)
 -- my autorun programs i.e. autostart
 local autorun = true
 local autorunApps = {
-	"/usr/bin/picom -b",
-	"/usr/bin/nitrogen --restore &",
-	--  "/usr/bin/copyq &",
-	--  "/opt/activitywatch/aw-qt &",
-	-- "/usr/bin/greenclip daemon &",
-	--  "/usr/bin/clipmenud &",
+	-- "/usr/bin/picom",
+	-- "/usr/bin/nitrogen --restore",
+	-- "/usr/bin/copyq"
+	"picom",
+	"nitrogen --restore",
+	"copyq"
 }
 
 if autorun then

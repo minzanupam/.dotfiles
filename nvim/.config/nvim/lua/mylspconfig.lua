@@ -48,9 +48,10 @@ lspconfig.dartls.setup({})
 lspconfig.tsserver.setup({
 	root_dir = lspconfig.util.root_pattern("package.json"),
 })
-lspconfig.denols.setup({
-	root_dir = lspconfig.util.root_pattern("deno.json"),
-})
+-- lspconfig.denols.setup({
+-- 	root_dir = lspconfig.util.root_pattern("deno.json"),
+-- })
+
 -- lspconfig.bashls.setup({})
 lspconfig.java_language_server.setup({ cmd = { "/usr/bin/java-language-server" } })
 

@@ -118,7 +118,7 @@ return require("packer").startup({
 		use("kyazdani42/nvim-web-devicons")
 		-- use("ActivityWatch/aw-watcher-vim")
 		-- use("dylanaraps/fff.vim")
-		use("wfxr/minimap.vim")
+		-- use("wfxr/minimap.vim")
 	end,
 	-- config = {
 	-- -- 	-- Move to lua dir so impatient.nvim can cache it
