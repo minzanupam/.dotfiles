@@ -44,11 +44,11 @@ f() {
 source /home/anupam/.config/fff/fffrc.sh
 
 # alias lf=lfrun
-# LFCD="/home/anupam/.config/lf/lfcd.sh"
-# if [ -f "$LFCD" ]; then
-#     source "$LFCD"
-# fi
-# alias lf=lfcd
+LFCD="/home/anupam/.config/lf/lfcd.sh"
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+alias lf=lfcd
 
 start_bookmarks() {
     if [ ! -f /home/anupam/.cache/projectlist ]; then
@@ -142,7 +142,7 @@ fr() {
 # PATH="$PATH:/home/anupam/scripts"
 # export PATH
 
-export MANWIDTH=79
+# export MANWIDTH=79
 export CHROME_EXECUTABLE=/usr/bin/chromium
 #  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
 

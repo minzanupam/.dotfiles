@@ -1,0 +1,8 @@
+setxkbmap -variant real-prog-dvorak -option caps:swapescape
+xset r rate 400 25
+
+/home/anupam/.screenlayout/home.sh
+
+PATH="$PATH:/home/anupam/go/bin"
+PATH="$PATH:/home/anupam/scripts"
+export PATH

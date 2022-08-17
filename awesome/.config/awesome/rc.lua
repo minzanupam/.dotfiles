@@ -767,7 +767,8 @@ local autorunApps = {
 	-- "/usr/bin/copyq"
 	"picom",
 	"nitrogen --restore",
-	"copyq"
+	"copyq",
+	"qpwgraph -m",
 }
 
 if autorun then
