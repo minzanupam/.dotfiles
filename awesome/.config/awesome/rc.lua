@@ -393,8 +393,8 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ modkey }, "e", function()
-		-- awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
-		awful.spawn("rofi -show emoji")
+		awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
+		-- awful.spawn("rofi -show emoji")
 	end),
 
 	awful.key({ "Mod4" }, "q", function()
