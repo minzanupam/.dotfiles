@@ -43,7 +43,7 @@ f() {
 
 source /home/anupam/.config/fff/fffrc.sh
 
-# alias lf=lfrun
+alias lf=lfrun
 LFCD="/home/anupam/.config/lf/lfcd.sh"
 if [ -f "$LFCD" ]; then
     source "$LFCD"
