@@ -398,11 +398,15 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ "Mod4" }, "q", function()
-		awful.spawn("/usr/bin/systemctl suspend")
+		-- awful.spawn("/usr/bin/systemctl suspend")
 	end),
 
 	awful.key({}, "Print", function()
 		awful.spawn("/home/anupam/scripts/screenshot.sh")
+	end),
+
+	awful.key({"Shift"}, "Print", function()
+		awful.spawn("/home/anupam/scripts/color-picker.sh")
 	end),
 
 	-- wibox
