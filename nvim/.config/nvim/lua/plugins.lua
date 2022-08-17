@@ -17,7 +17,7 @@ return require("packer").startup({
 			run = ":TSUpdate",
 		})
 		use("nvim-treesitter/playground")
-		use("theHamsta/nvim-treesitter-pairs")
+		-- use("theHamsta/nvim-treesitter-pairs")
 		use("nvim-treesitter/nvim-treesitter-textobjects")
 		use("JoosepAlviste/nvim-ts-context-commentstring")
 		-- git
@@ -49,7 +49,7 @@ return require("packer").startup({
 		--  use 'winston0410/commented.nvim'
 		use("numToStr/Comment.nvim")
 		-- close parenthesis / brackets
-		use("steelsojka/pears.nvim")
+		use("windwp/nvim-autopairs")
 		-- snip
 		use("L3MON4D3/LuaSnip")
 		use("saadparwaiz1/cmp_luasnip")
