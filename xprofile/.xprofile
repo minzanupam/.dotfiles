@@ -3,6 +3,12 @@ xset r rate 400 25
 
 /home/anupam/.screenlayout/home.sh
 
+PATH="$PATH:/home/anupam/.local/bin"
 PATH="$PATH:/home/anupam/go/bin"
 PATH="$PATH:/home/anupam/scripts"
 export PATH
+
+export http_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
+export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export HTTP_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
+export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
