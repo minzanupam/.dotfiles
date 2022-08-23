@@ -44,13 +44,16 @@ lspconfig.sumneko_lua.setup({
 -- 	single_file_support = true,
 -- 	root_dir = require("lspconfig.util").root_pattern(".git", "*.py"),
 -- })
-lspconfig.dartls.setup({})
+lspconfig.dartls.setup({
+	autostart = false,
+})
 lspconfig.tsserver.setup({
 	root_dir = lspconfig.util.root_pattern("package.json"),
 })
--- lspconfig.denols.setup({
--- 	root_dir = lspconfig.util.root_pattern("deno.json"),
--- })
+lspconfig.denols.setup({
+	autostart = true,
+	root_dir = lspconfig.util.root_pattern("deno.json"),
+})
 
 -- lspconfig.bashls.setup({})
 lspconfig.java_language_server.setup({ cmd = { "/usr/bin/java-language-server" } })

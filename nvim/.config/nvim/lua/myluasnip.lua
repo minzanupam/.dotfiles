@@ -252,7 +252,7 @@ local web_snippets = {
 	),
 }
 
-local web_langs = {'html', 'css', 'typescripreact', 'typescript', 'react', 'svelte' }
+local web_langs = {'html', 'css', 'typescriptreact', 'typescript', 'react', 'svelte' }
 for _,lang in pairs(web_langs) do
 	ls.add_snippets(lang, web_snippets)
 end
