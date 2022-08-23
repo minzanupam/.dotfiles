@@ -18,7 +18,7 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  opacity: .94
+  opacity: .9
   dimensions:
     columns: 80
     lines: 24
@@ -92,7 +92,7 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: FiraCode
+    family: UbuntuMono
     style: Regular
   bold:
     # family: UbuntuMono
@@ -107,7 +107,7 @@ font:
     # style: Bold Italic
     style: Bold
 
-  size: 16.0
+  size: 18.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
