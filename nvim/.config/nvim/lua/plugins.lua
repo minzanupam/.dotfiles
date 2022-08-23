@@ -35,7 +35,7 @@ return require("packer").startup({
 		})
 		use("ThePrimeagen/git-worktree.nvim")
 		use("nvim-telescope/telescope-fzy-native.nvim")
-		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+		use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
 		-- emmet
 		use("mattn/emmet-vim")
 		-- cmp
