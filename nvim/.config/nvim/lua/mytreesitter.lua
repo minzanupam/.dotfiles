@@ -18,9 +18,9 @@ require("nvim-treesitter.configs").setup({
 		disable = { "dart" },
 		keymaps = {
 			init_selection = "gnn",
-			-- node_incremental = "(",
+			node_incremental = "gna",
 			scope_incremental = "gnc",
-			-- node_decremental = ")",
+			node_decremental = "gnd",
 		},
 	},
 	indent = {
@@ -29,17 +29,6 @@ require("nvim-treesitter.configs").setup({
 	-- nvim-ts-context-commentstring
 	context_commentstring = {
 		enable = true,
-	},
-	-- nvim-treesitter-pairs
-	pairs = {
-		enable = true,
-		highlight_pair_events = {}, -- e.g. {"CursorMoved"}, -- when to highlight the pairs, use {} to deactivate highlighting
-		highlight_self = false, -- whether to highlight also the part of the pair under cursor (or only the partner)
-		goto_right_end = false, -- whether to go to the end of the right partner or the beginning
-		fallback_cmd_normal = "call matchit#Match_wrapper('',1,'n')", -- What command to issue when we can't find a pair (e.g. "normal! %")
-		keymaps = {
-			goto_partner = "%",
-		},
 	},
 	-- nvim treesitter textobjects
 	textobjects = {
@@ -52,8 +41,8 @@ require("nvim-treesitter.configs").setup({
 				-- You can use the capture groups defined in textobjects.scm
 				["af"] = "@function.outer",
 				["if"] = "@function.inner",
-				["ac"] = "@class.outer",
-				["ic"] = "@class.inner",
+				["ac"] = "@block.outer",
+				["ic"] = "@block.inner",
 			},
 		},
 		move = {
@@ -61,22 +50,23 @@ require("nvim-treesitter.configs").setup({
 			disable = { "dart" },
 			set_jumps = true, -- whether to set jumps in the jumplist
 			goto_next_start = {
-				["]m"] = "@function.outer",
-				["]]"] = "@class.outer",
+				["]f"] = "@function.outer",
+				-- ["]]"] = "@class.outer",
 				["]b"] = "@block.outer",
 			},
 			goto_next_end = {
-				["]M"] = "@function.outer",
-				["]["] = "@class.outer",
+				-- ["]M"] = "@function.outer",
+				-- ["]["] = "@class.outer",
 			},
 			goto_previous_start = {
-				["[m"] = "@function.outer",
-				["[["] = "@class.outer",
+				["[f"] = "@function.outer",
+				-- ["[["] = "@class.outer",
 				["[b"] = "@block.outer",
+				["[["] = "@block.inner",
 			},
 			goto_previous_end = {
-				["[M"] = "@function.outer",
-				["[]"] = "@class.outer",
+				-- ["[M"] = "@function.outer",
+				-- ["[]"] = "@class.outer",
 			},
 		},
 	},
