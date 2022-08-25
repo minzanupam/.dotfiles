@@ -20,7 +20,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/anupam/.zsh/vi-mode.plugin.zsh
 source /home/anupam/.zsh/key-bindings.zsh
-source /home/anupam/.zsh/completion.zsh
+# source /home/anupam/.zsh/completion.zsh
 
 # zsh-autosuggestions config
 bindkey '^ ' autosuggest-accept
