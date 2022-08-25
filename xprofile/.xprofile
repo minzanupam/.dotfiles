@@ -1,4 +1,5 @@
-setxkbmap -variant real-prog-dvorak -option caps:swapescape
+#setxkbmap -variant real-prog-dvorak -option caps:swapescape
+setxkbmap real-prog-dvorak -print -option caps:swapescape | xkbcomp -I$HOME/.config/xkb - $DISPLAY
 xset r rate 400 25
 
 /home/anupam/.screenlayout/home.sh
@@ -12,3 +13,5 @@ export http_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
 export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
 export HTTP_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
 export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export https_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
+export HTTPS_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
