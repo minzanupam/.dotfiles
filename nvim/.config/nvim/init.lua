@@ -3,6 +3,9 @@ vim.g.mapleader = " "
 -- require("impatient").enable_profile()
 
 vim.g.gruvbox_contrast_dark = "hard"
+vim.g.gruvbox_italic = 0
+vim.g.gruvbox_italicize_comments = 0
+vim.g.gruvbox_italicize_strings = 0
 
 vim.o.termguicolors = true
 vim.o.background = "dark"
@@ -56,6 +59,13 @@ require("themer").setup({
 		lsp = true,
 		telescope = true,
 	},
+	remaps = {
+		palette = {
+			gruvbox = {
+			  ["dimmed"] = { ["subtle"] = "#fe8019" },
+			}
+		}
+	}
 })
 
 -- gruvbox
@@ -66,6 +76,7 @@ vim.cmd("hi ColorColumn guibg=#3c3836")
 -- nord
 -- vim.cmd("hi ColorColumn guibg=#3b4252")
 --
+-- vim.cmd("color gruvbox")
 -- vim.cmd("hi Normal guibg=none")
 -- vim.cmd("hi LineNr guibg=none")
 
