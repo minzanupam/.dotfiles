@@ -26,7 +26,7 @@ import qualified XMonad.StackSet           as W
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "alacritty"
+myTerminal      = "st"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -77,7 +77,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- systemctl suspend
     , ((mod4Mask,               xK_q     ), spawn "systemctl suspend")
     -- cht.sh
-    , ((mod4Mask,               xK_s     ), spawn "alacritty -e /home/anupam/scripts/cht.sh")
+    , ((mod4Mask,               xK_c     ), spawn "alacritty -e /home/anupam/scripts/cht.sh")
+	-- start_project.sh
+    , ((mod4Mask,               xK_s     ), spawn "alacritty -e /home/anupam/scripts/start_projects.sh")
     -- emoji
     , ((mod4Mask,               xK_e     ), spawn "/home/anupam/scripts/dmenuunicode.sh")
     -- screenshot

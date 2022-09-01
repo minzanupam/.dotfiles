@@ -61,8 +61,8 @@ end
 -- my theme
 beautiful.init("/home/anupam/.config/awesome/themes/default.lua")
 -- my wallpaper
-beautiful.get().wallpaper =
-	"/home/anupam/Pictures/wallpapers/minimal/255909-vertical-minimalistic-wallpaper-3840x2160-images.jpg"
+-- beautiful.get().wallpaper =
+-- 	"/home/anupam/Pictures/wallpapers/minimal/255909-vertical-minimalistic-wallpaper-3840x2160-images.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -79,29 +79,24 @@ modkey = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
 
-	awful.layout.suit.tile,
-	--    awful.layout.suit.tile.bottom,
-
+	awful.layout.suit.spiral,
 	awful.layout.suit.max,
 
-	awful.layout.suit.spiral.dwindle,
-
-	awful.layout.suit.magnifier,
-
-	--awful.layout.suit.max.fullscreen,
-
-	awful.layout.suit.fair,
-
-	awful.layout.suit.tile.left,
-
-	awful.layout.suit.fair.horizontal,
-	--    awful.layout.suit.spiral,
-	--awful.layout.suit.corner.nw,
-	--awful.layout.suit.corner.ne,
-	--awful.layout.suit.corner.sw,
-	--awful.layout.suit.corner.se,
-	awful.layout.suit.floating,
-	awful.layout.suit.tile.top,
+	-- awful.layout.suit.tile,
+	-- awful.layout.suit.tile.bottom,
+	-- awful.layout.suit.spiral.dwindle,
+	-- awful.layout.suit.magnifier,
+	-- awful.layout.suit.max.fullscreen,
+	-- awful.layout.suit.fair,
+	-- awful.layout.suit.tile.left,
+	-- awful.layout.suit.fair.horizontal,
+	-- awful.layout.suit.spiral,
+	-- awful.layout.suit.corner.nw,
+	-- awful.layout.suit.corner.ne,
+	-- awful.layout.suit.corner.sw,
+	-- awful.layout.suit.corner.se,
+	-- awful.layout.suit.floating,
+	-- awful.layout.suit.tile.top,
 }
 -- }}}
 
@@ -379,8 +374,11 @@ globalkeys = gears.table.join(
 		-- awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
 		--  awful.spawn("clipmenu")
 	end),
-	awful.key({ "Mod4" }, "s", function()
+	awful.key({ "Mod4" }, "c", function()
 		awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
+	end),
+	awful.key({ "Mod4" }, "s", function()
+		awful.spawn(terminal .. " -e /home/anupam/scripts/start_projects.sh")
 	end),
 	awful.key({ "Mod4" }, "Return", function()
 		--awful.spawn("tabbed -c -n alacritty alacritty --embed")

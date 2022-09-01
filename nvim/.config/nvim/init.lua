@@ -69,6 +69,7 @@ require("themer").setup({
 })
 
 -- gruvbox
+
 vim.cmd("hi LineNr guifg=#7c6f64")
 vim.cmd("hi ColorColumn guibg=#3c3836")
 -- vim.cmd("colorscheme gruvbox")
@@ -185,3 +186,10 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 })
 
 -- vim.cmd([[syntax off]])
+--
+vim.api.nvim_create_autocmd("FileReadPre", {
+	pattern = {
+		"*.sql",
+	},
+	command = vim.cmd([[filetype plugin off]])
+})

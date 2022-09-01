@@ -150,7 +150,7 @@ alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 alias l="exa -lagF --color=always --group-directories-first"
 alias ll="l | less -r"
 alias b=bookmarks
-# alias s=start_bookmarks
+alias s=start_projects.sh
 # alias c="pwd | xclip -sel clip"
 alias ec="editconf"
 #alias tn="tmux new -s"

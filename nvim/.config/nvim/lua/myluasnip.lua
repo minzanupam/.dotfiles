@@ -257,3 +257,16 @@ for _,lang in pairs(web_langs) do
 	ls.add_snippets(lang, web_snippets)
 end
 
+
+ls.add_snippets("c", {
+	s("for", fmt([[
+for (int {iter}=0; {iter_c}<{cont}; {iter_c}++) {{
+	{}
+}}
+		]], {
+			i(0),
+			iter = i(1, "i"),
+			iter_c = f(function(args) return args[1][1] end, {1}),
+			cont = i(2, "n"),
+	}))
+})

@@ -2,16 +2,22 @@
 setxkbmap real-prog-dvorak -print -option caps:swapescape | xkbcomp -I$HOME/.config/xkb - $DISPLAY
 xset r rate 400 25
 
-/home/anupam/.screenlayout/home.sh
+# home dual monitor setup
+# /home/anupam/.screenlayout/home.sh
 
+# path
 PATH="$PATH:/home/anupam/.local/bin"
 PATH="$PATH:/home/anupam/go/bin"
 PATH="$PATH:/home/anupam/scripts"
 export PATH
 
+# college proxy
 export http_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
 export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
 export HTTP_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
 export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
 export https_proxy="http://edcguest:edcguest@172.31.100.27:3128/"
 export HTTPS_PROXY="http://edcguest:edcguest@172.31.100.27:3128/"
+
+# for weston wayland
+export LD_LIBRARY_PATH=/usr/local/lib/
