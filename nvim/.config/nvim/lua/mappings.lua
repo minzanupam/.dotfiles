@@ -24,6 +24,7 @@ vim.keymap.set("n", "<leader>gw", require('telescope').extensions.git_worktree.g
 vim.keymap.set("n", "<leader>ts", require('telescope.builtin').lsp_document_symbols)
 vim.keymap.set("n", "<leader>tw", require('telescope.builtin').lsp_dynamic_workspace_symbols)
 vim.keymap.set("n", "<leader>tx", require('telescope.builtin').diagnostics)
+vim.keymap.set("n", "<leader>th", require('telescope.builtin').help_tags)
 vim.keymap.set("n", "<leader>mm", require('telescope.builtin').man_pages)
 
 vim.keymap.set("n", "<C-p>", vim.lsp.buf.code_action)
@@ -84,4 +85,7 @@ imap <C-c> <Esc>
 nnoremap <leader>,e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>
 nmap <F2> "=strftime('%Y-%m-%d %H:%M:%S %z')<C-M>p
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
 ]])

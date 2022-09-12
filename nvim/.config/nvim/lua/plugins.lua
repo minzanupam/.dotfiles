@@ -11,6 +11,8 @@ return require("packer").startup({
 		use("mfussenegger/nvim-lint")
 		use("simrat39/rust-tools.nvim")
 
+		use("simrat39/symbols-outline.nvim")
+
 		-- treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -19,6 +21,7 @@ return require("packer").startup({
 		use("nvim-treesitter/playground")
 		-- use("theHamsta/nvim-treesitter-pairs")
 		use("nvim-treesitter/nvim-treesitter-textobjects")
+		use("nvim-treesitter/nvim-treesitter-context")
 		use("JoosepAlviste/nvim-ts-context-commentstring")
 		-- git
 		use("tpope/vim-fugitive")
@@ -35,7 +38,7 @@ return require("packer").startup({
 		})
 		use("ThePrimeagen/git-worktree.nvim")
 		use("nvim-telescope/telescope-fzy-native.nvim")
-		use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"})
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 		-- emmet
 		use("mattn/emmet-vim")
 		-- cmp
@@ -82,9 +85,10 @@ return require("packer").startup({
 		-- #hex colors
 		use("norcalli/nvim-colorizer.lua")
 		-- org / wiki
-		use("vimwiki/vimwiki")
+		-- use("vimwiki/vimwiki")
+		use({ "nvim-neorg/neorg", requires = "nvim-lua/plenary.nvim" })
 		use("vuciv/vim-bujo")
-		use("nvim-orgmode/orgmode")
+		-- use("nvim-orgmode/orgmode")
 		-- use({
 		-- 	"lukas-reineke/headlines.nvim",
 		-- 	config = function()
@@ -120,8 +124,9 @@ return require("packer").startup({
 		-- use("dylanaraps/fff.vim")
 		-- use("wfxr/minimap.vim")
 	end,
-	-- config = {
-	-- -- 	-- Move to lua dir so impatient.nvim can cache it
-	-- 	compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua",
-	-- },
+	config = {
+		git = {
+			clone_timeout = 360,
+		},
+	},
 })

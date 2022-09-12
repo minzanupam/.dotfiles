@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
--- require("impatient").enable_profile()
+require("impatient").enable_profile()
 
 vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_italic = 0
@@ -28,15 +28,17 @@ require("nvim-autopairs").setup()
 
 local rt = require("rust-tools")
 rt.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      -- vim.keymap.set("n", "<leader>hgh", rt.hover_actions.hover_actions, { buffer = bufnr })
-      -- Code action groups
-      -- vim.keymap.set("n", "<Leader>hga", rt.code_action_group.code_action_group, { buffer = bufnr })
-    end,
-  },
+	server = {
+		on_attach = function(_, bufnr)
+			-- Hover actions
+			-- vim.keymap.set("n", "<leader>hgh", rt.hover_actions.hover_actions, { buffer = bufnr })
+			-- Code action groups
+			-- vim.keymap.set("n", "<Leader>hga", rt.code_action_group.code_action_group, { buffer = bufnr })
+		end,
+	},
 })
+
+require("symbols-outline").setup()
 
 require("themer").setup({
 	colorscheme = "gruvbox",
@@ -62,10 +64,10 @@ require("themer").setup({
 	remaps = {
 		palette = {
 			gruvbox = {
-			  ["dimmed"] = { ["subtle"] = "#fe8019" },
-			}
-		}
-	}
+				["dimmed"] = { ["subtle"] = "#fe8019" },
+			},
+		},
+	},
 })
 
 -- gruvbox
@@ -103,6 +105,8 @@ require("Comment").setup({
 		end
 	end,
 })
+
+require("neorg").setup({})
 
 --[[
 require('orgmode').setup({
@@ -186,10 +190,3 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 })
 
 -- vim.cmd([[syntax off]])
---
-vim.api.nvim_create_autocmd("FileReadPre", {
-	pattern = {
-		"*.sql",
-	},
-	command = vim.cmd([[filetype plugin off]])
-})
