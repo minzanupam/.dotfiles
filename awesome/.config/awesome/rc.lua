@@ -79,12 +79,11 @@ modkey = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
 
-	awful.layout.suit.spiral,
-	awful.layout.suit.max,
-
+	awful.layout.suit.spiral.dwindle,
+	-- awful.layout.suit.max,
 	-- awful.layout.suit.tile,
 	-- awful.layout.suit.tile.bottom,
-	-- awful.layout.suit.spiral.dwindle,
+	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.magnifier,
 	-- awful.layout.suit.max.fullscreen,
 	-- awful.layout.suit.fair,
@@ -453,9 +452,9 @@ globalkeys = gears.table.join(
 	end, { description = "go back", group = "client" }),
 
 	-- Standard program
-	awful.key({ modkey }, "Return", function()
-		awful.spawn(terminal)
-	end, { description = "open a terminal", group = "launcher" }),
+	-- awful.key({ modkey }, "Return", function(c)
+	-- 	awful.spawn(terminal)
+	-- end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
@@ -528,8 +527,11 @@ clientkeys = gears.table.join(
 		awful.client.floating.toggle,
 		{ description = "toggle floating", group = "client" }
 	),
-	awful.key({ modkey, "Shift" }, "Return", function(c)
+	awful.key({ modkey }, "Return", function(c)
 		c:swap(awful.client.getmaster())
+	end, { description = "open a terminal", group = "launcher" }),
+	awful.key({ modkey, "Shift" }, "Return", function(c)
+		awful.spawn(terminal)
 	end, { description = "move to master", group = "client" }),
 	awful.key({ modkey }, "o", function(c)
 		c:move_to_screen()
@@ -781,15 +783,15 @@ if autorun then
 end
 
 -- hide the border for max windows / clients
-screen.connect_signal("arrange", function(s)
-	local max = s.selected_tag.layout.name == "max"
-	local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
-	-- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
-	for _, c in pairs(s.clients) do
-		if (max or only_one) and not c.floating or c.maximized then
-			c.border_width = 0
-		else
-			c.border_width = beautiful.border_width
-		end
-	end
-end)
+-- screen.connect_signal("arrange", function(s)
+-- 	local max = s.selected_tag.layout.name == "max"
+-- 	local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
+-- 	-- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
+-- 	for _, c in pairs(s.clients) do
+-- 		if (max or only_one) and not c.floating or c.maximized then
+-- 			c.border_width = 0
+-- 		else
+-- 			c.border_width = beautiful.border_width
+-- 		end
+-- 	end
+-- end)
