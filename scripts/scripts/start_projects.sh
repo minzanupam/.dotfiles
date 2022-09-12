@@ -14,7 +14,7 @@ case "$ch" in
 		fi
 		dir="/home/anupam/work/playground/web/fresh-app"
 		tmux new-session -d -s fresh-app -c $dir
-		tmux send-key -t fresh-app vim ENTER
+		tmux send-key -t fresh-app nvim ENTER
 		tmux new-window -n "run" -c "${dir}/server/main-server"
 		tmux send-key -t fresh-app "cargo watch -x run" ENTER
 		tmux new-window -n "f-run" -c $dir

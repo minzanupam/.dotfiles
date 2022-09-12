@@ -150,7 +150,7 @@ alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 alias l="exa -lagF --color=always --group-directories-first"
 alias ll="l | less -r"
 alias b=bookmarks
-alias s=start_projects.sh
+alias s=start_bookmarks
 # alias c="pwd | xclip -sel clip"
 alias ec="editconf"
 #alias tn="tmux new -s"
@@ -161,7 +161,8 @@ alias yymax="/home/anupam/scripts/ydlp.sh bestvideo"
 alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallpaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
-#  alias vi=nvim
+alias vi=nvim
+# alias vim=nvim
 alias dra=dragon-drop
 alias alarm="mpv /home/anupam/Documents/emergency_alarm.wav"
 alias alertsound="mpv /home/anupam/Documents/bell-notify.wav"
@@ -174,7 +175,6 @@ alias liveaudio='mpv --ytdl-format=91 --vid=no'
 # alias finso='flatpak run rest.insomnia.Insomnia'
 alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
 # alias cht="/home/anupam/scripts/cht.sh"
-alias vim=nvim
 alias sxiv=nsxiv
 alias tl="tmux ls"
 alias ta="tmux attach -t"
