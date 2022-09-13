@@ -106,7 +106,23 @@ require("Comment").setup({
 	end,
 })
 
-require("neorg").setup({})
+require("neorg").setup({
+	load = {
+		["core.defaults"] = {},
+		["core.norg.dirman"] = {
+			config = {
+				workspaces = {
+					work = "~/notes/work",
+				},
+			},
+		},
+		["core.gtd.base"] = {
+			config = {
+				workspace = "work",
+			},
+		},
+	},
+})
 
 --[[
 require('orgmode').setup({
