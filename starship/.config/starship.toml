@@ -1,8 +1,6 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
-line_break = false
-
 format = """
 $directory\
 $git_branch\
@@ -18,6 +16,9 @@ $character
 """
 
 command_timeout = 50
+
+[line_break]
+disabled = false
 
 [cmd_duration]
 min_time=2000
