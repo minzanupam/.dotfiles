@@ -1,5 +1,6 @@
-vim.keymap.set("n", '<leader>y', '+y')
-vim.keymap.set("n", '<leader>p', '+p')
+-- vim.keymap.set("n", '<leader>y', '+y')
+-- vim.keymap.set("n", '<leader>p', '+p')
+vim.keymap.set("x", "<leader>p", "\"_dP")
 
 vim.keymap.set("n", "<C-Up>", ":resize +3<cr>")
 vim.keymap.set("n", "<C-Down>", ":resize -3<cr>")
