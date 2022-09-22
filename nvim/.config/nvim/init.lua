@@ -22,6 +22,7 @@ require("mygitsigns")
 require("myluasnip")
 require("mylspsignature")
 require("mylualine")
+require("mytheme")
 
 require("colorizer").setup()
 require("nvim-autopairs").setup()
@@ -39,49 +40,6 @@ rt.setup({
 })
 
 require("symbols-outline").setup()
-
-require("themer").setup({
-	colorscheme = "gruvbox",
-	transparent = true,
-	term_colors = true,
-
-	styles = {
-		-- constant = { style = "bold" },
-		-- constantBuiltIn = { style = "bold" },
-		-- keyword = { style = "italic" },
-		-- keywordBuiltIn = { style = "italic" },
-	},
-	plugins = {
-		treesitter = true,
-		indentline = true,
-		barbar = true,
-		bufferline = true,
-		cmp = true,
-		gitsigns = true,
-		lsp = true,
-		telescope = true,
-	},
-	remaps = {
-		palette = {
-			gruvbox = {
-				["dimmed"] = { ["subtle"] = "#fe8019" },
-			},
-		},
-	},
-})
-
--- gruvbox
-
-vim.cmd("hi LineNr guifg=#7c6f64")
-vim.cmd("hi ColorColumn guibg=#3c3836")
--- vim.cmd("colorscheme gruvbox")
---
--- nord
--- vim.cmd("hi ColorColumn guibg=#3b4252")
---
--- vim.cmd("color gruvbox")
--- vim.cmd("hi Normal guibg=none")
--- vim.cmd("hi LineNr guibg=none")
 
 require("Comment").setup({
 	--@param ctx Ctx
@@ -109,6 +67,14 @@ require("Comment").setup({
 require("neorg").setup({
 	load = {
 		["core.defaults"] = {},
+		["core.keybinds"] = {
+			config ={
+				neorg_leader = " ",
+				hook = function(keybinds)
+					keybinds.map("neorg", "n", "<NeorgLeader>no")
+				end
+			}
+		},
 		["core.norg.dirman"] = {
 			config = {
 				workspaces = {
@@ -198,6 +164,14 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = {
+		"*.hs",
+	},
+	group = augroup_fmt,
+	command = "set ts=4 sw=4 et",
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = {
 		"*.c",
 		"*.cpp",
 	},
@@ -206,3 +180,11 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 })
 
 -- vim.cmd([[syntax off]])
+
+local function reload()
+	local package_name = tostring(vim.fn.expand("%:r"))
+	package.loaded[package_name] = nil
+	require(package_name)
+end
+
+vim.keymap.set("n", "<leader>rr", reload)
