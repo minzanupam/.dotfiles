@@ -85,7 +85,7 @@ return require("packer").startup({
 		-- #hex colors
 		use("norcalli/nvim-colorizer.lua")
 		-- org / wiki
-		-- use("vimwiki/vimwiki")
+		use("vimwiki/vimwiki")
 		use({"nvim-neorg/neorg", requires = "nvim-lua/plenary.nvim"})
 		use("vuciv/vim-bujo")
 		-- use("nvim-orgmode/orgmode")
