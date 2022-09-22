@@ -79,9 +79,9 @@ modkey = "Mod1"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
 
-	awful.layout.suit.spiral.dwindle,
-	-- awful.layout.suit.max,
-	-- awful.layout.suit.tile,
+	awful.layout.suit.tile,
+	awful.layout.suit.max,
+	-- awful.layout.suit.spiral.dwindle,
 	-- awful.layout.suit.tile.bottom,
 	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.magnifier,
@@ -509,7 +509,7 @@ globalkeys = gears.table.join(
 	--    awful.key({ modkey }, "p", function() menubar.show() end,
 	awful.key({ modkey }, "p", function()
 		-- awful.spawn("rofi -show run -theme dmenu")
-		awful.spawn("dmenu_run")
+		awful.spawn("dmenu_run -i")
 	end, { description = "show the menubar", group = "launcher" })
 )
 
