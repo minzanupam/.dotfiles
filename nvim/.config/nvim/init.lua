@@ -68,12 +68,12 @@ require("neorg").setup({
 	load = {
 		["core.defaults"] = {},
 		["core.keybinds"] = {
-			config ={
+			config = {
 				neorg_leader = " ",
 				hook = function(keybinds)
 					keybinds.map("neorg", "n", "<NeorgLeader>no")
-				end
-			}
+				end,
+			},
 		},
 		["core.norg.dirman"] = {
 			config = {
@@ -117,7 +117,7 @@ require("mappings")
 require("vars")
 
 local augroup_build = vim.api.nvim_create_augroup("build", { clear = true })
-
+local yank_group = vim.api.nvim_create_augroup("fmt", { clear = true })
 local augroup_fmt = vim.api.nvim_create_augroup("fmt", { clear = true })
 
 vim.api.nvim_create_autocmd("BufNewFile,BufWinEnter", {
@@ -177,6 +177,19 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	},
 	group = augroup_fmt,
 	command = "set ts=8 sw=8 noet",
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = yank_group,
+	pattern = {
+		"*",
+	},
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 40,
+		})
+	end,
 })
 
 -- vim.cmd([[syntax off]])
