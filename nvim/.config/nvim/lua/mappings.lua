@@ -1,6 +1,10 @@
 -- vim.keymap.set("n", '<leader>y', '+y')
 -- vim.keymap.set("n", '<leader>p', '+p')
+
 vim.keymap.set("x", "<leader>p", "\"_dP")
+-- vim.keymap.set("x", "<leader>p", "p")
+-- vim.keymap.set("x", "p", "pgvy")
+-- vim.keymap.set("x", "p", "\"_dP")
 
 vim.keymap.set("n", "<C-Up>", ":resize +3<cr>")
 vim.keymap.set("n", "<C-Down>", ":resize -3<cr>")
@@ -8,7 +12,6 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -3<cr>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +3<cr>")
 
 vim.keymap.set("n", "<leader>,i", ":nohls<CR>")
-vim.keymap.set("n", "<leader>if", vim.lsp.buf.formatting_sync)
 vim.keymap.set("n", "<leader>ir", function() require('plenary.reload').reload_module('something') end)
 
 vim.keymap.set("n", "<C-j>", ":cnext<CR>")

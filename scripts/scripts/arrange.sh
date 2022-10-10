@@ -1,14 +1,11 @@
 #!/bin/sh
 
-mv /home/anupam/Downloads/*.{webm,mp4,mkv} /home/anupam/Downloads/videos
-mv /home/anupam/Downloads/*.{jpg,jpeg,webp,png,svg} /home/anupam/Downloads/images
+mkdir -p ~/Downloads/{videos,images,pdfs,archives,torrents,docs,code_related}
 
-mv /home/anupam/Downloads/*.{pdf,epub} /home/anupam/Downloads/pdfs
-
-mv /home/anupam/Downloads/*.{gz,zip,rar,tgz} /home/anupam/Downloads/archives
-
-mv /home/anupam/Downloads/*.torrent /home/anupam/Downloads/torrents
-
-mv /home/anupam/Downloads/*.{pptx,docx,txt} /home/anupam/Downloads/docs
-
-mv /home/anupam/Downloads/*.{diff,sh,py,yaml,yml,json} /home/anupam/Downloads/code_related
+mv ~/Downloads/*.{webm,mp4,mkv} ~/Downloads/videos
+mv ~/Downloads/*.{jpg,jpeg,webp,png,svg} ~/Downloads/images
+mv ~/Downloads/*.{pdf,epub} ~/Downloads/pdfs
+mv ~/Downloads/*.{gz,zip,rar,tgz} ~/Downloads/archives
+mv ~/Downloads/*.torrent ~/Downloads/torrents
+mv ~/Downloads/*.{pptx,docx,txt} ~/Downloads/docs
+mv ~/Downloads/*.{diff,sh,py,yaml,yml,json} ~/Downloads/code_related

@@ -11,7 +11,7 @@ PATH="$PATH:/home/anupam/go/bin"
 PATH="$PATH:/home/anupam/scripts"
 export PATH
 
-# college proxy
+# # college proxy
 proxy_var="http://edcguest:edcguest@172.31.102.29:3128/"
 # proxy_var="http://edcguest:edcguest@172.31.100.27:3128/"
 export http_proxy=$proxy_var
@@ -23,3 +23,7 @@ export HTTPS_PROXY=$proxy_var
 
 # for weston wayland
 export LD_LIBRARY_PATH=/usr/local/lib/
+
+# for qt
+export QT_QPA_PLATFORMTHEME=qt5ct
+# export QT_STYLE_OVERRIDE=gtk2

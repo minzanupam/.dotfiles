@@ -23,10 +23,14 @@ return require("packer").startup({
 		use("nvim-treesitter/nvim-treesitter-textobjects")
 		use("nvim-treesitter/nvim-treesitter-context")
 		use("JoosepAlviste/nvim-ts-context-commentstring")
+		use("p00f/nvim-ts-rainbow")
 		-- git
 		use("tpope/vim-fugitive")
 		use("junegunn/gv.vim")
+
 		use("lewis6991/gitsigns.nvim")
+		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+		use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 		-- harpoon and telescope
 		use({
 			"ThePrimeagen/harpoon",
@@ -71,6 +75,7 @@ return require("packer").startup({
 		use("themercorp/themer.lua")
 		-- use("flazz/vim-colorschemes")
 		use("ellisonleao/gruvbox.nvim")
+		use({ "shaunsingh/oxocarbon.nvim", run = "./install.sh" })
 		use("shaunsingh/nord.nvim")
 		use("folke/tokyonight.nvim")
 		use("shaunsingh/moonlight.nvim")
@@ -86,7 +91,7 @@ return require("packer").startup({
 		use("norcalli/nvim-colorizer.lua")
 		-- org / wiki
 		use("vimwiki/vimwiki")
-		use({"nvim-neorg/neorg", requires = "nvim-lua/plenary.nvim"})
+		use({ "nvim-neorg/neorg", requires = "nvim-lua/plenary.nvim" })
 		use("vuciv/vim-bujo")
 		-- use("nvim-orgmode/orgmode")
 		-- use({

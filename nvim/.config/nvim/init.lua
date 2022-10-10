@@ -27,6 +27,8 @@ require("mytheme")
 require("colorizer").setup()
 require("nvim-autopairs").setup()
 
+require("neogit").setup({})
+
 local rt = require("rust-tools")
 rt.setup({
 	server = {
@@ -165,6 +167,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = {
 		"*.hs",
+		"*.py",
 	},
 	group = augroup_fmt,
 	command = "set ts=4 sw=4 et",
