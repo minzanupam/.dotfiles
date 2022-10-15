@@ -389,6 +389,10 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal .. " -e /home/anupam/scripts/tmux_opener.sh")
 	end),
 
+	awful.key({ "Mod4" }, "k", function()
+		awful.spawn(terminal .. " -e /home/anupam/scripts/keyboard-setup.sh")
+	end),
+
 	awful.key({ modkey }, "e", function()
 		awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
 		-- awful.spawn("rofi -show emoji")
