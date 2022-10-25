@@ -104,9 +104,6 @@ require('orgmode').setup({
 require('orgmode').setup_ts_grammar()
 require("luasnip.loaders.from_snipmate").load({include={"java"}})
 require("luasnip.loaders.from_vscode").load()
-require("lint").linters_by_ft = {
-python = { "pylint" }
-}
 ]]
 --
 
@@ -118,9 +115,14 @@ require("opts")
 require("mappings")
 require("vars")
 
+require("lint").linters_by_ft = {
+	python = { "pylint" },
+}
+
 local augroup_build = vim.api.nvim_create_augroup("build", { clear = true })
 local yank_group = vim.api.nvim_create_augroup("fmt", { clear = true })
 local augroup_fmt = vim.api.nvim_create_augroup("fmt", { clear = true })
+local augroup_lint = vim.api.nvim_create_augroup("lint", { clear = true })
 
 vim.api.nvim_create_autocmd("BufNewFile,BufWinEnter", {
 	pattern = "*",
@@ -180,6 +182,16 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	},
 	group = augroup_fmt,
 	command = "set ts=8 sw=8 noet",
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	group = augroup_lint,
+	pattern = {
+		"*.py",
+	},
+	callback = function()
+		require("lint").try_lint()
+	end,
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
