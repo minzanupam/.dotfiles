@@ -24,7 +24,7 @@ for FILE in "$@"; do
 		echo "anime"
 		# anime
 		ffmpeg -i "$FILE" -vcodec libx265 \
-			-vf scale=-1:720 \
+			-vf scale=-1:1080 \
 			-preset fast \
 			-tune animation \
 			-crf 28 "$OUT_FILE"

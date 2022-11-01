@@ -115,9 +115,9 @@ require("opts")
 require("mappings")
 require("vars")
 
-require("lint").linters_by_ft = {
-	python = { "pylint" },
-}
+-- require("lint").linters_by_ft = {
+-- 	python = { "pylint" },
+-- }
 
 local augroup_build = vim.api.nvim_create_augroup("build", { clear = true })
 local yank_group = vim.api.nvim_create_augroup("fmt", { clear = true })
