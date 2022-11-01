@@ -320,7 +320,9 @@ awful.screen.connect_for_each_screen(function(s)
 	})
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s })
+	-- s.mywibox = awful.wibar({ position = "top", screen = s })
+	s.mywibox = awful.wibar({ position = "top", screen = s, bg = beautiful.bg_normal .. "55" })
+
 
 	-- wibox visiblity
 	s.mywibox.visible = true
@@ -393,9 +395,9 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal .. " -e /home/anupam/scripts/keyboard-setup.sh")
 	end),
 
-	awful.key({ modkey }, "e", function()
-		awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
-		-- awful.spawn("rofi -show emoji")
+	awful.key({ "Mod4" }, "e", function()
+		-- awful.spawn("/home/anupam/scripts/dmenuunicode.sh")
+		awful.spawn("rofi -show emoji")
 	end),
 
 	awful.key({ "Mod4" }, "q", function()
