@@ -1,9 +1,4 @@
-#setxkbmap -variant real-prog-dvorak -option caps:swapescape
-setxkbmap real-prog-dvorak -print -option caps:swapescape | xkbcomp -I$HOME/.config/xkb - $DISPLAY
-xset r rate 400 25
-
-# home dual monitor setup
-# /home/anupam/.screenlayout/home.sh
+/home/anupam/scripts/keyboard-setup.sh
 
 # path
 PATH="$PATH:/home/anupam/.local/bin"
@@ -27,3 +22,7 @@ export LD_LIBRARY_PATH=/usr/local/lib/
 # for qt
 export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_STYLE_OVERRIDE=gtk2
+
+# home dual monitor setup
+# /home/anupam/.screenlayout/home.sh
+
