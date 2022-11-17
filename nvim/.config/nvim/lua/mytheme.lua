@@ -44,7 +44,7 @@ usethemer()
 -- vim.cmd("hi ColorColumn guibg=#3b4252")
 
 -- tokyonight
--- vim.cmd("hi ColorColumn guibg=#32334a")
+vim.cmd("hi ColorColumn guibg=#32334a")
 
 -- vim.cmd("hi Normal guibg=none")
 -- vim.cmd("hi LineNr guibg=none")
