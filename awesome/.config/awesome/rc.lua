@@ -706,15 +706,6 @@ awful.rules.rules = {
 
 	{ rule = { class = "Pavucontrol" },
 	  properties = { screen = 1, tag = "3" } },
-
-	{ rule = { class = "Gimp-2.99" },
-	  properties = { screen = 1, tag = "6" } },
-
-	{ rule = { class = "Nitrogen" },
-	  properties = { screen = 1, tag = "6" } },
-
-	{ rule = { class = "Pcmanfm" },
-	  properties = { screen = 1, tag = "7" } },
 }
 -- }}}
 

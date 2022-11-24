@@ -214,6 +214,8 @@ bindsym $mod+semicolon layout stacking
 
 bindsym $mod+m fullscreen toggle
 
+input type:keyboard xkb_layout real-prog-dvorak
+
 exec autotiling
 
 exec picom &
@@ -221,9 +223,10 @@ exec nitrogen --restore
 
 # disable titlebar
 # new_window 1pixel
-new_window 1pixel
+# new_window 1pixel
 # default_orientation vertical
 # start in opposite orientation from your monitor
 #for_window [class=".*"] split toggle #toggles split at each new window
 
 gaps inner 6
+

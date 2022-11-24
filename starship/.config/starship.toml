@@ -18,7 +18,7 @@ $character
 command_timeout = 50
 
 [line_break]
-disabled = false
+disabled = true
 
 [cmd_duration]
 min_time=2000
