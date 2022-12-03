@@ -66,41 +66,7 @@ require("Comment").setup({
 	end,
 })
 
-require("neorg").setup({
-	load = {
-		["core.defaults"] = {},
-		["core.keybinds"] = {
-			config = {
-				neorg_leader = " ",
-				hook = function(keybinds)
-					keybinds.map("neorg", "n", "<NeorgLeader>no")
-				end,
-			},
-		},
-		["core.norg.dirman"] = {
-			config = {
-				workspaces = {
-					work = "~/notes/work",
-				},
-			},
-		},
-		["core.gtd.base"] = {
-			config = {
-				workspace = "work",
-			},
-		},
-	},
-})
-
 --[[
-require('orgmode').setup({
-	org_agenda_files = {'~/orgs/**/*'},
-	org_default_notes_file = '~/orgs/init.org',
-	mappings = {
-		global = {
-		},
-	}
-})
 require('orgmode').setup_ts_grammar()
 require("luasnip.loaders.from_snipmate").load({include={"java"}})
 require("luasnip.loaders.from_vscode").load()
@@ -152,6 +118,8 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 		"*.jsx",
 		"*.js",
 		"*.ts",
+		"*.json",
+		"*.yaml",
 	},
 	group = augroup_fmt,
 	command = "set ts=2 sw=2 et",
