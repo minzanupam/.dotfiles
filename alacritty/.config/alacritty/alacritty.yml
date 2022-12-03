@@ -18,7 +18,7 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  opacity: .95
+  opacity: .92
   dimensions:
     columns: 80
     lines: 24
