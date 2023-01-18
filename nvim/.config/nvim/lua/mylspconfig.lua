@@ -12,6 +12,7 @@ lspconfig.hls.setup({})
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.svelte.setup({})
 lspconfig.cssls.setup({})
+-- lspconfig.glslls.setup({})
 lspconfig.clangd.setup({ capabilities = capabilities })
 -- lspconfig.sumneko_lua.setup({})
 lspconfig.sumneko_lua.setup({

@@ -29,17 +29,17 @@ require("nvim-autopairs").setup()
 
 require("neogit").setup({})
 
-local rt = require("rust-tools")
-rt.setup({
-	server = {
-		on_attach = function(_, bufnr)
-			-- Hover actions
-			-- vim.keymap.set("n", "<leader>hgh", rt.hover_actions.hover_actions, { buffer = bufnr })
-			-- Code action groups
-			-- vim.keymap.set("n", "<Leader>hga", rt.code_action_group.code_action_group, { buffer = bufnr })
-		end,
-	},
-})
+-- local rt = require("rust-tools")
+-- rt.setup({
+-- 	server = {
+-- 		on_attach = function(_, bufnr)
+-- 			-- Hover actions
+-- 			-- vim.keymap.set("n", "<leader>hgh", rt.hover_actions.hover_actions, { buffer = bufnr })
+-- 			-- Code action groups
+-- 			-- vim.keymap.set("n", "<Leader>hga", rt.code_action_group.code_action_group, { buffer = bufnr })
+-- 		end,
+-- 	},
+-- })
 
 require("symbols-outline").setup()
 
@@ -81,9 +81,9 @@ require("opts")
 require("mappings")
 require("vars")
 
-require("lint").linters_by_ft = {
-	python = { "pylint" },
-}
+-- require("lint").linters_by_ft = {
+-- 	python = { "pylint" },
+-- }
 
 local augroup_build = vim.api.nvim_create_augroup("build", { clear = true })
 local yank_group = vim.api.nvim_create_augroup("fmt", { clear = true })
@@ -105,6 +105,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = {
 		"*.go",
+		"*.svelte",
+		"*.ts",
+		"*.js",
 	},
 	group = augroup_fmt,
 	command = ":Neoformat",
@@ -149,7 +152,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 		"*.cpp",
 	},
 	group = augroup_fmt,
-	command = "set ts=8 sw=8 noet",
+	command = "set ts=4 sw=4 noet",
 })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {

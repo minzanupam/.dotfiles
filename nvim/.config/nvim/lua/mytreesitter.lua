@@ -10,7 +10,7 @@ require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		-- disable = {"org"}, -- list of language that will be disabled
-		-- additional_vim_regex_highlighting = {'org'},
+		additional_vim_regex_highlighting = false,
 	},
 	ignore_install = { "phpdoc", "godot_resource" },
 	incremental_selection = {

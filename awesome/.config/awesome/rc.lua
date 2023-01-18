@@ -2,6 +2,10 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -321,8 +325,12 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Create the wibox
 	-- s.mywibox = awful.wibar({ position = "top", screen = s })
-	s.mywibox = awful.wibar({ position = "top", screen = s, bg = beautiful.bg_normal .. "ff" })
-
+	s.mywibox = awful.wibar({ position = "top", height=30, screen = s, })
+	-- awful.placement.top(s.mywibox, {
+	-- 	margins = {
+	-- 		top = dpi(2),
+	-- 	}
+	-- })
 
 	-- wibox visiblity
 	s.mywibox.visible = true
@@ -712,6 +720,9 @@ client.connect_signal("manage", function(c)
 	-- Set the windows at the slave,
 	-- i.e. put it at the end of others instead of setting it master.
 	-- if not awesome.startup then awful.client.setslave(c) end
+
+	-- rounded border
+    -- c.shape = gears.shape.rounded_rect
 
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.

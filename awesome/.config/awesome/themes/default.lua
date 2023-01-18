@@ -13,10 +13,10 @@ local theme = {}
 
 theme.font = "sans 11"
 
-theme.bg_normal = "#3a3a3a"
-theme.bg_focus = "#242424"
+theme.bg_normal = "#32344Aa0"
+theme.bg_focus = "#242424aa"
 theme.bg_urgent = "#006b8e"
-theme.bg_minimize = "#444444"
+theme.bg_minimize = "#444444aa"
 theme.bg_systray = theme.bg_normal
 
 theme.fg_normal = "#ffffff"
@@ -25,10 +25,10 @@ theme.fg_urgent = "#cc9393"
 theme.fg_minimize = "#aaaaaa"
 
 theme.useless_gap = dpi(0)
-theme.border_width = dpi(2)
-theme.border_normal = "#111111"
---theme.border_focus  = "#0099cc"
-theme.border_focus = "#11566d"
+theme.border_width = dpi(1)
+theme.border_normal = "#1a1b26"
+theme.border_focus  = "#57F3FD"
+-- theme.border_focus = "#11566d"
 theme.border_marked = "#91231c"
 -- theme.useless_gap = dpi(0)
 

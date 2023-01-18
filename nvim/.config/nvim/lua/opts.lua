@@ -10,7 +10,7 @@ vim.o.colorcolumn=79
 vim.cmd("set colorcolumn=79")
 vim.o.undofile = true
 vim.o.swapfile = true
-vim.o.hlsearch = true
+vim.o.hlsearch = false
 vim.o.splitbelow = false
 vim.o.nu = true
 vim.o.rnu = true
@@ -36,8 +36,8 @@ vim.o.smarttab = true
 vim.o.incsearch = true
 -- vim.o.nrformats = vim.o.nrformats .. "alpha"
 vim.cmd([[ set formatoptions=cron ]])
--- set cursorcolumn
--- set cursorline
+-- vim.o.cursorcolumn = true
+-- vim.o.cursorline = true
 vim.o.laststatus=3
 
 -- filetype indent off

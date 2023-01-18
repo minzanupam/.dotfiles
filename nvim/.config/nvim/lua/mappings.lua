@@ -90,6 +90,9 @@ nnoremap <leader>,e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>
 nmap <F2> "=strftime('%Y-%m-%d %H:%M:%S %z')<C-M>p
 
+]])
+
+--[[
 nnoremap n nzzzv
 nnoremap N Nzzzv
-]])
+]]--

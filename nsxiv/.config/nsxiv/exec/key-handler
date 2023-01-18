@@ -1,0 +1,28 @@
+#!/bin/sh
+while read file
+do
+        case "$1" in
+        "C-d")
+                mv "$file" /home/anupam/.local/share/fff/trash;;
+        "R")
+                #convert -rotate 90 "$file" "$file" ;;
+                name="$(dmenu -p "rename $file to: ")" 2> /dev/null
+                if ! [ -z "$name" ]; then
+                    mv "$file" "$(dirname $file)/${name}"
+                fi
+                ;;
+        "d")
+                dragon-drag-and-drop "$file" -x;;
+        "w")
+                nitrogen --set-zoom-fill --head=0 "$file" ;;
+		"W")
+                nitrogen --set-zoom-fill --head=1 "$file" ;;
+        "g")
+                gimp "$file";;
+        "y")
+                xclip -sel clip -t `xdg-mime query filetype $file` $file ;;
+        "Y")
+                xclip -sel clip <<< "`pwd`/$file"
+        esac
+done
+

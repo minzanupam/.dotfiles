@@ -138,10 +138,10 @@ ls.add_snippets("java", {
 				i(2, "Name"),
 				rt = f(function(args)
 					return args[1][1]
-				end, {1}),
+				end, { 1 }),
 				name = f(function(args)
 					return args[1][1]
-				end, {2}),
+				end, { 2 }),
 				val = f(function(args)
 					local str = args[1][1]
 					local ret = str:gsub("^%u", string.lower)
@@ -149,7 +149,7 @@ ls.add_snippets("java", {
 				end, { 2 }),
 			}
 		)
-	)
+	),
 })
 
 ls.add_snippets("typescriptreact", {
@@ -185,7 +185,7 @@ local web_snippets = {
 				box-shadow: 0px 1px 3px rgba(0,0,0,.24), 0 1px 2px rgba(0,0,0,.24);
 				transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 			]],
-			{ }
+			{}
 		)
 	),
 	s(
@@ -252,21 +252,74 @@ local web_snippets = {
 	),
 }
 
-local web_langs = {'html', 'css', 'typescriptreact', 'typescript', 'react', 'svelte' }
-for _,lang in pairs(web_langs) do
+local web_langs = { "html", "css", "typescriptreact", "typescript", "react", "svelte" }
+for _, lang in pairs(web_langs) do
 	ls.add_snippets(lang, web_snippets)
 end
 
-
 ls.add_snippets("c", {
-	s("for", fmt([[
+	s(
+		"for",
+		fmt(
+			[[
 for (int {iter}=0; {iter_c}<{cont}; {iter_c}++) {{
 	{}
 }}
-		]], {
-			i(0),
-			iter = i(1, "i"),
-			iter_c = f(function(args) return args[1][1] end, {1}),
-			cont = i(2, "n"),
-	}))
+		]],
+			{
+				i(0),
+				iter = i(1, "i"),
+				iter_c = f(function(args)
+					return args[1][1]
+				end, { 1 }),
+				cont = i(2, "n"),
+			}
+		)
+	),
+})
+
+ls.add_snippets("go", {
+	s(
+		"err",
+		fmt(
+			[[
+	if err != nil {{
+		w.WriteHeader({})
+		log.Println(err)
+		return
+	}}
+	]],
+			{i(0)}
+		)
+	),
+	s(
+		"db",
+		fmt(
+			[[
+	db, err := sql.Open("sqlite3", DB_NAME)
+	defer db.Close()
+	if err != nil {{
+		log.Println(err)
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}}
+	]],
+			{}
+		)
+	),
+	s(
+		"query",
+		fmt(
+			[[
+	rows, err := db.Query(`{}`)
+	defer rows.Close()
+	if err != nil {{
+		log.Println(err)
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}}
+	]],
+			{ i(0) }
+		)
+	),
 })
