@@ -105,7 +105,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = {
 		"*.go",
+		"*.rs",
 		"*.svelte",
+		"*.tsx",
 		"*.ts",
 		"*.js",
 	},
@@ -155,15 +157,15 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	command = "set ts=4 sw=4 noet",
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	group = augroup_lint,
-	pattern = {
-		"*.py",
-	},
-	callback = function()
-		require("lint").try_lint()
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- 	group = augroup_lint,
+-- 	pattern = {
+-- 		"*.py",
+-- 	},
+-- 	callback = function()
+-- 		require("lint").try_lint()
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = yank_group,
@@ -185,5 +187,10 @@ local function reload()
 	package.loaded[package_name] = nil
 	require(package_name)
 end
+
+function git_accept_both()
+	vim.cmd([[:g/^<\{7}\|^|\{7}\|^=\{7}\|^>\{7}/d]])
+end
+
 
 vim.keymap.set("n", "<leader>rr", reload)

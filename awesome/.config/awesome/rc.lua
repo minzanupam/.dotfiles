@@ -409,6 +409,10 @@ globalkeys = gears.table.join(
 		-- awful.spawn("/usr/bin/systemctl suspend")
 	end),
 
+	awful.key({ "Mod4" }, "b", function()
+		awful.spawn("brave")
+	end),
+
 	awful.key({}, "Print", function()
 		awful.spawn("/home/anupam/scripts/screenshot.sh")
 	end),

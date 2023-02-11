@@ -7,8 +7,8 @@ PATH="$PATH:/home/anupam/scripts"
 export PATH
 
 # college proxy
-# proxy_var="http://edcguest:edcguest@172.31.102.29:3128/"
-proxy_var="http://edcguest:edcguest@172.31.100.27:3128/"
+proxy_var="http://edcguest:edcguest@172.31.102.29:3128/"
+# proxy_var="http://edcguest:edcguest@172.31.100.27:3128/"
 export http_proxy=$proxy_var
 export no_proxy="localhost,131.0.0.1,192.168.1.1,::1,*.local"
 export HTTP_PROXY=$proxy_var

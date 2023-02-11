@@ -2,6 +2,8 @@ return require("packer").startup({
 	function()
 		-- speed
 		use("lewis6991/impatient.nvim", {})
+		-- packer
+		use("wbthomason/packer.nvim")
 		-- deps
 		use("nvim-lua/popup.nvim")
 		use("nvim-lua/plenary.nvim")
@@ -10,6 +12,8 @@ return require("packer").startup({
 		use("SmiteshP/nvim-gps")
 		use("mfussenegger/nvim-lint")
 		use("simrat39/rust-tools.nvim")
+		-- dap
+		use("mfussenegger/nvim-dap")
 
 		use("simrat39/symbols-outline.nvim")
 
