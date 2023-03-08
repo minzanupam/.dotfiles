@@ -78,7 +78,7 @@ set_projectdir () {
 
 #  findproj() { cd `find ~/work -maxdepth 3 -mindepth 1 -type d | fzf` }
 
-editconf() {
+editconf_old() {
     #  nvim `fzf < /home/anupam/scripts/conflist` -c 'cd %:p:h'
     # nvim `find /home/anupam/.dotfiles -type f | fzf` -c 'cd /home/anupam/.dotfiles'
 
@@ -93,6 +93,19 @@ editconf() {
 "
 	exit 0
 }
+
+
+editconf() {
+	selected="$HOME/.dotfiles"
+	tmux new-session -c $selected -d -s "config"
+	if [[ $? -eq 0 ]]; then
+		tmux send-keys -t config:0 "vim" Enter "C-n"
+		tmux attach -t "config"
+	else
+		tmux attach-session -d -t "config"
+	fi
+}
+
 
 songsearch() {
     find /media/anupam/881f3c4e-63e4-4d5d-a149-e736788e2134/Songs -mindepth 1 -type f | fzf
@@ -133,6 +146,10 @@ nwal() {
 fr() {
 	flatpak_choice=`flatpak list | fzf | cut -f2`
 	flatpak run $flatpak_choice
+}
+
+tmn() {
+	tmux new -s ${PWD##*/}
 }
 
 # export DENO_INSTALL=$HOME/.deno

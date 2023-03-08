@@ -6,15 +6,15 @@ vim.o.expandtab = false
 vim.o.wrap = false
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.colorcolumn=79
-vim.cmd("set colorcolumn=79")
+-- don't know why the following doesn't work
+vim.o.colorcolumn = "79"
 vim.o.undofile = true
 vim.o.swapfile = true
 vim.o.hlsearch = false
 vim.o.splitbelow = false
 vim.o.nu = true
 vim.o.rnu = true
--- set autowriteall
+vim.o.autowriteall = true
 vim.o.autowrite = true
 vim.o.hidden = false
 vim.o.guicursor="n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"

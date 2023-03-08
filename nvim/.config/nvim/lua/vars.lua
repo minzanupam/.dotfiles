@@ -1,7 +1,7 @@
 vim.g.dart_format_on_save = 1
 vim.g.tex_flavor = 'latex'
 vim.g.netrw_banner = 0
-vim.g.netrw_browse_split = 4
+vim.g.netrw_browse_split = 0
 vim.g.netrw_winsize = 20
 vim.g.netrw_keepdir = 0
 vim.g['bujo#window_width'] = 100
