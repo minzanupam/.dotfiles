@@ -13,27 +13,9 @@ lspconfig.hls.setup({})
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.svelte.setup({})
 lspconfig.cssls.setup({})
--- lspconfig.glslls.setup({})
+lspconfig.glslls.setup({})
 lspconfig.clangd.setup({ capabilities = capabilities })
--- lspconfig.sumneko_lua.setup({})
-lspconfig.sumneko_lua.setup({
-	settings = {
-		Lua = {
-			runtime = {
-				version = "LuaJIT",
-			},
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			telemetry = {
-				enable = false,
-			},
-		},
-	},
-})
+lspconfig.lua_ls.setup({ capabilities = capabilities })
 -- lspconfig.ccls.setup{
 --     autostart = false,
 --     init_options = { cache = {directory = ""} }
