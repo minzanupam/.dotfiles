@@ -8,6 +8,7 @@ require("lspconfig").clangd.setup({})
 
 lspconfig.texlab.setup({ autostart = false })
 lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+lspconfig.zls.setup({ capabilities = capabilities })
 lspconfig.hls.setup({})
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.svelte.setup({})

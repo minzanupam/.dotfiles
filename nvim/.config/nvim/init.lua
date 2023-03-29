@@ -105,11 +105,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = {
 		"*.go",
-		"*.rs",
-		"*.svelte",
-		"*.tsx",
-		"*.ts",
-		"*.js",
 	},
 	group = augroup_fmt,
 	command = ":Neoformat",
