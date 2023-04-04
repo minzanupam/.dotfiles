@@ -32,13 +32,12 @@ vim.keymap.set("n", "<leader>th", require('telescope.builtin').help_tags)
 vim.keymap.set("n", "<leader>mm", require('telescope.builtin').man_pages)
 
 vim.keymap.set("n", "<C-p>", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 -- vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "<leader>ggt", vim.lsp.buf.type_defination)
-vim.keymap.set("n", "<leader>ggt", vim.lsp.buf.implementation)
-
-vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
+vim.keymap.set("n", "<leader>gdt", vim.lsp.buf.type_definition)
+vim.keymap.set("n", "<leader>gdi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "<leader>gdr", vim.lsp.buf.references)
+vim.keymap.set("n", "<leader>gm", vim.lsp.buf.rename)
 
 vim.keymap.set("n", "<leader>gl", vim.lsp.buf.signature_help)
 vim.keymap.set("n", "<leader>ht", vim.lsp.buf.hover)
