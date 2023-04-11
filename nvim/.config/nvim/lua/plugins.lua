@@ -22,7 +22,7 @@ return require("packer").startup({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 		})
-		use("nvim-treesitter/playground")
+		-- use("nvim-treesitter/playground")
 		-- use("theHamsta/nvim-treesitter-pairs")
 		use("nvim-treesitter/nvim-treesitter-textobjects")
 		use("nvim-treesitter/nvim-treesitter-context")
