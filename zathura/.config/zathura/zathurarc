@@ -5,8 +5,8 @@ set selection-clipboard clipboard
 # set recolor-darkcolor "#ebdbb2"
 
 # solarized dark
-# set recolor-darkcolor "#cccccc"
-# set recolor-lightcolor "#1C323E"
+set recolor-darkcolor "#cccccc"
+set recolor-lightcolor "#1C323E"
 
 # sepia light
 # set recolor-darkcolor "#000000"
@@ -17,5 +17,5 @@ set selection-clipboard clipboard
 # set recolor-lightcolor "#000000"
 
 # gray
-set recolor-darkcolor "#000000"
-set recolor-lightcolor "#aaaaaa"
+# set recolor-darkcolor "#000000"
+# set recolor-lightcolor "#aaaaaa"

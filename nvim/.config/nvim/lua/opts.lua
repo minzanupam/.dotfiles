@@ -16,6 +16,7 @@ vim.o.nu = true
 vim.o.rnu = true
 vim.o.autowriteall = true
 vim.o.autowrite = true
+vim.o.autochdir = true
 vim.o.hidden = false
 vim.o.guicursor="n-v-c-sm:block,i-ci-ve:block,r-cr-o:hor20"
 -- set textwidth=80
