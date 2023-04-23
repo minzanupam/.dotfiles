@@ -13,7 +13,7 @@ lspconfig.hls.setup({})
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.svelte.setup({})
 lspconfig.cssls.setup({})
-lspconfig.glslls.setup({})
+-- lspconfig.glslls.setup({})
 lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.lua_ls.setup({ capabilities = capabilities })
 -- lspconfig.ccls.setup{
