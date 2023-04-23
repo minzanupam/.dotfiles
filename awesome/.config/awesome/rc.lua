@@ -85,7 +85,7 @@ awful.layout.layouts = {
 
 	awful.layout.suit.tile,
 	awful.layout.suit.max,
-	-- awful.layout.suit.spiral.dwindle,
+	awful.layout.suit.spiral.dwindle,
 	-- awful.layout.suit.tile.bottom,
 	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.magnifier,
@@ -726,7 +726,7 @@ client.connect_signal("manage", function(c)
 	-- if not awesome.startup then awful.client.setslave(c) end
 
 	-- rounded border
-    -- c.shape = gears.shape.rounded_rect
+	-- c.shape = gears.shape.rounded_rect
 
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.
