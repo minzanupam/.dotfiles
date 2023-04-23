@@ -152,6 +152,12 @@ tmn() {
 	tmux new -s ${PWD##*/}
 }
 
+sch() {
+    ch=`find $HOME/work/playground/rough -type d -name '.git' -prune -maxdepth 3 | sed 's/\.git//g' | fzf`
+	cd $ch
+	nvim .
+}
+
 # export DENO_INSTALL=$HOME/.deno
 
 # export PATH="$PATH:/home/anupam/scripts
@@ -196,6 +202,8 @@ alias sxiv=nsxiv
 alias tl="tmux ls"
 alias ta="tmux attach -t"
 alias o=xdg-open
+
+unset DEBUGINFOD_URLS
 
 # something to display
 # figlet 'mark52s' -f mini | lolcat
