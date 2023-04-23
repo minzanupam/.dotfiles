@@ -3,11 +3,12 @@ local yank_group = vim.api.nvim_create_augroup("fmt", { clear = true })
 local augroup_fmt = vim.api.nvim_create_augroup("fmt", { clear = true })
 local augroup_lint = vim.api.nvim_create_augroup("lint", { clear = true })
 
-vim.api.nvim_create_autocmd("BufNewFile,BufWinEnter", {
-	pattern = "*",
-	group = augroup_build,
-	command = "setlocal formatoptions-=cro",
-})
+-- vim.api.nvim_create_autocmd("BufNewFile,BufWinEnter", {
+-- 	pattern = "*",
+-- 	group = augroup_build,
+-- 	command = "setlocal formatoptions-=cro",
+-- })
+vim.cmd([[set formatoptions+=cro]])
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
