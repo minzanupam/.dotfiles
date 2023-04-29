@@ -26,6 +26,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = {
+		"*.hs",
 		"*.svelte",
 		"*.html",
 		"*.tsx",
@@ -42,7 +43,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = {
 		"*.go",
-		"*.rust",
+		"*.rs",
 	},
 	group = augroup_fmt,
 	command = "set ts=4 sw=4 noet",
@@ -50,7 +51,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = {
-		"*.hs",
 		"*.py",
 	},
 	group = augroup_fmt,
@@ -88,5 +88,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		})
 	end,
 })
-
-

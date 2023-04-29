@@ -99,3 +99,17 @@ end
 
 
 vim.keymap.set("n", "<leader>rr", reload)
+
+
+local dap = require('dap')
+dap.configurations.c = {
+  {
+	type = 'c';
+	request = 'launch';
+	name = "Launch file";
+	program = "${file}";
+	pythonPath = function()
+	  return '/usr/bin/python'
+	end;
+  },
+}

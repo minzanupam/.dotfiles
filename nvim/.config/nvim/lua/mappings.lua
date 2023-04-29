@@ -12,8 +12,8 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -3<cr>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +3<cr>")
 
 vim.keymap.set("n", "<leader>,i", ":nohls<CR>")
-vim.keymap.set("n", "<leader>ir", function() require('plenary.reload').reload_module('something') end)
-
+-- vim.keymap.set("n", "<leader>ir", function() require('plenary.reload').reload_module('something') end)
+--
 vim.keymap.set("n", "<C-e>", ":Ex<CR>")
 
 vim.keymap.set("n", "<C-j>", ":cnext<CR>")
@@ -73,6 +73,30 @@ vim.keymap.set("n", "<leader>shn", require"gitsigns".next_hunk)
 vim.keymap.set("n", "<leader>shp", require"gitsigns".prev_hunk)
 vim.keymap.set("n", "<leader>shx", function() require"gitsigns".blame_line(true) end)
 
+vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+  require('dap.ui.widgets').hover()
+end)
+vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+  require('dap.ui.widgets').preview()
+end)
+vim.keymap.set('n', '<Leader>df', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.scopes)
+end)
+
 vim.cmd([[
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
@@ -94,7 +118,7 @@ imap <C-c> <Esc>
 
 nnoremap <leader>,e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <leader>,t :!mkdir -p <C-R>=expand("%:p:h") . "/" <CR>
-nmap <F2> "=strftime('%Y-%m-%d %H:%M:%S %z')<C-M>p
+" nmap <F2> "=strftime('%Y-%m-%d %H:%M:%S %z')<C-M>p
 
 ]])
 

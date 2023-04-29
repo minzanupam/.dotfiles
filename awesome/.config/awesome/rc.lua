@@ -85,7 +85,7 @@ awful.layout.layouts = {
 
 	awful.layout.suit.tile,
 	awful.layout.suit.max,
-	awful.layout.suit.spiral.dwindle,
+	-- awful.layout.suit.spiral.dwindle,
 	-- awful.layout.suit.tile.bottom,
 	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.magnifier,
@@ -379,10 +379,13 @@ globalkeys = gears.table.join(
 	awful.key({ "Mod4", "Shift" }, "p", function()
 		awful.spawn("/home/anupam/scripts/change_window_name.sh")
 	end),
+
 	awful.key({ "Mod4" }, "p", function()
+		awful.spawn("/home/anupam/scripts/screenshot.sh")
 		-- awful.spawn("rofi -modi 'clipboard:greenclip print' -show clipboard ")
 		--  awful.spawn("clipmenu")
 	end),
+
 	awful.key({ "Mod4" }, "c", function()
 		awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
 	end),
