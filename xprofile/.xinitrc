@@ -38,6 +38,6 @@ fi
 /home/anupam/scripts/keyboard-setup.sh
 
 # window managers I have installed are
-# openbox-session,aweson,leftwm
+# openbox-session,awesome,leftwm
 
 exec awesome

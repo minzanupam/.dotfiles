@@ -31,12 +31,12 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_STYLE_OVERRIDE=gtk2
 
 # if you want to use amd-driver
-export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+# export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
 
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && [ "$(tty)" = "/dev/tty1" ]; then
   exec startx
 fi
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-. "$HOME/.cargo/env"
+# [[ -f ~/.bashrc ]] && . ~/.bashrc
+# . "$HOME/.cargo/env"
