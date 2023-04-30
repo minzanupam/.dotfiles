@@ -14,6 +14,7 @@ return require("packer").startup({
 		use("simrat39/rust-tools.nvim")
 		-- dap
 		use("mfussenegger/nvim-dap")
+		use("theHamsta/nvim-dap-virtual-text")
 
 		use("simrat39/symbols-outline.nvim")
 
