@@ -1,6 +1,7 @@
 require('telescope').setup {
 	defaults = {
-		layout_strategy = 'vertical'
+		layout_strategy = 'center',
+		sorting_strategy = 'ascending',
 	},
 	extensions = {
 		fzf = {
