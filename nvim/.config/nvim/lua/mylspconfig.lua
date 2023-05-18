@@ -35,7 +35,7 @@ lspconfig.tsserver.setup({
 	root_dir = lspconfig.util.root_pattern("package.json"),
 })
 lspconfig.denols.setup({
-	autostart = true,
+	autostart = false,
 	root_dir = lspconfig.util.root_pattern("deno.json"),
 })
 
