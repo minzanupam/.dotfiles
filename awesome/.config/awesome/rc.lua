@@ -463,10 +463,12 @@ globalkeys = gears.table.join(
 	end, { description = "focus the previous screen", group = "screen" }),
 	awful.key({ modkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
 	awful.key({ modkey }, "Tab", function()
-		awful.client.focus.history.previous()
-		if client.focus then
-			client.focus:raise()
-		end
+		awful.client.swap.byidx(1)
+		awful.client.focus.byidx(-1)
+		-- awful.client.focus.history.previous()
+		-- if client.focus then
+		-- 	client.focus:raise()
+		-- end
 	end, { description = "go back", group = "client" }),
 
 	-- Standard program
@@ -703,9 +705,11 @@ awful.rules.rules = {
 	-- force not floating
 	{ rule_any = {
 		class = {
-			"pavucontrol-qt",
+			"Pavucontrol",
+			"Blueman-manager",
+			"Cmus",
 		},
-	}, properties = { floating = false } },
+	}, properties = { floating = false, tag = "3" } },
 
 	-- Add titlebars to normal clients and dialogs
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
@@ -716,8 +720,6 @@ awful.rules.rules = {
 	{ rule = { class = "Brave" },
 	  properties = { screen = 1, tag = "2" } },
 
-	{ rule = { class = "Pavucontrol" },
-	  properties = { screen = 1, tag = "3" } },
 }
 -- }}}
 
@@ -793,14 +795,16 @@ end)
 -- my autorun programs i.e. autostart
 local autorun = true
 local autorunApps = {
-	-- "/usr/bin/picom",
-	-- "/usr/bin/nitrogen --restore",
-	-- "/usr/bin/copyq"
 	"picom",
 	"nitrogen --restore",
 	"copyq",
 	"qpwgraph -m",
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+	"aw-qt",
+	"pavucontrol",
+	"blueman-manager",
+	"brave",
+	"alacritty --class Cmus -e cmus",
 }
 
 if autorun then
