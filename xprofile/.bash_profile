@@ -3,25 +3,26 @@
 #
 
 # path
-PATH="$PATH:/opt/appimages"
-PATH="$PATH:/home/anupam/.local/bin"
-PATH="$PATH:/home/anupam/go/bin"
-PATH="$PATH:/home/anupam/scripts"
+# PATH="$PATH:/opt/appimages"
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/go/bin"
+PATH="$PATH:$HOME/scripts"
 PATH="$PATH:$HOME/.config/emacs/bin"
 export PATH
 
 source $HOME/.cargo/env
 
 # college proxy
-proxy_var="http://edcguest:edcguest@172.31.102.29:3128"
+# proxy_var="http://edcguest:edcguest@172.31.102.29:3128"
 # proxy_var="http://edcguest:edcguest@172.31.100.27:3128"
 # proxy_var="http://edcguest:edcguest@172.31.100.25:3128"
-export http_proxy=$proxy_var
-export no_proxy="localhost,131.0.0.1,192.168.1.1,::1,*.local"
-export HTTP_PROXY=$proxy_var
-export NO_PROXY="localhost,131.0.0.1,192.168.1.1,::1,*.local"
-export https_proxy=$proxy_var
-export HTTPS_PROXY=$proxy_var
+# export http_proxy="http://edcguest:edcguest@172.31.100.27:3128"
+export http_proxy="http://edcguest:edcguest@172.31.102.29:3128"
+export HTTP_PROXY=$http_proxy
+export https_proxy=$http_proxy
+export HTTPS_PROXY=$http_proxy
+export no_proxy="localhost,131.0.0.1,192.168.1.1,::1,*.local,127.0.0.1"
+export NO_PROXY=$no_proxy
 
 # for weston wayland
 export LD_LIBRARY_PATH=/usr/local/lib/

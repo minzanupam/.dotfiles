@@ -39,5 +39,7 @@ fi
 
 # window managers I have installed are
 # openbox-session,awesome,leftwm
+#
 
 exec awesome
+# exec sway --unsupported-gpu
