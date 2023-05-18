@@ -10,3 +10,6 @@ vim.g['bujo#window_width'] = 100
 vim.g.neovide_transparency= 0.92
 vim.g.neovide_floating_blur_amount_x = 2.0
 vim.g.neovide_floating_blur_amount_y = 2.0
+
+vim.g.neoformat_enabled_javascript = {'js-beautify', 'prettier'}
+vim.g.neoformat_enabled_javascriptreact = {'prettier', 'js-beautify'}
