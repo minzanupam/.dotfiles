@@ -26,6 +26,7 @@ require("mytheme")
 require("mydapconfig")
 
 require("colorizer").setup()
+-- require('mini.map').setup()
 require("nvim-autopairs").setup()
 
 require("neogit").setup({})
