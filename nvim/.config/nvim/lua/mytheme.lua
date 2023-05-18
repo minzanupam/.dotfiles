@@ -32,6 +32,7 @@ end
 
 usethemer()
 
+-- vim.cmd("colorscheme solarized8")
 -- vim.cmd("colorscheme gruvbox")
 
 -- vim.cmd("hi LineNr guifg=#7c6f64")
@@ -40,9 +41,11 @@ usethemer()
 -- nord
 -- vim.cmd("colorscheme nord")
 -- vim.cmd("hi ColorColumn guibg=#3b4252")
+-- vim.cmd("hi CursorColumn guibg=#3b4252")
+-- vim.cmd("hi CursorLine guibg=#3b4252")
 
 -- tokyonight
-vim.cmd("hi ColorColumn guibg=#32334a")
+-- vim.cmd("hi ColorColumn guibg=#32334a")
 
 -- rose_pine
 -- vim.cmd("hi ColorColumn guibg=#403d52")

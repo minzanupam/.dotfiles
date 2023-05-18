@@ -18,7 +18,7 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  opacity: .9
+  opacity: .92
   dimensions:
     columns: 80
     lines: 24
@@ -92,7 +92,7 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: UbuntuMono
+    family: FiraCode
     style: Regular
   bold:
     # family: UbuntuMono
@@ -107,7 +107,7 @@ font:
     # style: Bold Italic
     style: Bold
 
-  size: 16.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -141,33 +141,37 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
+# don't use this use import
 # (tokyo-night)
-colors:
-  primary:
-    background: '#1a1b26'
-    foreground: '#a9b1d6'
+# colors:
+#   primary:
+#     background: '#1a1b26'
+#     foreground: '#a9b1d6'
+#
+#   # Normal colors
+#   normal:
+#     black:   '#32344a'
+#     red:     '#f7768e'
+#     green:   '#9ece6a'
+#     yellow:  '#e0af68'
+#     blue:    '#7aa2f7'
+#     magenta: '#ad8ee6'
+#     cyan:    '#449dab'
+#     white:   '#787c99'
+#
+#   # Bright colors
+#   bright:
+#     black:   '#444b6a'
+#     red:     '#ff7a93'
+#     green:   '#b9f27c'
+#     yellow:  '#ff9e64'
+#     blue:    '#7da6ff'
+#     magenta: '#bb9af7'
+#     cyan:    '#0db9d7'
+#     white:   '#acb0d0'
 
-  # Normal colors
-  normal:
-    black:   '#32344a'
-    red:     '#f7768e'
-    green:   '#9ece6a'
-    yellow:  '#e0af68'
-    blue:    '#7aa2f7'
-    magenta: '#ad8ee6'
-    cyan:    '#449dab'
-    white:   '#787c99'
-
-  # Bright colors
-  bright:
-    black:   '#444b6a'
-    red:     '#ff7a93'
-    green:   '#b9f27c'
-    yellow:  '#ff9e64'
-    blue:    '#7da6ff'
-    magenta: '#bb9af7'
-    cyan:    '#0db9d7'
-    white:   '#acb0d0'
+import:
+  - '~/.config/alacritty/colors/tokyo-night.yaml'
 
 # Colors
 #colors:
