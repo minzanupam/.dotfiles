@@ -133,6 +133,7 @@ return require("packer").startup({
 		-- use("ActivityWatch/aw-watcher-vim")
 		-- use("dylanaraps/fff.vim")
 		-- use("wfxr/minimap.vim")
+		use("echasnovski/mini.map")
 	end,
 	config = {
 		git = {
