@@ -166,8 +166,8 @@ sch() {
 # export PATH
 
 # export MANWIDTH=79
-export CHROME_EXECUTABLE=/usr/bin/chromium
-#  export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
+# export CHROME_EXECUTABLE=/usr/bin/chromium
+# export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
 
 alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 alias l="exa -lagF --color=always --group-directories-first"
@@ -184,7 +184,7 @@ alias yymax="/home/anupam/scripts/ydlp.sh bestvideo"
 alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallpaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
-alias vi=nvim
+alias v=nvim
 alias vim=nvim
 alias dra=dragon-drop
 alias alarm="mpv /home/anupam/Documents/emergency_alarm.wav"
@@ -203,7 +203,7 @@ alias tl="tmux ls"
 alias ta="tmux attach -t"
 alias o=xdg-open
 
-unset DEBUGINFOD_URLS
+# unset DEBUGINFOD_URLS
 
 # something to display
 # figlet 'mark52s' -f mini | lolcat
