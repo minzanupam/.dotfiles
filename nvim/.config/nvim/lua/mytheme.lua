@@ -45,7 +45,7 @@ usethemer()
 -- vim.cmd("hi CursorLine guibg=#3b4252")
 
 -- tokyonight
--- vim.cmd("hi ColorColumn guibg=#32334a")
+vim.cmd("hi ColorColumn guibg=#32334a")
 
 -- rose_pine
 -- vim.cmd("hi ColorColumn guibg=#403d52")

@@ -134,6 +134,15 @@ return require("packer").startup({
 		-- use("dylanaraps/fff.vim")
 		-- use("wfxr/minimap.vim")
 		use("echasnovski/mini.map")
+		-- which key nvim
+		use({
+			"folke/which-key.nvim",
+			config = function()
+				vim.o.timeout = true
+				vim.o.timeoutlen = 300
+				require("which-key").setup({})
+			end,
+		})
 	end,
 	config = {
 		git = {
