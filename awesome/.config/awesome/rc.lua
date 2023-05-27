@@ -85,7 +85,7 @@ awful.layout.layouts = {
 
 	awful.layout.suit.tile,
 	awful.layout.suit.max,
-	-- awful.layout.suit.spiral.dwindle,
+	awful.layout.suit.spiral.dwindle,
 	-- awful.layout.suit.tile.bottom,
 	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.magnifier,
@@ -387,7 +387,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ "Mod4" }, "c", function()
-		awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
+		awful.spawn("alacritty -e /home/anupam/scripts/cht.sh")
 	end),
 	awful.key({ "Mod4" }, "Return", function()
 		--awful.spawn("tabbed -c -n alacritty alacritty --embed")
@@ -399,8 +399,8 @@ globalkeys = gears.table.join(
 		awful.spawn(terminal .. " -e /home/anupam/scripts/tmux_opener.sh")
 	end),
 
-	awful.key({ "Mod4" }, "k", function()
-		awful.spawn(terminal .. " -e /home/anupam/scripts/keyboard-setup.sh")
+	awful.key({ "Mod4" }, "space", function()
+		awful.spawn("/home/anupam/scripts/switch-keyboard.sh")
 	end),
 
 	awful.key({ "Mod4" }, "e", function()
