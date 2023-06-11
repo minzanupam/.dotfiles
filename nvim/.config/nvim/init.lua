@@ -89,6 +89,17 @@ require("myformat")
 -- }
 -- vim.cmd([[syntax off]])
 
+-- gui config
+if vim.g.neovide then
+	vim.o.guifont="Fira Code:h12"
+	vim.g.neovide_cursor_animation_length = 0
+	vim.g.neovide_scroll_animation_length = 0
+	vim.g.neovide_transparency = 0.92
+	-- vim.g.neovide_floating_blur_amount_x = 2.0
+	-- vim.g.neovide_floating_blur_amount_y = 2.0
+end
+--
+
 local function reload()
 	local package_name = tostring(vim.fn.expand("%:r"))
 	package.loaded[package_name] = nil

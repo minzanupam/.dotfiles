@@ -46,7 +46,4 @@ vim.o.laststatus=3
 -- filetype plugin on
 -- filetype off
 
-vim.o.guifont="Ubuntu Mono:h18"
--- set guifont=Comic\ Mono:h15
-
 vim.cmd([[filetype plugin off]])

@@ -15,6 +15,10 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 local filename = tostring(vim.fn.expand("%:r"))
 
+local function copy(args)
+	return args[1][1]
+end
+
 ls.add_snippets("java", {
 	s(
 		"pcl",
@@ -77,9 +81,7 @@ ls.add_snippets("java", {
 			]],
 			{
 				i(1, "ClassName"),
-				classname = f(function(args)
-					return args[1][1]
-				end, { 1 }),
+				classname = f(copy, { 1 }),
 				i(0),
 			}
 		)
@@ -136,12 +138,8 @@ ls.add_snippets("java", {
 			{
 				i(1, "String"),
 				i(2, "Name"),
-				rt = f(function(args)
-					return args[1][1]
-				end, { 1 }),
-				name = f(function(args)
-					return args[1][1]
-				end, { 2 }),
+				rt = f(copy, { 1 }),
+				name = f(copy, { 2 }),
 				val = f(function(args)
 					local str = args[1][1]
 					local ret = str:gsub("^%u", string.lower)
@@ -269,13 +267,33 @@ for (int {iter}=0; {iter_c}<{cont}; {iter_c}++) {{
 			{
 				i(0),
 				iter = i(1, "i"),
-				iter_c = f(function(args)
-					return args[1][1]
-				end, { 1 }),
+				iter_c = f(copy, { 1 }),
 				cont = i(2, "n"),
 			}
 		)
 	),
+	s (
+		"readfile",
+		fmt(
+			[[
+FILE *f = fopen("{}", "r");
+if (f == NULL) {{
+	fprintf(stderr, "file {} not found");
+	return -1;
+}}
+char c;
+char buf[FILE_LEN];
+int i = 0;
+do {{
+	c = fgetc(f);
+	buf[i++] = c;
+}} while(c != EOF);
+			]], {
+				i(1, "file name"),
+				f(copy, { 1 }),
+			}
+		)
+	)
 })
 
 ls.add_snippets("go", {

@@ -1,7 +1,7 @@
 function usethemer()
 	require("themer").setup({
 		colorscheme = "tokyonight",
-		transparent = true,
+		transparent = not vim.g.neovide and true or false,
 		term_colors = true,
 
 		styles = {
@@ -23,7 +23,25 @@ function usethemer()
 		remaps = {
 			palette = {
 				gruvbox = {
-					["dimmed"] = { ["subtle"] = "#fe8019" },
+					["dimmed"] = { ["subtle"] = "#7c6f64" },
+					["bg"] = { ["base"] = "#1d2021" },
+				},
+			},
+			highlights = {
+				gruvbox = {
+					base = {
+						ColorColumn = { bg = "#3c3836" },
+					},
+				},
+				nord = {
+					base = {
+						ColorColumn = { bg = "#3b4252" }
+					},
+				},
+				tokyonight = {
+					base = {
+						ColorColumn = { bg = "#32334a" }
+					},
 				},
 			},
 		},
@@ -45,7 +63,7 @@ usethemer()
 -- vim.cmd("hi CursorLine guibg=#3b4252")
 
 -- tokyonight
-vim.cmd("hi ColorColumn guibg=#32334a")
+-- vim.cmd("hi ColorColumn guibg=#32334a")
 
 -- rose_pine
 -- vim.cmd("hi ColorColumn guibg=#403d52")

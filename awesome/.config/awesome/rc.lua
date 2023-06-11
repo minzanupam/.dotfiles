@@ -85,7 +85,7 @@ awful.layout.layouts = {
 
 	awful.layout.suit.tile,
 	awful.layout.suit.max,
-	awful.layout.suit.spiral.dwindle,
+	-- awful.layout.suit.spiral.dwindle,
 	-- awful.layout.suit.tile.bottom,
 	-- awful.layout.suit.spiral,
 	-- awful.layout.suit.magnifier,
@@ -413,7 +413,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ "Mod4" }, "b", function()
-		awful.spawn("brave")
+		awful.spawn("emacsclient -c")
 	end),
 
 	awful.key({}, "Print", function()
@@ -800,6 +800,7 @@ local autorunApps = {
 	"copyq",
 	"qpwgraph -m",
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+	"emacs --daemon",
 	"aw-qt",
 	"pavucontrol",
 	"blueman-manager",

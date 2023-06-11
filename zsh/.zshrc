@@ -158,6 +158,12 @@ sch() {
 	nvim .
 }
 
+sourcefile() {
+	SOURCEFILE_COMMAND=`echo '/usr/share/nvm/init-nvm.sh
+/opt/anaconda/bin/activate' | fzf`
+	source $SOURCEFILE_COMMAND
+}
+
 # export DENO_INSTALL=$HOME/.deno
 
 # export PATH="$PATH:/home/anupam/scripts
@@ -196,7 +202,7 @@ alias rscp='rsync -aP'
 alias rsmv='rsync -aP --remove-source-files'
 alias liveaudio='mpv --ytdl-format=91 --vid=no'
 # alias finso='flatpak run rest.insomnia.Insomnia'
-alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
+# alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
 # alias cht="/home/anupam/scripts/cht.sh"
 alias sxiv=nsxiv
 alias tl="tmux ls"
