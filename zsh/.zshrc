@@ -208,6 +208,7 @@ alias sxiv=nsxiv
 alias tl="tmux ls"
 alias ta="tmux attach -t"
 alias o=xdg-open
+alias em="emacsclient -c"
 
 # unset DEBUGINFOD_URLS
 

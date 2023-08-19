@@ -112,9 +112,9 @@ myawesomemenu = {
 			hotkeys_popup.show_help(nil, awful.screen.focused())
 		end,
 	},
-	{ "manual", terminal .. " -e man awesome" },
+	{ "manual",      terminal .. " -e man awesome" },
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart", awesome.restart },
+	{ "restart",     awesome.restart },
 	{
 		"quit",
 		function()
@@ -325,7 +325,7 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Create the wibox
 	-- s.mywibox = awful.wibar({ position = "top", screen = s })
-	s.mywibox = awful.wibar({ position = "top", height=30, screen = s, })
+	s.mywibox = awful.wibar({ position = "top", height = 30, screen = s, })
 	-- awful.placement.top(s.mywibox, {
 	-- 	margins = {
 	-- 		top = dpi(2),
@@ -338,14 +338,16 @@ awful.screen.connect_for_each_screen(function(s)
 	-- Add widgets to the wibox
 	s.mywibox:setup({
 		layout = wibox.layout.align.horizontal,
-		{ -- Left widgets
+		{
+			-- Left widgets
 			layout = wibox.layout.fixed.horizontal,
 			mylauncher,
 			s.mytaglist,
 			s.mypromptbox,
 		},
 		s.mytasklist, -- Middle widget
-		{ -- Right widgets
+		{
+			-- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			mykeyboardlayout,
 			wibox.widget.systray(),
@@ -413,14 +415,14 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ "Mod4" }, "b", function()
-		awful.spawn("emacsclient -c")
+		awful.spawn("emacsclient -c -a 'emacs'")
 	end),
 
 	awful.key({}, "Print", function()
 		awful.spawn("/home/anupam/scripts/screenshot.sh")
 	end),
 
-	awful.key({"Shift"}, "Print", function()
+	awful.key({ "Shift" }, "Print", function()
 		awful.spawn("/home/anupam/scripts/color-picker.sh")
 	end),
 
@@ -477,7 +479,6 @@ globalkeys = gears.table.join(
 	-- end, { description = "open a terminal", group = "launcher" }),
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
-
 	awful.key({ modkey }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
@@ -703,13 +704,16 @@ awful.rules.rules = {
 	},
 
 	-- force not floating
-	{ rule_any = {
-		class = {
-			"Pavucontrol",
-			"Blueman-manager",
-			"Cmus",
+	{
+		rule_any = {
+			class = {
+				"Pavucontrol",
+				"Blueman-manager",
+				"Cmus",
+			},
 		},
-	}, properties = { floating = false, tag = "3" } },
+		properties = { floating = false, tag = "3" }
+	},
 
 	-- Add titlebars to normal clients and dialogs
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
@@ -717,8 +721,10 @@ awful.rules.rules = {
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
 	--   properties = { screen = 1, tag = "2" } },
-	{ rule = { class = "Brave" },
-	  properties = { screen = 1, tag = "2" } },
+	{
+		rule = { class = "Brave" },
+		properties = { screen = 1, tag = "2" }
+	},
 
 }
 -- }}}
@@ -754,20 +760,24 @@ client.connect_signal("request::titlebars", function(c)
 	)
 
 	awful.titlebar(c):setup({
-		{ -- Left
+		{
+			-- Left
 			awful.titlebar.widget.iconwidget(c),
 			buttons = buttons,
 			layout = wibox.layout.fixed.horizontal,
 		},
-		{ -- Middle
-			{ -- Title
+		{
+			-- Middle
+			{
+				-- Title
 				align = "center",
 				widget = awful.titlebar.widget.titlewidget(c),
 			},
 			buttons = buttons,
 			layout = wibox.layout.flex.horizontal,
 		},
-		{ -- Right
+		{
+			-- Right
 			awful.titlebar.widget.floatingbutton(c),
 			awful.titlebar.widget.maximizedbutton(c),
 			awful.titlebar.widget.stickybutton(c),
