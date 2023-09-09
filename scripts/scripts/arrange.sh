@@ -11,4 +11,3 @@ mv ~/Downloads/*.{pptx,docx,txt} ~/Downloads/docs
 mv ~/Downloads/*.{diff,sh,py,yaml,yml,json} ~/Downloads/code_related
 mv ~/Downloads/*.AppImage ~/Downloads/appimages
 mv ~/Downloads/*.iso ~/Downloads/iso
-

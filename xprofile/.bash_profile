@@ -13,10 +13,10 @@ export PATH
 source $HOME/.cargo/env
 
 # college proxy
-proxy_var="http://edcguest:edcguest@172.31.102.29:3128"
+# proxy_var="http://edcguest:edcguest@172.31.102.29:3128"
 # proxy_var="http://edcguest:edcguest@172.31.100.27:3128"
 # proxy_var="http://edcguest:edcguest@172.31.100.25:3128"
-export http_proxy="http://edcguest:edcguest@172.31.100.27:3128"
+# export http_proxy="http://edcguest:edcguest@172.31.100.27:3128"
 export http_proxy="http://edcguest:edcguest@172.31.102.29:3128"
 export HTTP_PROXY=$http_proxy
 export https_proxy=$http_proxy

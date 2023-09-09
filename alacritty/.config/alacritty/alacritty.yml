@@ -142,7 +142,7 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 import:
-  - '~/.config/alacritty/colors/Gruvbox-Dark.yml'
+  - '~/.config/alacritty/colors/Gruvbox-dark.yaml'
 
 # Colors
 #colors:

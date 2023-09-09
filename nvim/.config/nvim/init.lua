@@ -125,15 +125,16 @@ require('lazy').setup({
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
   -- requirements installed.
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation,
-    --       refer to the README for telescope-fzf-native for more instructions.
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-  },
+  -- {
+  --   'nvim-telescope/telescope-fzf-native.nvim',
+  --   -- NOTE: If you are having trouble with this installation,
+  --   --       refer to the README for telescope-fzf-native for more instructions.
+  --   build = 'make',
+  --   cond = function()
+  --     return vim.fn.executable 'make' == 1
+  --   end,
+  -- },
+  { 'nvim-telescope/telescope-fzy-native.nvim' },
 
   {
     -- Highlight, edit, and navigate code
@@ -246,10 +247,16 @@ require('telescope').setup {
       },
     },
   },
+  extensions = {
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    }
+  }
 }
 
 -- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'fzy_native')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -439,10 +446,11 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
+-- require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
+-- require('snippets')
 
-cmp.setup {
+cmp.setup = {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -478,10 +486,10 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = 'luasnip' },
+    -- { name = 'luasnip' },
     { name = 'nvim_lsp' },
-    { name = 'path' },
-    { name = 'buffer' },
+    -- { name = 'path' },
+    -- { name = 'buffer' },
   },
 }
 
