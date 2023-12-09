@@ -25,8 +25,10 @@ min_time=2000
 show_milliseconds=false
 
 [character]
-success_symbol = "[λ](bold white)"
-error_symbol = "[✗](bold red)"
+# success_symbol = "[λ](bold white)"
+# error_symbol = "[✗](bold red)"
+success_symbol = "[➢](bold blue)"
+error_symbol = "[➢](bold red)"
 vicmd_symbol = "[Λ](bold green)"
 # [➜](bold green)
 # [←](bold red)

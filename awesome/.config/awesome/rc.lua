@@ -573,9 +573,9 @@ clientkeys = gears.table.join(
 		c.maximized = not c.maximized
 		for _, cls in ipairs(client.get()) do
 			-- minimize all windows except the focused one
-			if c.window ~= cls.window and c.first_tag == cls.first_tag then
-				cls.minimized = not cls.minimized
-			end
+			-- if c.window ~= cls.window and c.first_tag == cls.first_tag then
+			-- 	cls.minimized = not cls.minimized
+			-- end
 		end
 		c:raise()
 	end, { description = "(un)maximize", group = "client" }),
@@ -807,15 +807,16 @@ local autorun = true
 local autorunApps = {
 	"picom",
 	"nitrogen --restore",
-	"copyq",
-	"qpwgraph -m",
+	-- "copyq",
+	-- "qpwgraph -m",
+	-- "blueman-manager",
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
 	"emacs --daemon",
 	"aw-qt",
-	"pavucontrol",
-	"blueman-manager",
 	"brave",
 	"alacritty --class Cmus -e cmus",
+	"flameshot",
+	-- "pasystray",
 }
 
 if autorun then

@@ -6,6 +6,7 @@
 # PATH="$PATH:/opt/appimages"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/go/bin"
+PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 PATH="$PATH:$HOME/scripts"
 PATH="$PATH:$HOME/.config/emacs/bin"
 export PATH
@@ -17,12 +18,15 @@ source $HOME/.cargo/env
 # proxy_var="http://edcguest:edcguest@172.31.100.27:3128"
 # proxy_var="http://edcguest:edcguest@172.31.100.25:3128"
 # export http_proxy="http://edcguest:edcguest@172.31.100.27:3128"
-export http_proxy="http://edcguest:edcguest@172.31.102.29:3128"
-export HTTP_PROXY=$http_proxy
-export https_proxy=$http_proxy
-export HTTPS_PROXY=$http_proxy
-export no_proxy="localhost,131.0.0.1,192.168.1.1,::1,*.local,127.0.0.1"
-export NO_PROXY=$no_proxy
+# export http_proxy="http://edcguest:edcguest@172.31.102.29:3128"
+# export http_proxy="http://edcguest:edcguest@172.31.100.14:3128"
+# export HTTP_PROXY=$http_proxy
+# export https_proxy=$http_proxy
+# export HTTPS_PROXY=$http_proxy
+# export no_proxy="localhost,131.0.0.1,192.168.1.1,::1,*.local,127.0.0.1"
+# export NO_PROXY=$no_proxy
+
+source $HOME/.proxy.conf
 
 # for weston wayland
 export LD_LIBRARY_PATH=/usr/local/lib/

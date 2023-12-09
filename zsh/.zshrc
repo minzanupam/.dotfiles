@@ -158,11 +158,11 @@ sch() {
 	nvim .
 }
 
-sourcefile() {
-	SOURCEFILE_COMMAND=`echo '/usr/share/nvm/init-nvm.sh
-/opt/anaconda/bin/activate' | fzf`
-	source $SOURCEFILE_COMMAND
-}
+# sourcefile() {
+# 	SOURCEFILE_COMMAND=`echo '/usr/share/nvm/init-nvm.sh
+# /opt/anaconda/bin/activate' | fzf`
+# 	source $SOURCEFILE_COMMAND
+# }
 
 # export DENO_INSTALL=$HOME/.deno
 
