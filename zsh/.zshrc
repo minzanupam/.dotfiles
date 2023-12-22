@@ -15,12 +15,12 @@ HISTSIZE=50000
 SAVEHIST=50000
 setopt SHARE_HISTORY             # Share history between all sessions.
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #source /home/anupam/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/anupam/.zsh/vi-mode.plugin.zsh
 source /home/anupam/.zsh/key-bindings.zsh
 # source /home/anupam/.zsh/completion.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-autosuggestions config
 bindkey '^ ' autosuggest-accept
