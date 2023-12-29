@@ -50,32 +50,6 @@ if [ -f "$LFCD" ]; then
 fi
 alias lf=lfcd
 
-start_bookmarks() {
-    if [ ! -f /home/anupam/.cache/projectlist ]; then
-        set_projectdir
-    fi
-    selected=`fzf < /home/anupam/.cache/projectlist`
-    dirname=`basename $selected`
-    tmux switch-client -t $dirname
-    #if [[ $? -eq 0 ]]; then
-    #    exit 0
-    #fi
-    tmux new-session -c $selected -d -s $dirname &&
-    tmux switch-client -t $dirname || tmux new -c $selected -A -s $dirname
-}
-
-bookmarks() {
-    if [ ! -f /home/anupam/.cache/projectlist ]; then
-        set_projectdir
-    fi
-    selected=`fzf < /home/anupam/.cache/projectlist`
-    cd $selected
-}
-
-set_projectdir () {
-    find /home/anupam/work -type d -name '.git' -prune | sed 's/\.git//g' > /home/anupam/.cache/projectlist
-}
-
 #  findproj() { cd `find ~/work -maxdepth 3 -mindepth 1 -type d | fzf` }
 
 editconf_old() {
@@ -109,13 +83,6 @@ editconf() {
 
 songsearch() {
     find /media/anupam/881f3c4e-63e4-4d5d-a149-e736788e2134/Songs -mindepth 1 -type f | fzf
-}
-
-readbook() {
-    bookname=`find /home/anupam/Documents/Books/ | fzf --height=20 --layout=reverse`
-    zathura "$bookname" &
-	disown
-    exit
 }
 
 bvim () {
