@@ -807,7 +807,7 @@ local autorun = true
 local autorunApps = {
 	"picom",
 	"nitrogen --restore",
-	-- "copyq",
+	"copyq",
 	-- "qpwgraph -m",
 	-- "blueman-manager",
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",

@@ -26,7 +26,7 @@ source $HOME/.cargo/env
 # export no_proxy="localhost,131.0.0.1,192.168.1.1,::1,*.local,127.0.0.1"
 # export NO_PROXY=$no_proxy
 
-source $HOME/.proxy.conf
+# source $HOME/.proxy.conf
 
 # for weston wayland
 export LD_LIBRARY_PATH=/usr/local/lib/
