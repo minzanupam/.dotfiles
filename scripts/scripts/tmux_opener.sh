@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    selected=`fzf < /home/anupam/.cache/projectlist`
-fi
+selected=`fzf < /home/anupam/.cache/projectlist`
 
 dirname=`basename $selected`
 
