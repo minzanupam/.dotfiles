@@ -69,7 +69,7 @@ beautiful.init("/home/anupam/.config/awesome/themes/default.lua")
 -- 	"/home/anupam/Pictures/wallpapers/minimal/255909-vertical-minimalistic-wallpaper-3840x2160-images.jpg"
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "mate-terminal"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -389,7 +389,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ "Mod4" }, "c", function()
-		awful.spawn("alacritty -e /home/anupam/scripts/cht.sh")
+		awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
 	end),
 	awful.key({ "Mod4" }, "Return", function()
 		--awful.spawn("tabbed -c -n alacritty alacritty --embed")
@@ -809,12 +809,13 @@ local autorunApps = {
 	"nitrogen --restore",
 	"copyq",
 	-- "qpwgraph -m",
-	-- "blueman-manager",
+	"blueman-manager",
+	"pavucontrol",
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
 	"emacs --daemon",
-	"aw-qt",
+	-- "aw-qt",
 	"brave",
-	"alacritty --class Cmus -e cmus",
+	"kitty --class Cmus -e cmus",
 	"flameshot",
 	-- "pasystray",
 }

@@ -23,10 +23,11 @@ import           XMonad.Util.SpawnOnce
 import qualified Data.Map                  as M
 import qualified XMonad.StackSet           as W
 
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "alacritty"
+myTerminal      = "kitty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -56,7 +57,7 @@ myModMask       = mod1Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["dev","web","music","aux","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -217,7 +218,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList
 -- which denotes layout choice.
 --
 -- myLayout = (avoidStruts $ spacingWithEdge 4 $ tiled) ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
-myLayout = (avoidStruts $ spacingWithEdge 4 tiled) ||| (avoidStruts $ spacingWithEdge 4 Full)
+-- myLayout = (avoidStruts $ spacingWithEdge 4 tiled) ||| (avoidStruts $ spacingWithEdge 4 Full)
+myLayout = (avoidStruts tiled) ||| (noBorders Full)
 
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -288,7 +290,7 @@ myStartupHook = do
     spawnOnce "copyq"
     spawnOnce "qpwgraph -m"
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawnOnce "aw-qt"
+    -- spawnOnce "aw-qt"
     spawnOnce "pavucontrol"
     spawnOnce "blueman-manager"
     spawnOnce "brave"

@@ -23,6 +23,6 @@ export LD_LIBRARY_PATH=/usr/local/lib/
 # export QT_STYLE_OVERRIDE=gtk2
 
 # home dual monitor setup
-# /home/anupam/.screenlayout/home.sh
+/home/anupam/.screenlayout/home.sh
 
 /home/anupam/scripts/keyboard-setup.sh
