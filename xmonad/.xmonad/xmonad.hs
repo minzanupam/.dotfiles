@@ -87,7 +87,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,                      xK_Print     ), spawn "/home/anupam/scripts/screenshot.sh")
 
     -- launch dmenu
-    , ((modm,                   xK_p     ), spawn "dmenu_run")
+    , ((modm,                   xK_p     ), spawn "dmenu_run -i")
 
     -- launch gmrun
     --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -284,7 +284,8 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
-    spawnOnce "trayer --edge top --align right --widthtype request --expand true --SetDockType true --SetPartialStrut true --transparent true --alpha 0 --tint 0x1A1918 --heighttype pixel --monitor 0 --height 18 --distancefrom right --distance 430"
+    -- spawnOnce "trayer --edge top --align right --widthtype request --expand true --SetDockType true --SetPartialStrut true --transparent true --alpha 0 --tint 0x1A1918 --heighttype pixel --monitor 0 --height 18 --distancefrom right --distance 430"
+    spawnOnce "trayer --edge top --align right --SetDockType true --transparent false --alpha 0 --tint 0x1A1918 --monitor 0 --distancefrom right --distance 430 --width 15"
     spawnOnce "picom"
     spawnOnce "nitrogen --restore"
     spawnOnce "copyq"
