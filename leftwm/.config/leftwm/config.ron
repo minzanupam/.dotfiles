@@ -47,7 +47,7 @@
     ],
     layout_mode: Tag,
     // Bottom, Top
-    insert_behavior: Bottom, 
+    insert_behavior: Top, 
     scratchpad: [
         (name: "Alacritty", value: "alacritty", x: 860, y: 390, height: 300, width: 200),
     ],
@@ -70,7 +70,7 @@
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "q"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
         (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "j"),
-        (command: MoveWindowTop, value: "", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: MoveWindowTop, value: "", modifier: ["modkey"], key: "Return"),
         (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "k"),
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "j"),
         (command: NextLayout, value: "", modifier: ["modkey"], key: "space"),

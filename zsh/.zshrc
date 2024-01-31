@@ -175,7 +175,7 @@ alias sxiv=nsxiv
 alias tl="tmux ls"
 alias ta="tmux attach -t"
 alias o=xdg-open
-alias em="emacsclient -c . & disown"
+alias em="emacsclient -c"
 
 # unset DEBUGINFOD_URLS
 
@@ -187,3 +187,9 @@ alias em="emacsclient -c . & disown"
 # figlet 'mark52s'
 # figlet 'start' | lolcat
 # fortune
+
+pn() {
+    # pnpm $1 --prefer-offline
+    pnpm $@ --prefer-offline
+}
+
