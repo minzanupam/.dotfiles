@@ -72,8 +72,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       -- launch terminal
       -- , ((mod4Mask, xK_Return), spawn "st -e zsh")
       ((mod4Mask, xK_Return), spawn myTerminal),
-      -- systemctl suspend
-      ((mod4Mask, xK_q), spawn "systemctl suspend"),
       -- cht.sh
       ((mod4Mask, xK_c), spawn (myTerminal ++ " -e /home/anupam/scripts/cht.sh")),
       -- start_project.sh
@@ -229,7 +227,10 @@ myManageHook =
     [ --  className =? "MPlayer"        --> doFloat
       --  , className =? "Gimp"           --> doFloat
       resource =? "desktop_window" --> doIgnore,
-      resource =? "kdesktop" --> doIgnore
+      resource =? "kdesktop" --> doIgnore,
+      resource =? "pavucontrol" --> doShift (myWorkspaces !! 2),
+      resource =? "Cmus" --> doShift (myWorkspaces !! 2),
+      resource =? "brave-browser" --> doShift (myWorkspaces !! 1)
     ]
 
 ------------------------------------------------------------------------
@@ -272,6 +273,7 @@ myStartupHook = do
   spawnOnce "pavucontrol"
   spawnOnce "blueman-applet"
   spawnOnce "rog-control-center"
+  -- spawnOnce "brave"
   spawnOnce "brave"
   spawnOnce (myTerminal ++ " --class Cmus -e cmus")
 
