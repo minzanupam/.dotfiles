@@ -9,7 +9,10 @@ PATH="$PATH:$HOME/go/bin"
 PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 PATH="$PATH:$HOME/scripts"
 PATH="$PATH:$HOME/.config/emacs/bin"
+PATH="$PATH:$HOME/.npm-packages/bin"
 export PATH
+
+export NODE_PATH=~/.npm-packages/lib/node_modules
 
 source $HOME/.cargo/env
 
