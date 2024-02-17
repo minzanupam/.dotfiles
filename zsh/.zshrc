@@ -176,6 +176,7 @@ alias tl="tmux ls"
 alias ta="tmux attach -t"
 alias o=xdg-open
 alias em="emacsclient -c"
+alias egrep="grep -E"
 
 # unset DEBUGINFOD_URLS
 
