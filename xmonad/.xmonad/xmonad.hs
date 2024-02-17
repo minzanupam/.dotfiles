@@ -270,7 +270,8 @@ myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
   -- spawnOnce "aw-qt"
   spawnOnce "pavucontrol"
-  -- spawnOnce "blueman-manager"
+  spawnOnce "blueman-applet"
+  spawnOnce "rog-control-center"
   spawnOnce "brave"
   spawnOnce "alacritty --class Cmus -e cmus"
 
