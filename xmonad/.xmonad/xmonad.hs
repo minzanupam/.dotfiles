@@ -75,9 +75,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       -- systemctl suspend
       ((mod4Mask, xK_q), spawn "systemctl suspend"),
       -- cht.sh
-      ((mod4Mask, xK_c), spawn "alacritty -e /home/anupam/scripts/cht.sh"),
+      ((mod4Mask, xK_c), spawn (myTerminal ++ " -e /home/anupam/scripts/cht.sh")),
       -- start_project.sh
-      ((mod4Mask, xK_s), spawn "alacritty -e /home/anupam/scripts/start_projects.sh"),
+      ((mod4Mask, xK_s), spawn (myTerminal ++ "-e /home/anupam/scripts/start_projects.sh")),
       -- emoji
       ((mod4Mask, xK_e), spawn "/home/anupam/scripts/dmenuunicode.sh"),
       -- screenshot
@@ -273,7 +273,7 @@ myStartupHook = do
   spawnOnce "blueman-applet"
   spawnOnce "rog-control-center"
   spawnOnce "brave"
-  spawnOnce "alacritty --class Cmus -e cmus"
+  spawnOnce (myTerminal ++ " --class Cmus -e cmus")
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -305,7 +305,7 @@ main = do
           logHook =
             dynamicLogWithPP $
               xmobarPP
-                { ppOutput = \x -> hPutStrLn xmproc0 x {- >> hPutStrLn xmproc1 x -}
+                { ppOutput = hPutStrLn xmproc0 {- >> hPutStrLn xmproc1 x -}
                 },
           manageHook = myManageHook,
           startupHook = myStartupHook
