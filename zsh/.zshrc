@@ -157,7 +157,7 @@ alias yymax="/home/anupam/scripts/ydlp.sh bestvideo"
 alias yym="/home/anupam/scripts/ydlp.sh"
 alias randomwallpaper="/home/anupam/work/build/styli.sh/styli.sh"
 #  alias dlfile="/home/anupam/scripts/dlfile"
-alias v=nvim
+# alias v=nvim
 alias vim=nvim
 alias dra=dragon-drop
 alias alarm="mpv /home/anupam/Documents/emergency_alarm.wav"
@@ -189,8 +189,9 @@ alias egrep="grep -E"
 # figlet 'start' | lolcat
 # fortune
 
-pn() {
-    # pnpm $1 --prefer-offline
-    pnpm $@ --prefer-offline
+tt() {
+    fileName=`ls -a1 ~/Templates | fzf`
+    cp ~/Templates/${fileName} .
 }
 
+export SHELL=zsh
