@@ -1,4 +1,4 @@
-import = ["/home/anupam/.config/alacritty/colors/Nord.toml"]
+import = ["/home/anupam/.config/alacritty/colors/Gruvbox-Dark.toml"]
 
 [cursor]
 style = "Block"
