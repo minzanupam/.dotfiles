@@ -19,7 +19,7 @@ export PATH
 export LD_LIBRARY_PATH=/usr/local/lib/
 #
 # # for qt
-export QT_QPA_PLATFORMTHEME=gtk2
+# export QT_QPA_PLATFORMTHEME=gtk2
 # export QT_STYLE_OVERRIDE=gtk2
 
 # home dual monitor setup

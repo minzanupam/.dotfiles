@@ -69,7 +69,7 @@ beautiful.init("/home/anupam/.config/awesome/themes/default.lua")
 -- 	"/home/anupam/Pictures/wallpapers/minimal/255909-vertical-minimalistic-wallpaper-3840x2160-images.jpg"
 
 -- This is used later as the default terminal and editor to run.
-terminal = "mate-terminal"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
