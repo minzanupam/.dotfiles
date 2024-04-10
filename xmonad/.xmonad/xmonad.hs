@@ -76,8 +76,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       ((mod4Mask, xK_c), spawn (myTerminal ++ " -e /home/anupam/scripts/cht.sh")),
       -- start_project.sh
       ((mod4Mask, xK_s), spawn (myTerminal ++ "-e /home/anupam/scripts/start_projects.sh")),
-      -- start_project.sh
+
       ((mod4Mask, xK_b), spawn "blueman-manager"),
+      ((mod4Mask, xK_n), spawn "emacsclient -r"),
       -- emoji
       ((mod4Mask, xK_e), spawn "/home/anupam/scripts/dmenuunicode.sh"),
       -- screenshot
