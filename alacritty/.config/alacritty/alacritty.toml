@@ -1,4 +1,4 @@
-import = ["/home/anupam/.config/alacritty/colors/Gruvbox-Dark.toml"]
+import = ["/home/anupam/.config/alacritty/colors/tokyo-night.toml"]
 
 [cursor]
 style = "Block"
@@ -34,7 +34,7 @@ history = 10000
 program = "/usr/bin/zsh"
 
 [window]
-opacity = 0.95
+opacity = 1
 
 [window.dimensions]
 columns = 80
