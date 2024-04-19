@@ -34,8 +34,7 @@ history = 10000
 program = "/usr/bin/zsh"
 
 [window]
-opacity = 1
-
+opacity = 0.97
 [window.dimensions]
 columns = 80
 lines = 24
