@@ -10,6 +10,7 @@ PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 PATH="$PATH:$HOME/scripts"
 PATH="$PATH:$HOME/.config/emacs/bin"
 PATH="$PATH:$HOME/.npm-packages/bin"
+# PATH="$PATH:/opt/instantclient_21_13"
 export PATH
 
 export NODE_PATH=~/.npm-packages/lib/node_modules
@@ -31,9 +32,11 @@ source $HOME/.cargo/env
 
 # source $HOME/.proxy.conf
 
+# for orcale client
 # for weston wayland
-export LD_LIBRARY_PATH=/usr/local/lib/
-
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/"
+# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/instantclient_21_13"
+#
 # for qt
 # export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_STYLE_OVERRIDE=gtk2
