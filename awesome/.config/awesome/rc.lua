@@ -415,7 +415,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ "Mod4" }, "b", function()
-		awful.spawn("emacsclient -c -a 'emacs'")
+		awful.spawn("blueman-manager")
 	end),
 
 	awful.key({}, "Print", function()
@@ -678,7 +678,7 @@ awful.rules.rules = {
 			},
 			class = {
 				"Arandr",
-				"Blueman-manager",
+				-- "Blueman-manager",
 				"Gpick",
 				"Kruler",
 				"MessageWin", -- kalarm.
@@ -708,7 +708,7 @@ awful.rules.rules = {
 		rule_any = {
 			class = {
 				"Pavucontrol",
-				"Blueman-manager",
+				-- "Blueman-manager",
 				"Cmus",
 			},
 		},
@@ -809,14 +809,15 @@ local autorunApps = {
 	"nitrogen --restore",
 	"copyq",
 	-- "qpwgraph -m",
-	"blueman-manager",
+	-- "blueman-manager",
 	"pavucontrol",
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
 	"emacs --daemon",
 	-- "aw-qt",
 	"brave",
-	"kitty --class Cmus -e cmus",
+	terminal .. " --class Cmus -e cmus",
 	"flameshot",
+	"rog-control-center",
 	-- "pasystray",
 }
 
