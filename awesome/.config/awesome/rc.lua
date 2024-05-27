@@ -722,8 +722,20 @@ awful.rules.rules = {
 	-- { rule = { class = "Firefox" },
 	--   properties = { screen = 1, tag = "2" } },
 	{
-		rule = { class = "Brave" },
+		rule_any = {
+			class = {
+				"Brave",
+			},
+		},
 		properties = { screen = 1, tag = "2" }
+	},
+	{
+		rule = { name = "Brave" },
+		properties = { screen = 1, tag = "2" }
+	},
+	{
+		rule = { class = "Chromium-browser" },
+		properties = { screen = 1, tag = "4" }
 	},
 
 }
@@ -817,7 +829,7 @@ local autorunApps = {
 	"brave",
 	terminal .. " --class Cmus -e cmus",
 	"flameshot",
-	"rog-control-center",
+	-- "rog-control-center",
 	-- "pasystray",
 }
 

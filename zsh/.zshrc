@@ -199,3 +199,5 @@ export SHELL=zsh
 export PATH="$PATH:/opt/instantclient_21_13"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/instantclient_21_13"
 export ORACLE_HOME="/opt/instantclient_21_13"
+
+# source .proxy.conf
