@@ -278,7 +278,7 @@ myStartupHook = do
   -- spawnOnce "aw-qt"
   spawnOnce "pavucontrol"
   spawnOnce "blueman-applet"
-  spawnOnce "rog-control-center"
+  -- spawnOnce "rog-control-center"
   -- spawnOnce "brave"
   spawnOnce "brave"
   spawnOnce (myTerminal ++ " --class Cmus -e cmus")
