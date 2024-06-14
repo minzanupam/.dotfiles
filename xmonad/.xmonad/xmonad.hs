@@ -275,15 +275,15 @@ myStartupHook = do
   spawnOnce "trayer --edge top --align right --SetDockType true --transparent false --alpha 0 --tint 0x1A1918 --monitor 0 --distancefrom right --distance 430 --width 15"
   spawnOnce "picom"
   spawnOnce "nitrogen --restore"
-  spawnOnce "copyq"
-  spawnOnce "qpwgraph -m"
-  spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+  -- spawnOnce "copyq"
+  -- spawnOnce "qpwgraph -m"
+  -- spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
   -- spawnOnce "aw-qt"
-  spawnOnce "pavucontrol"
-  spawnOnce "blueman-applet"
+  -- spawnOnce "pavucontrol"
+  -- spawnOnce "blueman-applet"
   -- spawnOnce "rog-control-center"
   -- spawnOnce "brave"
-  spawnOnce "brave"
+  -- spawnOnce "brave"
   spawnOnce (myTerminal ++ " --class Cmus -e cmus")
 
 ------------------------------------------------------------------------
