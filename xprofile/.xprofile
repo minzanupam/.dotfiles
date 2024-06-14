@@ -1,6 +1,6 @@
 # this has been moved to .bash_profile
 # # path
-PATH="$PATH:/home/anupam/.local/bin"
+# PATH="$PATH:/home/anupam/.local/bin"
 PATH="$PATH:/home/anupam/go/bin"
 PATH="$PATH:/home/anupam/scripts"
 export PATH
@@ -16,13 +16,15 @@ export PATH
 # export HTTPS_PROXY=$proxy_var
 
 # # for weston wayland
-export LD_LIBRARY_PATH=/usr/local/lib/
+# export LD_LIBRARY_PATH=/usr/local/lib/
 #
 # # for qt
 # export QT_QPA_PLATFORMTHEME=gtk2
 # export QT_STYLE_OVERRIDE=gtk2
 
 # home dual monitor setup
-/home/anupam/.screenlayout/home.sh
+. /home/anupam/.screenlayout/home.sh
 
-/home/anupam/scripts/keyboard-setup.sh
+. /home/anupam/scripts/keyboard-setup.sh
+
+export GTK_THEME=Adwaita:dark
