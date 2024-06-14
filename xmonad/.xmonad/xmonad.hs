@@ -75,6 +75,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       -- cht.sh
       ((mod4Mask, xK_c), spawn (myTerminal ++ " -e /home/anupam/scripts/cht.sh")),
       -- start_project.sh
+
+      ((mod4Mask, xK_q), spawn ("xkill")),
+      -- start_project.sh
       ((mod4Mask, xK_s), spawn (myTerminal ++ "-e /home/anupam/scripts/start_projects.sh")),
 
       ((mod4Mask, xK_b), spawn "blueman-manager"),
