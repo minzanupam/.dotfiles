@@ -202,3 +202,5 @@ export SHELL=zsh
 # export ORACLE_HOME="/opt/instantclient_21_13"
 
 # source .proxy.conf
+
+cd $HOME

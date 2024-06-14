@@ -34,14 +34,14 @@ source $HOME/.cargo/env
 
 # for orcale client
 # for weston wayland
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/"
+# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/"
 # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/instantclient_21_13"
 #
 # for qt
 # export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_STYLE_OVERRIDE=gtk2
 # for gtk4
-export GTK_THEME=Adwaita:dark
+# export GTK_THEME=Adwaita:dark
 
 # if you want to use amd-driver
 # export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
@@ -53,3 +53,5 @@ fi
 
 # [[ -f ~/.bashrc ]] && . ~/.bashrc
 # . "$HOME/.cargo/env"
+
+# if [ -e /home/anupam/.nix-profile/etc/profile.d/nix.sh ]; then . /home/anupam/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
