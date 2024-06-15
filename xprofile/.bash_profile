@@ -6,10 +6,12 @@
 # PATH="$PATH:/opt/appimages"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/go/bin"
-PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
+# PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 PATH="$PATH:$HOME/scripts"
-PATH="$PATH:$HOME/.config/emacs/bin"
+# PATH="$PATH:$HOME/.config/emacs/bin"
 PATH="$PATH:$HOME/.npm-packages/bin"
+PATH="$PATH:/home/anupam/work/build/fff"
+PATH="$PATH:/var/lib/flatpak/exports/bin"
 # PATH="$PATH:/opt/instantclient_21_13"
 export PATH
 
@@ -47,10 +49,10 @@ source $HOME/.cargo/env
 # export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
 
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec startx
-fi
-
+# if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ] && [ "$(tty)" = "/dev/tty1" ]; then
+#   exec startx
+# fi
+#
 # [[ -f ~/.bashrc ]] && . ~/.bashrc
 # . "$HOME/.cargo/env"
 

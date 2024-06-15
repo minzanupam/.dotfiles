@@ -113,7 +113,7 @@ nwal() {
 
 fr() {
 	flatpak_choice=`flatpak list | fzf | cut -f2`
-	flatpak run $flatpak_choice $@
+	flatpak run $flatpak_choice $@ & disown
 }
 
 tmn() {
@@ -202,5 +202,7 @@ export SHELL=zsh
 # export ORACLE_HOME="/opt/instantclient_21_13"
 
 # source .proxy.conf
-
-cd $HOME
+# cd $HOME
+if [ `pwd` = "/" ]; then
+    cd $HOME
+fi

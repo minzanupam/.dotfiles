@@ -90,7 +90,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       -- launch dmenu
       ((modm, xK_p), spawn "dmenu_run -i"),
       -- setup keyboard
-      ((mod4Mask, xK_space), spawn "keyboard-setup.sh"),
+      ((mod4Mask, xK_space), spawn "reset.sh"),
       -- launch gmrun
       --, ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
