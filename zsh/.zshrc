@@ -172,7 +172,7 @@ alias liveaudio='mpv --ytdl-format=91 --vid=no'
 # alias finso='flatpak run rest.insomnia.Insomnia'
 # alias nvmsrc="source /usr/share/nvm/init-nvm.sh"
 # alias cht="/home/anupam/scripts/cht.sh"
-alias sxiv=nsxiv
+# alias sxiv=nsxiv
 alias tl="tmux ls"
 alias ta="tmux attach"
 alias o=xdg-open
