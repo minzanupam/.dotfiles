@@ -57,3 +57,5 @@ source $HOME/.cargo/env
 # . "$HOME/.cargo/env"
 
 # if [ -e /home/anupam/.nix-profile/etc/profile.d/nix.sh ]; then . /home/anupam/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# export GTK_THEME=Adwaita:dark
