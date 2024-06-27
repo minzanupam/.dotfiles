@@ -215,7 +215,10 @@ bindsym $mod+semicolon layout stacking
 
 bindsym $mod+m fullscreen toggle
 
-input type:keyboard xkb_layout real-prog-dvorak
+input type:keyboard {
+        xkb_layout real-prog-dvorak
+        xkb_options ctrl:nocaps
+}
 
 exec autotiling
 
