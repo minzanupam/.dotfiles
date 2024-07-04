@@ -60,7 +60,7 @@ myWorkspaces = ["dev", "web", "music", "aux", "llama", "6", "7", "8", "9"]
 --
 myNormalBorderColor = "#000000"
 
-myFocusedBorderColor = "#00B2E0"
+myFocusedBorderColor = "#565656"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -202,7 +202,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
 --
 -- myLayout = (avoidStruts $ spacingWithEdge 4 $ tiled) ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
 -- myLayout = (avoidStruts $ spacingWithEdge 4 tiled) ||| (avoidStruts $ spacingWithEdge 4 Full)
-myLayout = avoidStruts tiled ||| avoidStruts Full ||| noBorders Full
+myLayout = (avoidStruts $ spacingWithEdge 4 tiled) ||| (avoidStruts $ noBorders Full) ||| (noBorders Full)
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = Tall nmaster delta ratio
