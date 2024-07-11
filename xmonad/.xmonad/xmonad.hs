@@ -272,7 +272,8 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
   -- spawnOnce "trayer --edge top --align right --widthtype request --expand true --SetDockType true --SetPartialStrut true --transparent true --alpha 0 --tint 0x1A1918 --heighttype pixel --monitor 0 --height 18 --distancefrom right --distance 430"
-  spawnOnce "trayer --edge top --align right --SetDockType true --transparent false --alpha 0 --tint 0x1A1918 --monitor 0 --distancefrom right --distance 430 --width 15"
+  -- spawnOnce "trayer --edge top --align right --SetDockType true --transparent false --alpha 0 --tint 0x1A1918 --monitor 0 --distancefrom right --distance 430 --width 15"
+  spawnOnce "stalonetray"
   spawnOnce "picom"
   spawnOnce "nitrogen --restore"
   -- spawnOnce "copyq"
@@ -284,7 +285,7 @@ myStartupHook = do
   -- spawnOnce "rog-control-center"
   -- spawnOnce "brave"
   -- spawnOnce "brave"
-  spawnOnce (myTerminal ++ " --class Cmus -e cmus")
+  -- spawnOnce (myTerminal ++ " --class Cmus -e cmus")
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
