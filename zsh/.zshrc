@@ -44,12 +44,12 @@ f() {
 
 source /home/anupam/.config/fff/fffrc.sh
 
-alias lf=lfrun
-LFCD="/home/anupam/.config/lf/lfcd.sh"
-if [ -f "$LFCD" ]; then
-    source "$LFCD"
-fi
-alias lf=lfcd
+alias lf=lfrun.sh
+# LFCD="/home/anupam/.config/lf/lfcd.sh"
+# if [ -f "$LFCD" ]; then
+#     source "$LFCD"
+# fi
+# alias lf=lfcd
 
 #  findproj() { cd `find ~/work -maxdepth 3 -mindepth 1 -type d | fzf` }
 
@@ -206,3 +206,5 @@ export SHELL=zsh
 if [ `pwd` = "/" ]; then
     cd $HOME
 fi
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:."
