@@ -276,6 +276,7 @@ myStartupHook = do
   spawnOnce "stalonetray"
   spawnOnce "picom"
   spawnOnce "nitrogen --restore"
+  spawnOnce "clipmenud"
   -- spawnOnce "copyq"
   -- spawnOnce "qpwgraph -m"
   -- spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
