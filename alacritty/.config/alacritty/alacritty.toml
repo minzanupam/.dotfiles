@@ -19,7 +19,7 @@ style = "Bold"
 style = "Regular"
 
 [font.normal]
-family = "FiraCode"
+family = "JetBrainsMono"
 style = "Regular"
 
 [[keyboard.bindings]]
