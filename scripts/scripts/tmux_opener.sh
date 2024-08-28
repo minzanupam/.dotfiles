@@ -2,14 +2,21 @@
 
 selected=`fzf < /home/anupam/.cache/projectlist`
 
-dirname=`basename $selected`
+dirname=`basename $selected | tr \. \-`
+# echo $dirname
 
-tmux switch-client -t $dirname
-if [[ $? -eq 0 ]]; then
-    exit 0
-fi
+tmux attach -x -t $dirname || tmux new-session -c $selected -s $dirname
+# if [[ $? -eq 0 ]]; then
+#     exit 0
+# fi
+# tmux switch-client -t $dirname
+# if [[ $? -eq 0 ]]; then
+#     exit 0
+# fi
 
-tmux new-session -c $selected -d -s $dirname && tmux switch-client -t $dirname || tmux new -c $selected -A -s $dirname
+
+    # && tmux attach -d -t $dirname \
+    # || tmux new -c $selected -A -s $dirname
 
 # # from .zshrc
 #
