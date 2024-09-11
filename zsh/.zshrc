@@ -178,6 +178,7 @@ alias ta="tmux attach"
 alias o=xdg-open
 alias em="emacsclient -c"
 alias egrep="grep -E"
+alias snap_ffmpeg="/var/lib/snapd/snap/bin/ffmpeg"
 
 # unset DEBUGINFOD_URLS
 
