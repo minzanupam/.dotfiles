@@ -202,7 +202,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
 --
 -- myLayout = (avoidStruts $ spacingWithEdge 4 $ tiled) ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
 -- myLayout = (avoidStruts $ spacingWithEdge 4 tiled) ||| (avoidStruts $ spacingWithEdge 4 Full)
-myLayout = (avoidStruts $ spacingWithEdge 4 tiled) ||| (avoidStruts $ noBorders Full) ||| (noBorders Full)
+myLayout = (avoidStruts tiled) ||| (avoidStruts $ noBorders Full) ||| (noBorders Full)
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = Tall nmaster delta ratio
