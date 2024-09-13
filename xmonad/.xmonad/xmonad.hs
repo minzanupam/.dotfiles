@@ -277,6 +277,7 @@ myStartupHook = do
   spawnOnce "picom"
   spawnOnce "nitrogen --restore"
   spawnOnce "clipmenud"
+  spawnOnce "dunst"
   spawnOnce "$HOME/Downloads/appimages/activitywatch-linux-x86_64.AppImage"
   -- spawnOnce "copyq"
   -- spawnOnce "qpwgraph -m"
