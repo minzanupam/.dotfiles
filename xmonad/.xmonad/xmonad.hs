@@ -73,7 +73,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       -- , ((mod4Mask, xK_Return), spawn "st -e zsh")
       ((mod4Mask, xK_Return), spawn myTerminal),
       -- cht.sh
-      ((mod4Mask, xK_c), spawn (myTerminal ++ " -e /home/anupam/scripts/cht.sh")),
+      ((mod4Mask, xK_c), spawn (myTerminal ++ " -e ollama run llama3.1:latest")),
       -- start_project.sh
 
       ((mod4Mask, xK_q), spawn ("xkill")),
@@ -278,7 +278,7 @@ myStartupHook = do
   spawnOnce "nitrogen --restore"
   spawnOnce "clipmenud"
   spawnOnce "dunst"
-  spawnOnce "$HOME/Downloads/appimages/activitywatch-linux-x86_64.AppImage"
+  -- spawnOnce "$HOME/Downloads/appimages/activitywatch-linux-x86_64.AppImage"
   -- spawnOnce "copyq"
   -- spawnOnce "qpwgraph -m"
   -- spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"

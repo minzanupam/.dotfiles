@@ -389,7 +389,8 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({ "Mod4" }, "c", function()
-		awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
+		-- awful.spawn(terminal .. " -e /home/anupam/scripts/cht.sh")
+		awful.spawn(terminal .. " -e ollama run llama3.1:latest")
 	end),
 	awful.key({ "Mod4" }, "Return", function()
 		--awful.spawn("tabbed -c -n alacritty alacritty --embed")
@@ -707,9 +708,9 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
-				"Pavucontrol",
+				-- "Pavucontrol",
 				-- "Blueman-manager",
-				"Cmus",
+				-- "Cmus",
 			},
 		},
 		properties = { floating = false, tag = "3" }
@@ -819,15 +820,16 @@ local autorun = true
 local autorunApps = {
 	"picom",
 	"nitrogen --restore",
-	"copyq",
+	"clipmenud",
+	-- "copyq",
 	-- "qpwgraph -m",
 	-- "blueman-manager",
-	"pavucontrol",
+	-- "pavucontrol",
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
-	"emacs --daemon",
-	-- "aw-qt",
-	"brave",
-	terminal .. " --class Cmus -e cmus",
+	-- "emacs --daemon",
+	"aw-qt",
+	-- "brave",
+	-- terminal .. " --class Cmus -e cmus",
 	"flameshot",
 	-- "rog-control-center",
 	-- "pasystray",
