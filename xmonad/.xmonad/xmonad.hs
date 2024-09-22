@@ -13,6 +13,7 @@ import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat, doRectFloat) 
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
@@ -201,7 +202,6 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
 -- which denotes layout choice.
 --
 -- myLayout = (avoidStruts $ spacingWithEdge 4 $ tiled) ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
--- myLayout = (avoidStruts $ spacingWithEdge 4 tiled) ||| (avoidStruts $ spacingWithEdge 4 Full)
 myLayout = (avoidStruts tiled) ||| (avoidStruts $ noBorders Full) ||| (noBorders Full)
   where
     -- default tiling algorithm partitions the screen into two panes
@@ -300,31 +300,32 @@ main = do
   -- xmproc1 <- spawnPipe "xmobar -x 1 /home/anupam/.xmobarrc"
 
   xmonad $
-    docks
-      def
-        { terminal = myTerminal,
-          focusFollowsMouse = myFocusFollowsMouse,
-          clickJustFocuses = myClickJustFocuses,
-          borderWidth = myBorderWidth,
-          modMask = myModMask,
-          workspaces = myWorkspaces,
-          normalBorderColor = myNormalBorderColor,
-          focusedBorderColor = myFocusedBorderColor,
-          -- key bindings
-          keys = myKeys,
-          mouseBindings = myMouseBindings,
-          -- hooks, layouts
-          layoutHook = myLayout,
-          -- layoutHook         = spacingWithEdge 4 $ myLayout,
-          handleEventHook = myEventHook,
-          logHook =
-            dynamicLogWithPP $
-              xmobarPP
-                { ppOutput = hPutStrLn xmproc0 {- >> hPutStrLn xmproc1 x -}
-                },
-          manageHook = myManageHook,
-          startupHook = myStartupHook
-        }
+    ewmhFullscreen . ewmh $
+      docks
+        def
+          { terminal = myTerminal,
+            focusFollowsMouse = myFocusFollowsMouse,
+            clickJustFocuses = myClickJustFocuses,
+            borderWidth = myBorderWidth,
+            modMask = myModMask,
+            workspaces = myWorkspaces,
+            normalBorderColor = myNormalBorderColor,
+            focusedBorderColor = myFocusedBorderColor,
+            -- key bindings
+            keys = myKeys,
+            mouseBindings = myMouseBindings,
+            -- hooks, layouts
+            layoutHook = myLayout,
+            -- layoutHook         = spacingWithEdge 4 $ myLayout,
+            handleEventHook = myEventHook,
+            logHook =
+              dynamicLogWithPP $
+                xmobarPP
+                  { ppOutput = hPutStrLn xmproc0 {- >> hPutStrLn xmproc1 x -}
+                  },
+            manageHook = myManageHook,
+            startupHook = myStartupHook
+          }
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
