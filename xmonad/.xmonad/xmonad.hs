@@ -202,7 +202,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
 -- which denotes layout choice.
 --
 -- myLayout = (avoidStruts $ spacingWithEdge 4 $ tiled) ||| avoidStruts Full {- ||| avoidStruts (Mirror tiled) -} ||| noBorders Full
-myLayout = (avoidStruts tiled) ||| (avoidStruts $ noBorders Full) ||| (noBorders Full)
+myLayout = (avoidStruts tiled) ||| (noBorders Full)
   where
     -- default tiling algorithm partitions the screen into two panes
     tiled = Tall nmaster delta ratio
@@ -300,7 +300,8 @@ main = do
   -- xmproc1 <- spawnPipe "xmobar -x 1 /home/anupam/.xmobarrc"
 
   xmonad $
-    ewmhFullscreen . ewmh $
+    -- ewmhFullscreen . ewmh $
+    ewmh $
       docks
         def
           { terminal = myTerminal,
