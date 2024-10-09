@@ -220,6 +220,7 @@ PATH="$PATH:/home/anupam/work/build/fff"
 PATH="$PATH:/var/lib/flatpak/exports/bin"
 PATH="$HOME/.nodenv/bin:$PATH"
 PATH="/usr/lib/jvm/java-openjdk/bin:$PATH"
+PATH="$HOME/.deno/bin/:$PATH"
 # PATH="$PATH:/opt/instantclient_21_13"
 export PATH
 
