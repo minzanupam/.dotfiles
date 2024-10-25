@@ -81,11 +81,6 @@ editconf() {
 	fi
 }
 
-
-songsearch() {
-    find /media/anupam/881f3c4e-63e4-4d5d-a149-e736788e2134/Songs -mindepth 1 -type f | fzf
-}
-
 bvim () {
     lynx $1 --dump | nvim "+%s/\[\d*\]/g"
 }
