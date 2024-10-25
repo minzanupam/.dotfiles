@@ -6,8 +6,8 @@ bookname=`find $HOME/Documents/Books -name '*.pdf' |
 bookpath=$HOME/Documents/Books/$bookname
 
 if [ "$bookname" != "" ]; then 
-	prog=zathura
-	# prog=org.kde.okular
+	# prog=zathura
+	prog=org.kde.okular
 	$prog "$bookpath"
 else
 	exit 1
