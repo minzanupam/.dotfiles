@@ -44,7 +44,6 @@ source $HOME/.cargo/env
 # export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_STYLE_OVERRIDE=gtk2
 # for gtk4
-# export GTK_THEME=Adwaita:dark
 
 # if you want to use amd-driver
 # export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
@@ -59,4 +58,3 @@ source $HOME/.cargo/env
 
 # if [ -e /home/anupam/.nix-profile/etc/profile.d/nix.sh ]; then . /home/anupam/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
-# export GTK_THEME=Adwaita:dark
