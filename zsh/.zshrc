@@ -139,6 +139,7 @@ sch() {
 # export MANPAGER="nvim -c 'set ft=man nu rnu nowrap hlsearch colorcolumn=79'"
 
 alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
+alias ls=ls
 alias l="exa -lagF --color=always --group-directories-first"
 alias ll="l | less -r"
 alias b=tmux_opener.sh
