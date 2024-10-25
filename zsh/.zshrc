@@ -140,7 +140,7 @@ sch() {
 
 alias vvifm='/home/anupam/.config/vifm/scripts/vifmrun'
 alias ls=ls
-alias l="exa -lagF --color=always --group-directories-first"
+alias l="eza -lagF --color=always --group-directories-first"
 alias ll="l | less -r"
 alias b=tmux_opener.sh
 # alias s=start_bookmarks
