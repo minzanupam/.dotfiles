@@ -1,3 +1,4 @@
+[general]
 import = ["/home/anupam/.config/alacritty/colors/tokyo-night.toml"]
 
 [cursor]
@@ -30,7 +31,7 @@ mods = "Control"
 [scrolling]
 history = 10000
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/zsh"
 
 [window]
