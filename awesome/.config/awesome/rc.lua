@@ -464,7 +464,8 @@ globalkeys = gears.table.join(
 	awful.key({ modkey, "Control" }, "k", function()
 		awful.screen.focus_relative(-1)
 	end, { description = "focus the previous screen", group = "screen" }),
-	awful.key({ modkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
+	awful.key({ modkey }, "u", awful.client.urgent.jumpto,
+		{ description = "jump to urgent client", group = "client" }),
 	awful.key({ modkey }, "Tab", function()
 		awful.client.swap.byidx(1)
 		awful.client.focus.byidx(-1)
@@ -722,23 +723,6 @@ awful.rules.rules = {
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
 	--   properties = { screen = 1, tag = "2" } },
-	{
-		rule_any = {
-			class = {
-				"Brave",
-			},
-		},
-		properties = { screen = 1, tag = "2" }
-	},
-	{
-		rule = { name = "Brave" },
-		properties = { screen = 1, tag = "2" }
-	},
-	{
-		rule = { class = "Chromium-browser" },
-		properties = { screen = 1, tag = "4" }
-	},
-
 }
 -- }}}
 
