@@ -1,5 +1,6 @@
 [general]
 import = ["/home/anupam/.config/alacritty/colors/Gruvbox-Dark.toml"]
+working_directory = "/home/anupam"
 
 [cursor]
 style = "Block"
@@ -31,8 +32,8 @@ mods = "Control"
 [scrolling]
 history = 10000
 
-[terminal.shell]
-program = "/usr/bin/zsh"
+# [terminal.shell]
+# program = "/usr/bin/zsh"
 
 [window]
 opacity = 1
