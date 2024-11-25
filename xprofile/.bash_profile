@@ -20,6 +20,8 @@ export NODE_PATH=~/.npm-packages/lib/node_modules
 
 source $HOME/.cargo/env
 
+alias vim=nvim
+
 # college proxy
 # proxy_var="http://edcguest:edcguest@172.31.102.29:3128"
 # proxy_var="http://edcguest:edcguest@172.31.100.27:3128"
