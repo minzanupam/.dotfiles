@@ -4,21 +4,21 @@
 
 # path
 # PATH="$PATH:/opt/appimages"
-PATH="$PATH:$HOME/.local/bin"
-PATH="$PATH:$HOME/go/bin"
+# PATH="$PATH:$HOME/.local/bin"
+# PATH="$PATH:$HOME/go/bin"
 # PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
-PATH="$PATH:$HOME/scripts"
+# PATH="$PATH:$HOME/scripts"
 # PATH="$PATH:$HOME/.config/emacs/bin"
-PATH="$PATH:$HOME/.npm-packages/bin"
-PATH="$PATH:/home/anupam/work/build/fff"
-PATH="$PATH:/var/lib/flatpak/exports/bin"
-PATH="$HOME/.nodenv/bin:$PATH"
+# PATH="$PATH:$HOME/.npm-packages/bin"
+# PATH="$PATH:/home/anupam/work/build/fff"
+# PATH="$PATH:/var/lib/flatpak/exports/bin"
+# PATH="$HOME/.nodenv/bin:$PATH"
 # PATH="$PATH:/opt/instantclient_21_13"
-export PATH
+# export PATH
 
 export NODE_PATH=~/.npm-packages/lib/node_modules
 
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 
 alias vim=nvim
 
