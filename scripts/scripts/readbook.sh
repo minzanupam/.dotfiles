@@ -8,6 +8,7 @@ bookpath=$HOME/Documents/Books/$bookname
 if [ "$bookname" != "" ]; then 
 	# prog=zathura
 	prog=org.kde.okular
+	# prog=evince
 	$prog "$bookpath" & disown
 else
 	exit 1
