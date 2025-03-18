@@ -34,6 +34,8 @@ history = 10000
 
 # [terminal.shell]
 # program = "/usr/bin/zsh"
+[terminal]
+shell = "/home/anupam/.nix-profile/bin/fish"
 
 [window]
 opacity = 1
