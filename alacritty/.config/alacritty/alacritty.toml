@@ -38,7 +38,7 @@ history = 10000
 # shell = "/home/anupam/.nix-profile/bin/fish"
 
 [window]
-opacity = 1
+opacity = 0.99
 [window.dimensions]
 columns = 80
 lines = 24
